@@ -92,10 +92,8 @@ export const getMovieControllerFindOneV14ResponseMock = (
     ...overrideResponse,
   },
   budget: { currency: "€", value: 207283, ...overrideResponse },
-  countries: Array.from(
-    { length: faker.number.int({ min: 1, max: 10 }) },
-    (_, i) => i + 1,
-  ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+  countries: (() =>
+    new Array(3).fill(0).map(() => ({ name: faker.location.country() })))(),
   createdAt: faker.helpers.arrayElement([
     `${faker.date.past().toISOString().split(".")[0]}Z`,
     null,
@@ -123,10 +121,8 @@ export const getMovieControllerFindOneV14ResponseMock = (
     world: { currency: "€", value: 207283, ...overrideResponse },
     ...overrideResponse,
   },
-  genres: Array.from(
-    { length: faker.number.int({ min: 1, max: 10 }) },
-    (_, i) => i + 1,
-  ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+  genres: (() =>
+    new Array(3).fill(0).map(() => ({ name: faker.music.genre() })))(),
   id: 666,
   isSeries: true,
   lists: ["250 лучших сериалов"],
@@ -363,10 +359,8 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
       ...overrideResponse,
     },
     budget: { currency: "€", value: 207283, ...overrideResponse },
-    countries: Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+    countries: (() =>
+      new Array(3).fill(0).map(() => ({ name: faker.location.country() })))(),
     createdAt: faker.helpers.arrayElement([
       `${faker.date.past().toISOString().split(".")[0]}Z`,
       null,
@@ -394,10 +388,8 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
       world: { currency: "€", value: 207283, ...overrideResponse },
       ...overrideResponse,
     },
-    genres: Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+    genres: (() =>
+      new Array(3).fill(0).map(() => ({ name: faker.music.genre() })))(),
     id: 666,
     isSeries: true,
     lists: ["250 лучших сериалов"],
@@ -638,10 +630,11 @@ export const getMovieControllerSearchMovieV14ResponseMock = (
       url: faker.helpers.arrayElement([faker.word.sample(), null]),
       ...overrideResponse,
     },
-    countries: Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+    countries: faker.helpers.arrayElement([
+      (() =>
+        new Array(3).fill(0).map(() => ({ name: faker.location.country() })))(),
+      null,
+    ]),
     description: faker.helpers.arrayElement([faker.word.sample(), null]),
     enName: faker.helpers.arrayElement([faker.word.sample(), null]),
     externalId: {
@@ -650,10 +643,10 @@ export const getMovieControllerSearchMovieV14ResponseMock = (
       tmdb: 9799,
       ...overrideResponse,
     },
-    genres: Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+    genres: faker.helpers.arrayElement([
+      (() => new Array(3).fill(0).map(() => ({ name: faker.music.genre() })))(),
+      null,
+    ]),
     id: faker.number.int({ min: undefined, max: undefined }),
     isSeries: faker.datatype.boolean(),
     logo: {
@@ -757,10 +750,8 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
     ...overrideResponse,
   },
   budget: { currency: "€", value: 207283, ...overrideResponse },
-  countries: Array.from(
-    { length: faker.number.int({ min: 1, max: 10 }) },
-    (_, i) => i + 1,
-  ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+  countries: (() =>
+    new Array(3).fill(0).map(() => ({ name: faker.location.country() })))(),
   createdAt: faker.helpers.arrayElement([
     `${faker.date.past().toISOString().split(".")[0]}Z`,
     null,
@@ -788,10 +779,8 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
     world: { currency: "€", value: 207283, ...overrideResponse },
     ...overrideResponse,
   },
-  genres: Array.from(
-    { length: faker.number.int({ min: 1, max: 10 }) },
-    (_, i) => i + 1,
-  ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+  genres: (() =>
+    new Array(3).fill(0).map(() => ({ name: faker.music.genre() })))(),
   id: 666,
   isSeries: true,
   lists: ["250 лучших сериалов"],
