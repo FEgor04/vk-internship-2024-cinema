@@ -2,7 +2,7 @@ import { infer as zInfer, number, object, string, enum as zEnum } from "zod"
 
 const zMovieStatus = zEnum(["filming" , "pre-production" , "completed" , "announced" , "post-production"])
 
-const movieSchema = object({
+export const movieSchema = object({
   id: number(),
   name: string(),
   enName: string().optional(),

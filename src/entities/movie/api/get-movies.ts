@@ -1,7 +1,7 @@
 import { queryOptions } from "@tanstack/react-query";
 import { movieControllerFindManyByQueryV14 } from "@/shared/api";
 import { MovieDtoV14 } from "@/shared/api/index.schemas";
-import { Movie } from "../model/movie";
+import { Movie, movieSchema } from "../model/movie";
 
 type Query = {
   page: number,
@@ -31,10 +31,10 @@ export const getMoviesQueryOptions = (query: Query) => queryOptions({
 })
 
 function fromDTO(dto: MovieDtoV14): Movie {
-  return {
+  return movieSchema.parse({
     // todo: add a zod schema and parse it
-      id: dto.id!,
-      name: dto.name!,
+      id: dto.id,
+      name: dto.name,
       enName: dto.enName ?? undefined,
       description: dto.description ?? undefined,
       shortDescription: dto.shortDescription ?? undefined,
@@ -42,11 +42,9 @@ function fromDTO(dto: MovieDtoV14): Movie {
       countries: dto.countries?.map(it => it.name!) ?? [],
       year: dto.year ?? undefined,
       slogan: dto.slogan ?? undefined,
-    // @ts-expect-error bad typings by orval
       status: dto.status ?? undefined,
-    // @ts-expect-error bad typings by orval
       rating: dto.rating ?? undefined,
       movieLength: dto.movieLength ?? undefined,
       ageRating: dto.ageRating ?? undefined,
-  }
+  })
 }
