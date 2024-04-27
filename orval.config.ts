@@ -17,6 +17,7 @@ export default defineConfig({
       prettier: true,
       override: {
         mock: {
+          locale: 'ru',
           useExamples: true,
           required: true,
           properties: {

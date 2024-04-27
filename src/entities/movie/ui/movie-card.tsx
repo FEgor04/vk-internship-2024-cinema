@@ -12,7 +12,7 @@ export function MovieCard({movie}: Props) {
     <div className="rounded-t-md relative overflow-hidden">
     <img className="rounded-t-md w-full" src={movie.poster?.previewUrl} />
     </div>
-    <CardHeader className="space-y-8">
+    <CardHeader className="space-y-4">
       <CardTitle className="flex flex-row justify-between items-center">
         {movie.name}
         {movie.year && <span className="text-accent-foreground font-normal text-sm">
