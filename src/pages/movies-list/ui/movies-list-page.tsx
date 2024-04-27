@@ -10,9 +10,9 @@ type Props = {
 }
 
 export function MoviesListPage(props: Props) {
-  return <React.Suspense fallback={<MoviesListFallback />}>
+  return <div className="mt-8 container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"><React.Suspense fallback={<MoviesListFallback />}>
     <MoviesList pageSize={props.pageSize} page={props.page} />
-  </React.Suspense>
+  </React.Suspense></div>
 }
 
 function MoviesList(props: { page: number, pageSize: number }) {

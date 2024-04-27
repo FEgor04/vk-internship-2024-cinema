@@ -20,7 +20,7 @@ export const getMoviesQueryOptions = (query: Query) => queryOptions({
     const { data } = await movieControllerFindManyByQueryV14({
       page: query.page,
       limit: query.limit,
-      selectFields: ["id", "name", "enName", "description", "shortDescription", "genres", "countries", "year", "slogan", "status", "rating", "movieLength", "ageRating"]
+      selectFields: ["id", "name", "enName", "description", "shortDescription", "genres", "countries", "year", "slogan", "status", "rating", "movieLength", "ageRating", "poster"]
     })
     const response: Response = { movies: data.docs.map(fromDTO),
       pages: data.pages,
@@ -46,5 +46,6 @@ function fromDTO(dto: MovieDtoV14): Movie {
       rating: dto.rating ?? undefined,
       movieLength: dto.movieLength ?? undefined,
       ageRating: dto.ageRating ?? undefined,
+      poster: dto.poster ?? undefined,
   })
 }

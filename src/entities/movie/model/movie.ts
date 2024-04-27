@@ -23,6 +23,10 @@ export const movieSchema = object({
   }).optional(),
   movieLength: number().optional(),
   ageRating: coerce.number().optional(),
+  poster: object({
+    url: string().url(),
+    previewUrl: string().url()
+  }).optional()
 })
 
 export type Movie = zInfer<typeof movieSchema>

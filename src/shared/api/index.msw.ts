@@ -173,9 +173,9 @@ export const getMovieControllerFindOneV14ResponseMock = (
     ...overrideResponse,
   })),
   poster: {
-    previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
-    url: faker.helpers.arrayElement([faker.word.sample(), null]),
-    ...overrideResponse,
+    url: "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+    previewUrl:
+      "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
   },
   premiere: {
     bluray: faker.helpers.arrayElement([faker.word.sample(), null]),
@@ -235,11 +235,14 @@ export const getMovieControllerFindOneV14ResponseMock = (
     enName: faker.helpers.arrayElement([faker.word.sample(), null]),
     id: faker.number.int({ min: undefined, max: undefined }),
     name: faker.helpers.arrayElement([faker.word.sample(), null]),
-    poster: {
-      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
-      url: faker.helpers.arrayElement([faker.word.sample(), null]),
-      ...overrideResponse,
-    },
+    poster: faker.helpers.arrayElement([
+      {
+        url: "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+        previewUrl:
+          "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+      },
+      null,
+    ]),
     rating: {
       await: 6.1,
       filmCritics: 10,
@@ -263,11 +266,14 @@ export const getMovieControllerFindOneV14ResponseMock = (
     enName: faker.helpers.arrayElement([faker.word.sample(), null]),
     id: faker.number.int({ min: undefined, max: undefined }),
     name: faker.helpers.arrayElement([faker.word.sample(), null]),
-    poster: {
-      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
-      url: faker.helpers.arrayElement([faker.word.sample(), null]),
-      ...overrideResponse,
-    },
+    poster: faker.helpers.arrayElement([
+      {
+        url: "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+        previewUrl:
+          "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+      },
+      null,
+    ]),
     rating: {
       await: 6.1,
       filmCritics: 10,
@@ -438,9 +444,9 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
       ...overrideResponse,
     })),
     poster: {
-      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
-      url: faker.helpers.arrayElement([faker.word.sample(), null]),
-      ...overrideResponse,
+      url: "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+      previewUrl:
+        "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
     },
     premiere: {
       bluray: faker.helpers.arrayElement([faker.word.sample(), null]),
@@ -500,11 +506,14 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
       enName: faker.helpers.arrayElement([faker.word.sample(), null]),
       id: faker.number.int({ min: undefined, max: undefined }),
       name: faker.helpers.arrayElement([faker.word.sample(), null]),
-      poster: {
-        previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
-        url: faker.helpers.arrayElement([faker.word.sample(), null]),
-        ...overrideResponse,
-      },
+      poster: faker.helpers.arrayElement([
+        {
+          url: "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+          previewUrl:
+            "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+        },
+        null,
+      ]),
       rating: {
         await: 6.1,
         filmCritics: 10,
@@ -528,11 +537,14 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
       enName: faker.helpers.arrayElement([faker.word.sample(), null]),
       id: faker.number.int({ min: undefined, max: undefined }),
       name: faker.helpers.arrayElement([faker.word.sample(), null]),
-      poster: {
-        previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
-        url: faker.helpers.arrayElement([faker.word.sample(), null]),
-        ...overrideResponse,
-      },
+      poster: faker.helpers.arrayElement([
+        {
+          url: "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+          previewUrl:
+            "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+        },
+        null,
+      ]),
       rating: {
         await: 6.1,
         filmCritics: 10,
@@ -662,11 +674,14 @@ export const getMovieControllerSearchMovieV14ResponseMock = (
       type: faker.helpers.arrayElement([faker.word.sample(), null]),
       ...overrideResponse,
     })),
-    poster: {
-      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
-      url: faker.helpers.arrayElement([faker.word.sample(), null]),
-      ...overrideResponse,
-    },
+    poster: faker.helpers.arrayElement([
+      {
+        url: "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+        previewUrl:
+          "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+      },
+      null,
+    ]),
     rating: {
       await: 6.1,
       filmCritics: 10,
@@ -823,9 +838,9 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
     ...overrideResponse,
   })),
   poster: {
-    previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
-    url: faker.helpers.arrayElement([faker.word.sample(), null]),
-    ...overrideResponse,
+    url: "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+    previewUrl:
+      "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
   },
   premiere: {
     bluray: faker.helpers.arrayElement([faker.word.sample(), null]),
@@ -885,11 +900,14 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
     enName: faker.helpers.arrayElement([faker.word.sample(), null]),
     id: faker.number.int({ min: undefined, max: undefined }),
     name: faker.helpers.arrayElement([faker.word.sample(), null]),
-    poster: {
-      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
-      url: faker.helpers.arrayElement([faker.word.sample(), null]),
-      ...overrideResponse,
-    },
+    poster: faker.helpers.arrayElement([
+      {
+        url: "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+        previewUrl:
+          "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+      },
+      null,
+    ]),
     rating: {
       await: 6.1,
       filmCritics: 10,
@@ -913,11 +931,14 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
     enName: faker.helpers.arrayElement([faker.word.sample(), null]),
     id: faker.number.int({ min: undefined, max: undefined }),
     name: faker.helpers.arrayElement([faker.word.sample(), null]),
-    poster: {
-      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
-      url: faker.helpers.arrayElement([faker.word.sample(), null]),
-      ...overrideResponse,
-    },
+    poster: faker.helpers.arrayElement([
+      {
+        url: "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+        previewUrl:
+          "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+      },
+      null,
+    ]),
     rating: {
       await: 6.1,
       filmCritics: 10,
@@ -1080,9 +1101,9 @@ export const getSeasonControllerFindManyV14ResponseMock = (
     name: faker.word.sample(),
     number: faker.number.int({ min: undefined, max: undefined }),
     poster: {
-      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
-      url: faker.helpers.arrayElement([faker.word.sample(), null]),
-      ...overrideResponse,
+      url: "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
+      previewUrl:
+        "https://rukminim2.flixcart.com/image/850/1000/jqwny4w0/poster/s/v/u/medium-spider-man-11-spider-man-poster-for-room-office-13-inch-x-original-imafctjenprfatgh.jpeg?q=90&crop=false",
     },
     updatedAt: faker.helpers.arrayElement([
       `${faker.date.past().toISOString().split(".")[0]}Z`,
