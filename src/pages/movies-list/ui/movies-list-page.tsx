@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
 import React from "react";
-import { MovieCard } from "@/entities/movie";
+import { MovieCard, MovieCardFallback } from "@/entities/movie";
 import { getMoviesQueryOptions } from "@/entities/movie";
 
 type Props = {
@@ -21,5 +21,5 @@ function MoviesList(props: { page: number, pageSize: number }) {
 }
 
 function MoviesListFallback() {
-  return new Array(10).fill(0).map((_, ind) => <MoviesListFallback key={ind} />)
+  return new Array(10).fill(0).map((_, ind) => <MovieCardFallback key={ind} />)
 }
