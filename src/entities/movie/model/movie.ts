@@ -1,4 +1,4 @@
-import { infer as zInfer, number, object, string, enum as zEnum } from "zod"
+import { infer as zInfer, number, object, string, enum as zEnum, coerce } from "zod"
 
 const zMovieStatus = zEnum(["filming" , "pre-production" , "completed" , "announced" , "post-production"])
 
@@ -22,7 +22,7 @@ export const movieSchema = object({
     await: number(),
   }).optional(),
   movieLength: number().optional(),
-  ageRating: number().optional(),
+  ageRating: coerce.number().optional(),
 })
 
 export type Movie = zInfer<typeof movieSchema>

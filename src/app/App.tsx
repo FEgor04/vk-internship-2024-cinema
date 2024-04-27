@@ -6,7 +6,13 @@ import { worker } from "@/shared/mocks/browser";
 import "./index.css";
 import { routeTree } from "@/routeTree.gen";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    }
+  }
+});
 
 const router = createRouter({ routeTree, context: { queryClient } });
 

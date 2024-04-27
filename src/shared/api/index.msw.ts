@@ -56,7 +56,7 @@ API работает по принципу REST, все запросы отпр�
 
  * OpenAPI spec version: 1.4
  */
-import { faker } from "@faker-js/faker";
+import { faker } from "@faker-js/faker/locale/ru";
 import { HttpResponse, delay, http } from "msw";
 import type {
   ImageDocsResponseDtoV14,
@@ -80,864 +80,261 @@ import type {
 export const getMovieControllerFindOneV14ResponseMock = (
   overrideResponse: any = {},
 ): MovieDtoV14 => ({
-  ageRating: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
-  alternativeName: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  audience: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      count: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      country: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  backdrop: faker.helpers.arrayElement([
-    {
-      previewUrl: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      url: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  budget: faker.helpers.arrayElement([
-    {
-      currency: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      value: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  countries: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
+  ageRating: "16",
+  alternativeName: "Spider man",
+  audience: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ count: 1000, country: "Россия", ...overrideResponse })),
+  backdrop: {
+    previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+    url: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ...overrideResponse,
+  },
+  budget: { currency: "€", value: 207283, ...overrideResponse },
+  countries: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
   createdAt: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      `${faker.date.past().toISOString().split(".")[0]}Z`,
-      null,
-    ]),
-    undefined,
+    `${faker.date.past().toISOString().split(".")[0]}Z`,
+    null,
   ]),
-  description: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  enName: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  externalId: faker.helpers.arrayElement([
-    {
-      imdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      kpHD: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      tmdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  facts: faker.helpers.arrayElement([
-    Array.from(
+  description: faker.helpers.arrayElement([faker.word.sample(), null]),
+  enName: "Spider man",
+  externalId: {
+    imdb: "tt0232500",
+    kpHD: "48e8d0acb0f62d8585101798eaeceec5",
+    tmdb: 9799,
+    ...overrideResponse,
+  },
+  facts: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    spoiler: faker.datatype.boolean(),
+    type: faker.helpers.arrayElement([faker.word.sample(), null]),
+    value: faker.word.sample(),
+    ...overrideResponse,
+  })),
+  fees: {
+    russia: { currency: "€", value: 207283, ...overrideResponse },
+    usa: { currency: "€", value: 207283, ...overrideResponse },
+    world: { currency: "€", value: 207283, ...overrideResponse },
+    ...overrideResponse,
+  },
+  genres: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+  id: 666,
+  isSeries: true,
+  lists: ["250 лучших сериалов"],
+  logo: {
+    url: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ...overrideResponse,
+  },
+  movieLength: 120,
+  name: "Человек паук",
+  names: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    language: faker.helpers.arrayElement([faker.word.sample(), null]),
+    name: faker.word.sample(),
+    type: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ...overrideResponse,
+  })),
+  networks: {
+    items: Array.from(
       { length: faker.number.int({ min: 1, max: 10 }) },
       (_, i) => i + 1,
     ).map(() => ({
-      spoiler: faker.helpers.arrayElement([
-        faker.datatype.boolean(),
-        undefined,
-      ]),
-      type: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      value: faker.word.sample(),
+      logo: {
+        url: faker.helpers.arrayElement([faker.word.sample(), null]),
+        ...overrideResponse,
+      },
+      name: "Netflix",
       ...overrideResponse,
     })),
-    undefined,
-  ]),
-  fees: faker.helpers.arrayElement([
-    {
-      russia: faker.helpers.arrayElement([
-        {
-          currency: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          value: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      usa: faker.helpers.arrayElement([
-        {
-          currency: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          value: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      world: faker.helpers.arrayElement([
-        {
-          currency: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          value: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  genres: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  id: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
+    ...overrideResponse,
+  },
+  persons: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    description: faker.helpers.arrayElement([faker.word.sample(), null]),
+    enName: "Paul Walker",
+    enProfession: faker.helpers.arrayElement([faker.word.sample(), null]),
+    id: 6317,
+    name: "Пол Уокер",
+    photo: "https://st.kp.yandex.net/images/actor_iphone/iphone360_6317.jpg",
+    profession: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ...overrideResponse,
+  })),
+  poster: {
+    previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+    url: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ...overrideResponse,
+  },
+  premiere: {
+    bluray: faker.helpers.arrayElement([faker.word.sample(), null]),
+    cinema: "2023-02-25T02:44:39.359Z",
+    country: "США",
+    digital: faker.helpers.arrayElement([faker.word.sample(), null]),
+    dvd: faker.helpers.arrayElement([faker.word.sample(), null]),
+    russia: "2023-02-25T02:44:39.359Z",
+    world: "2023-02-25T02:44:39.359Z",
+    ...overrideResponse,
+  },
+  rating: {
+    await: 6.1,
+    filmCritics: 10,
+    imdb: 8.4,
+    kp: 6.2,
+    russianFilmCritics: 5.1,
+    tmdb: 3.2,
+    ...overrideResponse,
+  },
+  ratingMpaa: "pg13",
+  releaseYears: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ end: 2023, start: 2022, ...overrideResponse })),
+  reviewInfo: {
+    count: faker.helpers.arrayElement([
       faker.number.int({ min: undefined, max: undefined }),
       null,
     ]),
-    undefined,
-  ]),
-  isSeries: faker.helpers.arrayElement([faker.datatype.boolean(), undefined]),
-  lists: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => faker.word.sample()),
-    undefined,
-  ]),
-  logo: faker.helpers.arrayElement([
-    {
-      url: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  movieLength: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
+    percentage: faker.helpers.arrayElement([faker.word.sample(), null]),
+    positiveCount: faker.helpers.arrayElement([
       faker.number.int({ min: undefined, max: undefined }),
       null,
     ]),
-    undefined,
-  ]),
-  name: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  names: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      language: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      type: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  networks: faker.helpers.arrayElement([
-    {
-      items: faker.helpers.arrayElement([
-        Array.from(
-          { length: faker.number.int({ min: 1, max: 10 }) },
-          (_, i) => i + 1,
-        ).map(() => ({
-          logo: faker.helpers.arrayElement([
-            {
-              url: faker.helpers.arrayElement([
-                faker.helpers.arrayElement([faker.word.sample(), null]),
-                undefined,
-              ]),
-              ...overrideResponse,
-            },
-            undefined,
-          ]),
-          name: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        })),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  persons: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      description: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      enName: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      enProfession: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      id: faker.number.int({ min: undefined, max: undefined }),
-      name: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      photo: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      profession: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  poster: faker.helpers.arrayElement([
-    {
-      previewUrl: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      url: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  premiere: faker.helpers.arrayElement([
-    {
-      bluray: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      cinema: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          `${faker.date.past().toISOString().split(".")[0]}Z`,
-          null,
-        ]),
-        undefined,
-      ]),
-      country: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      digital: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      dvd: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      russia: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          `${faker.date.past().toISOString().split(".")[0]}Z`,
-          null,
-        ]),
-        undefined,
-      ]),
-      world: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          `${faker.date.past().toISOString().split(".")[0]}Z`,
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  rating: faker.helpers.arrayElement([
-    {
-      await: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      filmCritics: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      imdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      kp: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      russianFilmCritics: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      tmdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  ratingMpaa: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  releaseYears: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      end: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      start: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  reviewInfo: faker.helpers.arrayElement([
-    {
-      count: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      percentage: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      positiveCount: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  seasonsInfo: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      episodesCount: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      number: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  sequelsAndPrequels: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      alternativeName: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      enName: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      id: faker.number.int({ min: undefined, max: undefined }),
-      name: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      poster: faker.helpers.arrayElement([
-        {
-          previewUrl: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          url: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      rating: faker.helpers.arrayElement([
-        {
-          await: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          filmCritics: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          imdb: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          kp: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          russianFilmCritics: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          tmdb: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      type: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      year: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  seriesLength: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
+    ...overrideResponse,
+  },
+  seasonsInfo: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    episodesCount: faker.helpers.arrayElement([
       faker.number.int({ min: undefined, max: undefined }),
       null,
     ]),
-    undefined,
-  ]),
-  shortDescription: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  similarMovies: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      alternativeName: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      enName: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      id: faker.number.int({ min: undefined, max: undefined }),
-      name: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      poster: faker.helpers.arrayElement([
-        {
-          previewUrl: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          url: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      rating: faker.helpers.arrayElement([
-        {
-          await: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          filmCritics: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          imdb: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          kp: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          russianFilmCritics: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          tmdb: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      type: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      year: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
+    number: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    ...overrideResponse,
+  })),
+  sequelsAndPrequels: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    enName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    id: faker.number.int({ min: undefined, max: undefined }),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
+    poster: {
+      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
       ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  slogan: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  status: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  ticketsOnSale: faker.helpers.arrayElement([
-    faker.datatype.boolean(),
-    undefined,
-  ]),
-  top10: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
-  top250: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
-  totalSeriesLength: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
-  type: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  typeNumber: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
+    },
+    rating: {
+      await: 6.1,
+      filmCritics: 10,
+      imdb: 8.4,
+      kp: 6.2,
+      russianFilmCritics: 5.1,
+      tmdb: 3.2,
+      ...overrideResponse,
+    },
+    type: faker.helpers.arrayElement([faker.word.sample(), null]),
+    year: 2021,
+    ...overrideResponse,
+  })),
+  seriesLength: 20,
+  shortDescription: faker.helpers.arrayElement([faker.word.sample(), null]),
+  similarMovies: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    enName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    id: faker.number.int({ min: undefined, max: undefined }),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
+    poster: {
+      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
+    rating: {
+      await: 6.1,
+      filmCritics: 10,
+      imdb: 8.4,
+      kp: 6.2,
+      russianFilmCritics: 5.1,
+      tmdb: 3.2,
+      ...overrideResponse,
+    },
+    type: faker.helpers.arrayElement([faker.word.sample(), null]),
+    year: 2021,
+    ...overrideResponse,
+  })),
+  slogan: faker.helpers.arrayElement([faker.word.sample(), null]),
+  status: "completed",
+  ticketsOnSale: true,
+  top10: 1,
+  top250: 200,
+  totalSeriesLength: 155,
+  type: "movie",
+  typeNumber: 1,
   updatedAt: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      `${faker.date.past().toISOString().split(".")[0]}Z`,
-      null,
-    ]),
-    undefined,
+    `${faker.date.past().toISOString().split(".")[0]}Z`,
+    null,
   ]),
-  videos: faker.helpers.arrayElement([
-    {
-      trailers: faker.helpers.arrayElement([
-        Array.from(
-          { length: faker.number.int({ min: 1, max: 10 }) },
-          (_, i) => i + 1,
-        ).map(() => ({
-          name: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          site: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          size: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          type: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          url: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        })),
-        undefined,
+  videos: {
+    trailers: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      name: "Official Trailer",
+      site: "youtube",
+      size: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
       ]),
+      type: "TRAILER",
+      url: "https://www.youtube.com/embed/ZsJz2TJAPjw",
       ...overrideResponse,
-    },
-    undefined,
-  ]),
-  votes: faker.helpers.arrayElement([
-    {
-      await: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      filmCritics: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      imdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      kp: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      russianFilmCritics: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      tmdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
+    })),
+    ...overrideResponse,
+  },
+  votes: {
+    await: 34000,
+    filmCritics: 10000,
+    imdb: 50000,
+    kp: 60000,
+    russianFilmCritics: 4000,
+    tmdb: 10000,
+    ...overrideResponse,
+  },
+  watchability: {
+    items: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      logo: {
+        url: faker.helpers.arrayElement([faker.word.sample(), null]),
+        ...overrideResponse,
+      },
+      name: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.word.sample(),
       ...overrideResponse,
-    },
-    undefined,
-  ]),
-  watchability: faker.helpers.arrayElement([
-    {
-      items: faker.helpers.arrayElement([
-        Array.from(
-          { length: faker.number.int({ min: 1, max: 10 }) },
-          (_, i) => i + 1,
-        ).map(() => ({
-          logo: {
-            url: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          name: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          url: faker.word.sample(),
-          ...overrideResponse,
-        })),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  year: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
+    })),
+    ...overrideResponse,
+  },
+  year: 2023,
   ...overrideResponse,
 });
 
@@ -948,864 +345,261 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
   ).map(() => ({
-    ageRating: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
-    ]),
-    alternativeName: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    audience: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        count: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        country: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    backdrop: faker.helpers.arrayElement([
-      {
-        previewUrl: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        url: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    budget: faker.helpers.arrayElement([
-      {
-        currency: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        value: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    countries: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
+    ageRating: "16",
+    alternativeName: "Spider man",
+    audience: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ count: 1000, country: "Россия", ...overrideResponse })),
+    backdrop: {
+      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
+    budget: { currency: "€", value: 207283, ...overrideResponse },
+    countries: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
     createdAt: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        `${faker.date.past().toISOString().split(".")[0]}Z`,
-        null,
-      ]),
-      undefined,
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
     ]),
-    description: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    enName: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    externalId: faker.helpers.arrayElement([
-      {
-        imdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        kpHD: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        tmdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    facts: faker.helpers.arrayElement([
-      Array.from(
+    description: faker.helpers.arrayElement([faker.word.sample(), null]),
+    enName: "Spider man",
+    externalId: {
+      imdb: "tt0232500",
+      kpHD: "48e8d0acb0f62d8585101798eaeceec5",
+      tmdb: 9799,
+      ...overrideResponse,
+    },
+    facts: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      spoiler: faker.datatype.boolean(),
+      type: faker.helpers.arrayElement([faker.word.sample(), null]),
+      value: faker.word.sample(),
+      ...overrideResponse,
+    })),
+    fees: {
+      russia: { currency: "€", value: 207283, ...overrideResponse },
+      usa: { currency: "€", value: 207283, ...overrideResponse },
+      world: { currency: "€", value: 207283, ...overrideResponse },
+      ...overrideResponse,
+    },
+    genres: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+    id: 666,
+    isSeries: true,
+    lists: ["250 лучших сериалов"],
+    logo: {
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
+    movieLength: 120,
+    name: "Человек паук",
+    names: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      language: faker.helpers.arrayElement([faker.word.sample(), null]),
+      name: faker.word.sample(),
+      type: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    })),
+    networks: {
+      items: Array.from(
         { length: faker.number.int({ min: 1, max: 10 }) },
         (_, i) => i + 1,
       ).map(() => ({
-        spoiler: faker.helpers.arrayElement([
-          faker.datatype.boolean(),
-          undefined,
-        ]),
-        type: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        value: faker.word.sample(),
+        logo: {
+          url: faker.helpers.arrayElement([faker.word.sample(), null]),
+          ...overrideResponse,
+        },
+        name: "Netflix",
         ...overrideResponse,
       })),
-      undefined,
-    ]),
-    fees: faker.helpers.arrayElement([
-      {
-        russia: faker.helpers.arrayElement([
-          {
-            currency: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            value: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          undefined,
-        ]),
-        usa: faker.helpers.arrayElement([
-          {
-            currency: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            value: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          undefined,
-        ]),
-        world: faker.helpers.arrayElement([
-          {
-            currency: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            value: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    genres: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    id: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
+      ...overrideResponse,
+    },
+    persons: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      description: faker.helpers.arrayElement([faker.word.sample(), null]),
+      enName: "Paul Walker",
+      enProfession: faker.helpers.arrayElement([faker.word.sample(), null]),
+      id: 6317,
+      name: "Пол Уокер",
+      photo: "https://st.kp.yandex.net/images/actor_iphone/iphone360_6317.jpg",
+      profession: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    })),
+    poster: {
+      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
+    premiere: {
+      bluray: faker.helpers.arrayElement([faker.word.sample(), null]),
+      cinema: "2023-02-25T02:44:39.359Z",
+      country: "США",
+      digital: faker.helpers.arrayElement([faker.word.sample(), null]),
+      dvd: faker.helpers.arrayElement([faker.word.sample(), null]),
+      russia: "2023-02-25T02:44:39.359Z",
+      world: "2023-02-25T02:44:39.359Z",
+      ...overrideResponse,
+    },
+    rating: {
+      await: 6.1,
+      filmCritics: 10,
+      imdb: 8.4,
+      kp: 6.2,
+      russianFilmCritics: 5.1,
+      tmdb: 3.2,
+      ...overrideResponse,
+    },
+    ratingMpaa: "pg13",
+    releaseYears: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ end: 2023, start: 2022, ...overrideResponse })),
+    reviewInfo: {
+      count: faker.helpers.arrayElement([
         faker.number.int({ min: undefined, max: undefined }),
         null,
       ]),
-      undefined,
-    ]),
-    isSeries: faker.helpers.arrayElement([faker.datatype.boolean(), undefined]),
-    lists: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => faker.word.sample()),
-      undefined,
-    ]),
-    logo: faker.helpers.arrayElement([
-      {
-        url: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    movieLength: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
+      percentage: faker.helpers.arrayElement([faker.word.sample(), null]),
+      positiveCount: faker.helpers.arrayElement([
         faker.number.int({ min: undefined, max: undefined }),
         null,
       ]),
-      undefined,
-    ]),
-    name: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    names: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        language: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        type: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    networks: faker.helpers.arrayElement([
-      {
-        items: faker.helpers.arrayElement([
-          Array.from(
-            { length: faker.number.int({ min: 1, max: 10 }) },
-            (_, i) => i + 1,
-          ).map(() => ({
-            logo: faker.helpers.arrayElement([
-              {
-                url: faker.helpers.arrayElement([
-                  faker.helpers.arrayElement([faker.word.sample(), null]),
-                  undefined,
-                ]),
-                ...overrideResponse,
-              },
-              undefined,
-            ]),
-            name: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          })),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    persons: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        description: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        enName: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        enProfession: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        id: faker.number.int({ min: undefined, max: undefined }),
-        name: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        photo: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        profession: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    poster: faker.helpers.arrayElement([
-      {
-        previewUrl: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        url: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    premiere: faker.helpers.arrayElement([
-      {
-        bluray: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        cinema: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            `${faker.date.past().toISOString().split(".")[0]}Z`,
-            null,
-          ]),
-          undefined,
-        ]),
-        country: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        digital: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        dvd: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        russia: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            `${faker.date.past().toISOString().split(".")[0]}Z`,
-            null,
-          ]),
-          undefined,
-        ]),
-        world: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            `${faker.date.past().toISOString().split(".")[0]}Z`,
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    rating: faker.helpers.arrayElement([
-      {
-        await: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        filmCritics: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        imdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        kp: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        russianFilmCritics: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        tmdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    ratingMpaa: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    releaseYears: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        end: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        start: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    reviewInfo: faker.helpers.arrayElement([
-      {
-        count: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        percentage: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        positiveCount: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    seasonsInfo: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        episodesCount: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        number: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    sequelsAndPrequels: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        alternativeName: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        enName: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        id: faker.number.int({ min: undefined, max: undefined }),
-        name: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        poster: faker.helpers.arrayElement([
-          {
-            previewUrl: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            url: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          undefined,
-        ]),
-        rating: faker.helpers.arrayElement([
-          {
-            await: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            filmCritics: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            imdb: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            kp: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            russianFilmCritics: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            tmdb: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          undefined,
-        ]),
-        type: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        year: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    seriesLength: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
+      ...overrideResponse,
+    },
+    seasonsInfo: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      episodesCount: faker.helpers.arrayElement([
         faker.number.int({ min: undefined, max: undefined }),
         null,
       ]),
-      undefined,
-    ]),
-    shortDescription: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    similarMovies: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        alternativeName: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        enName: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        id: faker.number.int({ min: undefined, max: undefined }),
-        name: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        poster: faker.helpers.arrayElement([
-          {
-            previewUrl: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            url: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          undefined,
-        ]),
-        rating: faker.helpers.arrayElement([
-          {
-            await: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            filmCritics: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            imdb: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            kp: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            russianFilmCritics: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            tmdb: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          undefined,
-        ]),
-        type: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        year: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
+      number: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      ...overrideResponse,
+    })),
+    sequelsAndPrequels: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
+      enName: faker.helpers.arrayElement([faker.word.sample(), null]),
+      id: faker.number.int({ min: undefined, max: undefined }),
+      name: faker.helpers.arrayElement([faker.word.sample(), null]),
+      poster: {
+        previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+        url: faker.helpers.arrayElement([faker.word.sample(), null]),
         ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    slogan: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    status: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    ticketsOnSale: faker.helpers.arrayElement([
-      faker.datatype.boolean(),
-      undefined,
-    ]),
-    top10: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
-    ]),
-    top250: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
-    ]),
-    totalSeriesLength: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
-    ]),
-    type: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    typeNumber: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
-    ]),
+      },
+      rating: {
+        await: 6.1,
+        filmCritics: 10,
+        imdb: 8.4,
+        kp: 6.2,
+        russianFilmCritics: 5.1,
+        tmdb: 3.2,
+        ...overrideResponse,
+      },
+      type: faker.helpers.arrayElement([faker.word.sample(), null]),
+      year: 2021,
+      ...overrideResponse,
+    })),
+    seriesLength: 20,
+    shortDescription: faker.helpers.arrayElement([faker.word.sample(), null]),
+    similarMovies: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
+      enName: faker.helpers.arrayElement([faker.word.sample(), null]),
+      id: faker.number.int({ min: undefined, max: undefined }),
+      name: faker.helpers.arrayElement([faker.word.sample(), null]),
+      poster: {
+        previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+        url: faker.helpers.arrayElement([faker.word.sample(), null]),
+        ...overrideResponse,
+      },
+      rating: {
+        await: 6.1,
+        filmCritics: 10,
+        imdb: 8.4,
+        kp: 6.2,
+        russianFilmCritics: 5.1,
+        tmdb: 3.2,
+        ...overrideResponse,
+      },
+      type: faker.helpers.arrayElement([faker.word.sample(), null]),
+      year: 2021,
+      ...overrideResponse,
+    })),
+    slogan: faker.helpers.arrayElement([faker.word.sample(), null]),
+    status: "completed",
+    ticketsOnSale: true,
+    top10: 1,
+    top250: 200,
+    totalSeriesLength: 155,
+    type: "movie",
+    typeNumber: 1,
     updatedAt: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        `${faker.date.past().toISOString().split(".")[0]}Z`,
-        null,
-      ]),
-      undefined,
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
     ]),
-    videos: faker.helpers.arrayElement([
-      {
-        trailers: faker.helpers.arrayElement([
-          Array.from(
-            { length: faker.number.int({ min: 1, max: 10 }) },
-            (_, i) => i + 1,
-          ).map(() => ({
-            name: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            site: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            size: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            type: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            url: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          })),
-          undefined,
+    videos: {
+      trailers: Array.from(
+        { length: faker.number.int({ min: 1, max: 10 }) },
+        (_, i) => i + 1,
+      ).map(() => ({
+        name: "Official Trailer",
+        site: "youtube",
+        size: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
         ]),
+        type: "TRAILER",
+        url: "https://www.youtube.com/embed/ZsJz2TJAPjw",
         ...overrideResponse,
-      },
-      undefined,
-    ]),
-    votes: faker.helpers.arrayElement([
-      {
-        await: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        filmCritics: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        imdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        kp: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        russianFilmCritics: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        tmdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
+      })),
+      ...overrideResponse,
+    },
+    votes: {
+      await: 34000,
+      filmCritics: 10000,
+      imdb: 50000,
+      kp: 60000,
+      russianFilmCritics: 4000,
+      tmdb: 10000,
+      ...overrideResponse,
+    },
+    watchability: {
+      items: Array.from(
+        { length: faker.number.int({ min: 1, max: 10 }) },
+        (_, i) => i + 1,
+      ).map(() => ({
+        logo: {
+          url: faker.helpers.arrayElement([faker.word.sample(), null]),
+          ...overrideResponse,
+        },
+        name: faker.helpers.arrayElement([faker.word.sample(), null]),
+        url: faker.word.sample(),
         ...overrideResponse,
-      },
-      undefined,
-    ]),
-    watchability: faker.helpers.arrayElement([
-      {
-        items: faker.helpers.arrayElement([
-          Array.from(
-            { length: faker.number.int({ min: 1, max: 10 }) },
-            (_, i) => i + 1,
-          ).map(() => ({
-            logo: {
-              url: faker.helpers.arrayElement([
-                faker.helpers.arrayElement([faker.word.sample(), null]),
-                undefined,
-              ]),
-              ...overrideResponse,
-            },
-            name: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            url: faker.word.sample(),
-            ...overrideResponse,
-          })),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    year: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
-    ]),
+      })),
+      ...overrideResponse,
+    },
+    year: 2023,
     ...overrideResponse,
   })),
   limit: faker.number.int({ min: undefined, max: undefined }),
@@ -1823,311 +617,106 @@ export const getMovieControllerSearchMovieV14ResponseMock = (
     (_, i) => i + 1,
   ).map(() => ({
     ageRating: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
-    alternativeName: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    backdrop: faker.helpers.arrayElement([
-      {
-        previewUrl: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        url: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    countries: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    description: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    enName: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    externalId: faker.helpers.arrayElement([
-      {
-        imdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        kpHD: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        tmdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    genres: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
+    alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    backdrop: {
+      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
+    countries: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+    description: faker.helpers.arrayElement([faker.word.sample(), null]),
+    enName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    externalId: {
+      imdb: "tt0232500",
+      kpHD: "48e8d0acb0f62d8585101798eaeceec5",
+      tmdb: 9799,
+      ...overrideResponse,
+    },
+    genres: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
     id: faker.number.int({ min: undefined, max: undefined }),
-    isSeries: faker.helpers.arrayElement([faker.datatype.boolean(), undefined]),
-    logo: faker.helpers.arrayElement([
-      {
-        url: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
+    isSeries: faker.datatype.boolean(),
+    logo: {
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
     movieLength: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
-    name: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    names: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        language: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        type: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    poster: faker.helpers.arrayElement([
-      {
-        previewUrl: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        url: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    rating: faker.helpers.arrayElement([
-      {
-        await: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        filmCritics: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        imdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        kp: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        russianFilmCritics: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        tmdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    ratingMpaa: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    releaseYears: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        end: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        start: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
+    names: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      language: faker.helpers.arrayElement([faker.word.sample(), null]),
+      name: faker.word.sample(),
+      type: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    })),
+    poster: {
+      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
+    rating: {
+      await: 6.1,
+      filmCritics: 10,
+      imdb: 8.4,
+      kp: 6.2,
+      russianFilmCritics: 5.1,
+      tmdb: 3.2,
+      ...overrideResponse,
+    },
+    ratingMpaa: faker.helpers.arrayElement([faker.word.sample(), null]),
+    releaseYears: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ end: 2023, start: 2022, ...overrideResponse })),
     seriesLength: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
-    shortDescription: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    status: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    ticketsOnSale: faker.helpers.arrayElement([
-      faker.datatype.boolean(),
-      undefined,
-    ]),
+    shortDescription: faker.helpers.arrayElement([faker.word.sample(), null]),
+    status: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ticketsOnSale: faker.datatype.boolean(),
     top10: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
     top250: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
     totalSeriesLength: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
-    type: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
+    type: faker.helpers.arrayElement([faker.word.sample(), null]),
     typeNumber: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
-    votes: faker.helpers.arrayElement([
-      {
-        await: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        filmCritics: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        imdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        kp: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        russianFilmCritics: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        tmdb: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
+    votes: {
+      await: 34000,
+      filmCritics: 10000,
+      imdb: 50000,
+      kp: 60000,
+      russianFilmCritics: 4000,
+      tmdb: 10000,
+      ...overrideResponse,
+    },
     year: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
     ...overrideResponse,
   })),
@@ -2141,864 +730,261 @@ export const getMovieControllerSearchMovieV14ResponseMock = (
 export const getMovieControllerGetRandomMovieV14ResponseMock = (
   overrideResponse: any = {},
 ): MovieDtoV14 => ({
-  ageRating: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
-  alternativeName: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  audience: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      count: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      country: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  backdrop: faker.helpers.arrayElement([
-    {
-      previewUrl: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      url: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  budget: faker.helpers.arrayElement([
-    {
-      currency: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      value: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  countries: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
+  ageRating: "16",
+  alternativeName: "Spider man",
+  audience: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ count: 1000, country: "Россия", ...overrideResponse })),
+  backdrop: {
+    previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+    url: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ...overrideResponse,
+  },
+  budget: { currency: "€", value: 207283, ...overrideResponse },
+  countries: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
   createdAt: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      `${faker.date.past().toISOString().split(".")[0]}Z`,
-      null,
-    ]),
-    undefined,
+    `${faker.date.past().toISOString().split(".")[0]}Z`,
+    null,
   ]),
-  description: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  enName: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  externalId: faker.helpers.arrayElement([
-    {
-      imdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      kpHD: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      tmdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  facts: faker.helpers.arrayElement([
-    Array.from(
+  description: faker.helpers.arrayElement([faker.word.sample(), null]),
+  enName: "Spider man",
+  externalId: {
+    imdb: "tt0232500",
+    kpHD: "48e8d0acb0f62d8585101798eaeceec5",
+    tmdb: 9799,
+    ...overrideResponse,
+  },
+  facts: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    spoiler: faker.datatype.boolean(),
+    type: faker.helpers.arrayElement([faker.word.sample(), null]),
+    value: faker.word.sample(),
+    ...overrideResponse,
+  })),
+  fees: {
+    russia: { currency: "€", value: 207283, ...overrideResponse },
+    usa: { currency: "€", value: 207283, ...overrideResponse },
+    world: { currency: "€", value: 207283, ...overrideResponse },
+    ...overrideResponse,
+  },
+  genres: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ name: faker.word.sample(), ...overrideResponse })),
+  id: 666,
+  isSeries: true,
+  lists: ["250 лучших сериалов"],
+  logo: {
+    url: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ...overrideResponse,
+  },
+  movieLength: 120,
+  name: "Человек паук",
+  names: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    language: faker.helpers.arrayElement([faker.word.sample(), null]),
+    name: faker.word.sample(),
+    type: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ...overrideResponse,
+  })),
+  networks: {
+    items: Array.from(
       { length: faker.number.int({ min: 1, max: 10 }) },
       (_, i) => i + 1,
     ).map(() => ({
-      spoiler: faker.helpers.arrayElement([
-        faker.datatype.boolean(),
-        undefined,
-      ]),
-      type: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      value: faker.word.sample(),
+      logo: {
+        url: faker.helpers.arrayElement([faker.word.sample(), null]),
+        ...overrideResponse,
+      },
+      name: "Netflix",
       ...overrideResponse,
     })),
-    undefined,
-  ]),
-  fees: faker.helpers.arrayElement([
-    {
-      russia: faker.helpers.arrayElement([
-        {
-          currency: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          value: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      usa: faker.helpers.arrayElement([
-        {
-          currency: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          value: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      world: faker.helpers.arrayElement([
-        {
-          currency: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          value: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  genres: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  id: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
+    ...overrideResponse,
+  },
+  persons: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    description: faker.helpers.arrayElement([faker.word.sample(), null]),
+    enName: "Paul Walker",
+    enProfession: faker.helpers.arrayElement([faker.word.sample(), null]),
+    id: 6317,
+    name: "Пол Уокер",
+    photo: "https://st.kp.yandex.net/images/actor_iphone/iphone360_6317.jpg",
+    profession: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ...overrideResponse,
+  })),
+  poster: {
+    previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+    url: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ...overrideResponse,
+  },
+  premiere: {
+    bluray: faker.helpers.arrayElement([faker.word.sample(), null]),
+    cinema: "2023-02-25T02:44:39.359Z",
+    country: "США",
+    digital: faker.helpers.arrayElement([faker.word.sample(), null]),
+    dvd: faker.helpers.arrayElement([faker.word.sample(), null]),
+    russia: "2023-02-25T02:44:39.359Z",
+    world: "2023-02-25T02:44:39.359Z",
+    ...overrideResponse,
+  },
+  rating: {
+    await: 6.1,
+    filmCritics: 10,
+    imdb: 8.4,
+    kp: 6.2,
+    russianFilmCritics: 5.1,
+    tmdb: 3.2,
+    ...overrideResponse,
+  },
+  ratingMpaa: "pg13",
+  releaseYears: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ end: 2023, start: 2022, ...overrideResponse })),
+  reviewInfo: {
+    count: faker.helpers.arrayElement([
       faker.number.int({ min: undefined, max: undefined }),
       null,
     ]),
-    undefined,
-  ]),
-  isSeries: faker.helpers.arrayElement([faker.datatype.boolean(), undefined]),
-  lists: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => faker.word.sample()),
-    undefined,
-  ]),
-  logo: faker.helpers.arrayElement([
-    {
-      url: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  movieLength: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
+    percentage: faker.helpers.arrayElement([faker.word.sample(), null]),
+    positiveCount: faker.helpers.arrayElement([
       faker.number.int({ min: undefined, max: undefined }),
       null,
     ]),
-    undefined,
-  ]),
-  name: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  names: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      language: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      type: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  networks: faker.helpers.arrayElement([
-    {
-      items: faker.helpers.arrayElement([
-        Array.from(
-          { length: faker.number.int({ min: 1, max: 10 }) },
-          (_, i) => i + 1,
-        ).map(() => ({
-          logo: faker.helpers.arrayElement([
-            {
-              url: faker.helpers.arrayElement([
-                faker.helpers.arrayElement([faker.word.sample(), null]),
-                undefined,
-              ]),
-              ...overrideResponse,
-            },
-            undefined,
-          ]),
-          name: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        })),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  persons: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      description: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      enName: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      enProfession: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      id: faker.number.int({ min: undefined, max: undefined }),
-      name: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      photo: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      profession: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  poster: faker.helpers.arrayElement([
-    {
-      previewUrl: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      url: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  premiere: faker.helpers.arrayElement([
-    {
-      bluray: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      cinema: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          `${faker.date.past().toISOString().split(".")[0]}Z`,
-          null,
-        ]),
-        undefined,
-      ]),
-      country: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      digital: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      dvd: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      russia: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          `${faker.date.past().toISOString().split(".")[0]}Z`,
-          null,
-        ]),
-        undefined,
-      ]),
-      world: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          `${faker.date.past().toISOString().split(".")[0]}Z`,
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  rating: faker.helpers.arrayElement([
-    {
-      await: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      filmCritics: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      imdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      kp: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      russianFilmCritics: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      tmdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  ratingMpaa: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  releaseYears: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      end: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      start: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  reviewInfo: faker.helpers.arrayElement([
-    {
-      count: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      percentage: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      positiveCount: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  seasonsInfo: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      episodesCount: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      number: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  sequelsAndPrequels: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      alternativeName: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      enName: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      id: faker.number.int({ min: undefined, max: undefined }),
-      name: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      poster: faker.helpers.arrayElement([
-        {
-          previewUrl: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          url: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      rating: faker.helpers.arrayElement([
-        {
-          await: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          filmCritics: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          imdb: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          kp: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          russianFilmCritics: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          tmdb: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      type: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      year: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  seriesLength: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
+    ...overrideResponse,
+  },
+  seasonsInfo: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    episodesCount: faker.helpers.arrayElement([
       faker.number.int({ min: undefined, max: undefined }),
       null,
     ]),
-    undefined,
-  ]),
-  shortDescription: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  similarMovies: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      alternativeName: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      enName: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      id: faker.number.int({ min: undefined, max: undefined }),
-      name: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      poster: faker.helpers.arrayElement([
-        {
-          previewUrl: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          url: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      rating: faker.helpers.arrayElement([
-        {
-          await: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          filmCritics: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          imdb: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          kp: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          russianFilmCritics: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          tmdb: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        },
-        undefined,
-      ]),
-      type: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      year: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
+    number: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    ...overrideResponse,
+  })),
+  sequelsAndPrequels: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    enName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    id: faker.number.int({ min: undefined, max: undefined }),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
+    poster: {
+      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
       ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  slogan: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  status: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  ticketsOnSale: faker.helpers.arrayElement([
-    faker.datatype.boolean(),
-    undefined,
-  ]),
-  top10: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
-  top250: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
-  totalSeriesLength: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
-  type: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  typeNumber: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
+    },
+    rating: {
+      await: 6.1,
+      filmCritics: 10,
+      imdb: 8.4,
+      kp: 6.2,
+      russianFilmCritics: 5.1,
+      tmdb: 3.2,
+      ...overrideResponse,
+    },
+    type: faker.helpers.arrayElement([faker.word.sample(), null]),
+    year: 2021,
+    ...overrideResponse,
+  })),
+  seriesLength: 20,
+  shortDescription: faker.helpers.arrayElement([faker.word.sample(), null]),
+  similarMovies: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    enName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    id: faker.number.int({ min: undefined, max: undefined }),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
+    poster: {
+      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
+    rating: {
+      await: 6.1,
+      filmCritics: 10,
+      imdb: 8.4,
+      kp: 6.2,
+      russianFilmCritics: 5.1,
+      tmdb: 3.2,
+      ...overrideResponse,
+    },
+    type: faker.helpers.arrayElement([faker.word.sample(), null]),
+    year: 2021,
+    ...overrideResponse,
+  })),
+  slogan: faker.helpers.arrayElement([faker.word.sample(), null]),
+  status: "completed",
+  ticketsOnSale: true,
+  top10: 1,
+  top250: 200,
+  totalSeriesLength: 155,
+  type: "movie",
+  typeNumber: 1,
   updatedAt: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      `${faker.date.past().toISOString().split(".")[0]}Z`,
-      null,
-    ]),
-    undefined,
+    `${faker.date.past().toISOString().split(".")[0]}Z`,
+    null,
   ]),
-  videos: faker.helpers.arrayElement([
-    {
-      trailers: faker.helpers.arrayElement([
-        Array.from(
-          { length: faker.number.int({ min: 1, max: 10 }) },
-          (_, i) => i + 1,
-        ).map(() => ({
-          name: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          site: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          size: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([
-              faker.number.int({ min: undefined, max: undefined }),
-              null,
-            ]),
-            undefined,
-          ]),
-          type: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          url: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          ...overrideResponse,
-        })),
-        undefined,
+  videos: {
+    trailers: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      name: "Official Trailer",
+      site: "youtube",
+      size: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
       ]),
+      type: "TRAILER",
+      url: "https://www.youtube.com/embed/ZsJz2TJAPjw",
       ...overrideResponse,
-    },
-    undefined,
-  ]),
-  votes: faker.helpers.arrayElement([
-    {
-      await: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      filmCritics: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      imdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      kp: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      russianFilmCritics: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      tmdb: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
+    })),
+    ...overrideResponse,
+  },
+  votes: {
+    await: 34000,
+    filmCritics: 10000,
+    imdb: 50000,
+    kp: 60000,
+    russianFilmCritics: 4000,
+    tmdb: 10000,
+    ...overrideResponse,
+  },
+  watchability: {
+    items: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      logo: {
+        url: faker.helpers.arrayElement([faker.word.sample(), null]),
+        ...overrideResponse,
+      },
+      name: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.word.sample(),
       ...overrideResponse,
-    },
-    undefined,
-  ]),
-  watchability: faker.helpers.arrayElement([
-    {
-      items: faker.helpers.arrayElement([
-        Array.from(
-          { length: faker.number.int({ min: 1, max: 10 }) },
-          (_, i) => i + 1,
-        ).map(() => ({
-          logo: {
-            url: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          name: faker.helpers.arrayElement([
-            faker.helpers.arrayElement([faker.word.sample(), null]),
-            undefined,
-          ]),
-          url: faker.word.sample(),
-          ...overrideResponse,
-        })),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
-  year: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
+    })),
+    ...overrideResponse,
+  },
+  year: 2023,
   ...overrideResponse,
 });
 
@@ -3010,54 +996,30 @@ export const getMovieControllerFindManyAwardsV14ResponseMock = (
     (_, i) => i + 1,
   ).map(() => ({
     createdAt: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        `${faker.date.past().toISOString().split(".")[0]}Z`,
-        null,
-      ]),
-      undefined,
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
     ]),
     movieId: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
-    nomination: faker.helpers.arrayElement([
-      {
-        award: faker.helpers.arrayElement([
-          {
-            title: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            year: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          undefined,
-        ]),
-        title: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
+    nomination: {
+      award: {
+        title: faker.helpers.arrayElement([faker.word.sample(), null]),
+        year: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
         ]),
         ...overrideResponse,
       },
-      undefined,
-    ]),
+      title: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
     updatedAt: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        `${faker.date.past().toISOString().split(".")[0]}Z`,
-        null,
-      ]),
-      undefined,
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
     ]),
-    winning: faker.helpers.arrayElement([faker.datatype.boolean(), undefined]),
+    winning: faker.datatype.boolean(),
     ...overrideResponse,
   })),
   limit: faker.number.int({ min: undefined, max: undefined }),
@@ -3074,14 +1036,8 @@ export const getMovieControllerGetPossibleValuesByFieldNameResponseMock = (
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
   ).map(() => ({
-    name: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    slug: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
+    slug: faker.helpers.arrayElement([faker.word.sample(), null]),
     ...overrideResponse,
   }));
 
@@ -3092,90 +1048,45 @@ export const getSeasonControllerFindManyV14ResponseMock = (
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
   ).map(() => ({
-    airDate: faker.helpers.arrayElement([faker.word.sample(), undefined]),
+    airDate: faker.word.sample(),
     createdAt: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        `${faker.date.past().toISOString().split(".")[0]}Z`,
-        null,
-      ]),
-      undefined,
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
     ]),
-    description: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-    duration: faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      undefined,
-    ]),
-    enDescription: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-    enName: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-    episodes: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        airDate: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        date: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        description: faker.helpers.arrayElement([
-          faker.word.sample(),
-          undefined,
-        ]),
-        enDescription: faker.helpers.arrayElement([
-          faker.word.sample(),
-          undefined,
-        ]),
-        enName: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        number: faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          undefined,
-        ]),
-        still: faker.helpers.arrayElement([
-          {
-            previewUrl: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            url: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          undefined,
-        ]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    episodesCount: faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      undefined,
-    ]),
-    movieId: faker.number.int({ min: undefined, max: undefined }),
-    name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-    number: faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      undefined,
-    ]),
-    poster: faker.helpers.arrayElement([
-      {
-        previewUrl: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        url: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
+    description: faker.word.sample(),
+    duration: faker.number.int({ min: undefined, max: undefined }),
+    enDescription: faker.word.sample(),
+    enName: faker.word.sample(),
+    episodes: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      airDate: faker.word.sample(),
+      date: faker.word.sample(),
+      description: faker.word.sample(),
+      enDescription: faker.word.sample(),
+      enName: faker.word.sample(),
+      name: faker.word.sample(),
+      number: faker.number.int({ min: undefined, max: undefined }),
+      still: {
+        previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+        url: faker.helpers.arrayElement([faker.word.sample(), null]),
         ...overrideResponse,
       },
-      undefined,
-    ]),
+      ...overrideResponse,
+    })),
+    episodesCount: faker.number.int({ min: undefined, max: undefined }),
+    movieId: faker.number.int({ min: undefined, max: undefined }),
+    name: faker.word.sample(),
+    number: faker.number.int({ min: undefined, max: undefined }),
+    poster: {
+      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
     updatedAt: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        `${faker.date.past().toISOString().split(".")[0]}Z`,
-        null,
-      ]),
-      undefined,
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
     ]),
     ...overrideResponse,
   })),
@@ -3193,20 +1104,17 @@ export const getReviewControllerFindManyV14ResponseMock = (
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
   ).map(() => ({
-    author: faker.helpers.arrayElement([faker.word.sample(), undefined]),
+    author: faker.word.sample(),
     authorId: faker.number.int({ min: undefined, max: undefined }),
     createdAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
-    date: faker.helpers.arrayElement([faker.word.sample(), undefined]),
+    date: faker.word.sample(),
     id: faker.number.int({ min: undefined, max: undefined }),
     movieId: faker.number.int({ min: undefined, max: undefined }),
-    review: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-    title: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-    type: faker.helpers.arrayElement([faker.word.sample(), undefined]),
+    review: faker.word.sample(),
+    title: faker.word.sample(),
+    type: faker.word.sample(),
     updatedAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
-    userRating: faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      undefined,
-    ]),
+    userRating: faker.number.int({ min: undefined, max: undefined }),
     ...overrideResponse,
   })),
   limit: faker.number.int({ min: undefined, max: undefined }),
@@ -3220,148 +1128,64 @@ export const getPersonControllerFindOneV14ResponseMock = (
   overrideResponse: any = {},
 ): Person => ({
   age: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
-  ]),
-  birthday: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  birthPlace: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      value: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  countAwards: faker.helpers.arrayElement([
     faker.number.int({ min: undefined, max: undefined }),
-    undefined,
+    null,
   ]),
+  birthday: faker.helpers.arrayElement([faker.word.sample(), null]),
+  birthPlace: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ value: faker.word.sample(), ...overrideResponse })),
+  countAwards: faker.number.int({ min: undefined, max: undefined }),
   createdAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
-  death: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  deathPlace: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      value: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  enName: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  facts: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      value: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
+  death: faker.helpers.arrayElement([faker.word.sample(), null]),
+  deathPlace: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ value: faker.word.sample(), ...overrideResponse })),
+  enName: faker.helpers.arrayElement([faker.word.sample(), null]),
+  facts: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ value: faker.word.sample(), ...overrideResponse })),
   growth: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
   ]),
   id: faker.number.int({ min: undefined, max: undefined }),
-  movies: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      alternativeName: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      description: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      enProfession: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      general: faker.helpers.arrayElement([
-        faker.datatype.boolean(),
-        undefined,
-      ]),
-      id: faker.number.int({ min: undefined, max: undefined }),
-      name: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      rating: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          null,
-        ]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  name: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  photo: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  profession: faker.helpers.arrayElement([
-    Array.from(
-      { length: faker.number.int({ min: 1, max: 10 }) },
-      (_, i) => i + 1,
-    ).map(() => ({
-      value: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      ...overrideResponse,
-    })),
-    undefined,
-  ]),
-  sex: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  spouses: faker.helpers.arrayElement([
-    {
-      children: faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        undefined,
-      ]),
-      divorced: faker.helpers.arrayElement([
-        faker.datatype.boolean(),
-        undefined,
-      ]),
-      divorcedReason: faker.helpers.arrayElement([
-        faker.word.sample(),
-        undefined,
-      ]),
-      id: faker.number.int({ min: undefined, max: undefined }),
-      name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      relation: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      sex: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
+  movies: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({
+    alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    description: faker.helpers.arrayElement([faker.word.sample(), null]),
+    enProfession: faker.helpers.arrayElement([faker.word.sample(), null]),
+    general: faker.datatype.boolean(),
+    id: faker.number.int({ min: undefined, max: undefined }),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
+    rating: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    ...overrideResponse,
+  })),
+  name: faker.helpers.arrayElement([faker.word.sample(), null]),
+  photo: faker.helpers.arrayElement([faker.word.sample(), null]),
+  profession: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => ({ value: faker.word.sample(), ...overrideResponse })),
+  sex: faker.helpers.arrayElement([faker.word.sample(), null]),
+  spouses: {
+    children: faker.number.int({ min: undefined, max: undefined }),
+    divorced: faker.datatype.boolean(),
+    divorcedReason: faker.word.sample(),
+    id: faker.number.int({ min: undefined, max: undefined }),
+    name: faker.word.sample(),
+    relation: faker.word.sample(),
+    sex: faker.word.sample(),
+    ...overrideResponse,
+  },
   updatedAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
   ...overrideResponse,
 });
@@ -3374,148 +1198,64 @@ export const getPersonControllerFindManyV14ResponseMock = (
     (_, i) => i + 1,
   ).map(() => ({
     age: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
-    ]),
-    birthday: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    birthPlace: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        value: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    countAwards: faker.helpers.arrayElement([
       faker.number.int({ min: undefined, max: undefined }),
-      undefined,
+      null,
     ]),
+    birthday: faker.helpers.arrayElement([faker.word.sample(), null]),
+    birthPlace: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ value: faker.word.sample(), ...overrideResponse })),
+    countAwards: faker.number.int({ min: undefined, max: undefined }),
     createdAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
-    death: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    deathPlace: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        value: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    enName: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    facts: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        value: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
+    death: faker.helpers.arrayElement([faker.word.sample(), null]),
+    deathPlace: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ value: faker.word.sample(), ...overrideResponse })),
+    enName: faker.helpers.arrayElement([faker.word.sample(), null]),
+    facts: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ value: faker.word.sample(), ...overrideResponse })),
     growth: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
     id: faker.number.int({ min: undefined, max: undefined }),
-    movies: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        alternativeName: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        description: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        enProfession: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        general: faker.helpers.arrayElement([
-          faker.datatype.boolean(),
-          undefined,
-        ]),
-        id: faker.number.int({ min: undefined, max: undefined }),
-        name: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        rating: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    name: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    photo: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    profession: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        value: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    sex: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    spouses: faker.helpers.arrayElement([
-      {
-        children: faker.helpers.arrayElement([
-          faker.number.int({ min: undefined, max: undefined }),
-          undefined,
-        ]),
-        divorced: faker.helpers.arrayElement([
-          faker.datatype.boolean(),
-          undefined,
-        ]),
-        divorcedReason: faker.helpers.arrayElement([
-          faker.word.sample(),
-          undefined,
-        ]),
-        id: faker.number.int({ min: undefined, max: undefined }),
-        name: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        relation: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        sex: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
+    movies: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({
+      alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
+      description: faker.helpers.arrayElement([faker.word.sample(), null]),
+      enProfession: faker.helpers.arrayElement([faker.word.sample(), null]),
+      general: faker.datatype.boolean(),
+      id: faker.number.int({ min: undefined, max: undefined }),
+      name: faker.helpers.arrayElement([faker.word.sample(), null]),
+      rating: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      ...overrideResponse,
+    })),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
+    photo: faker.helpers.arrayElement([faker.word.sample(), null]),
+    profession: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ value: faker.word.sample(), ...overrideResponse })),
+    sex: faker.helpers.arrayElement([faker.word.sample(), null]),
+    spouses: {
+      children: faker.number.int({ min: undefined, max: undefined }),
+      divorced: faker.datatype.boolean(),
+      divorcedReason: faker.word.sample(),
+      id: faker.number.int({ min: undefined, max: undefined }),
+      name: faker.word.sample(),
+      relation: faker.word.sample(),
+      sex: faker.word.sample(),
+      ...overrideResponse,
+    },
     updatedAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
     ...overrideResponse,
   })),
@@ -3534,74 +1274,32 @@ export const getPersonControllerSearchPersonV14ResponseMock = (
     (_, i) => i + 1,
   ).map(() => ({
     age: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
-    birthday: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    birthPlace: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        value: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    death: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    deathPlace: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        value: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    enName: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
+    birthday: faker.helpers.arrayElement([faker.word.sample(), null]),
+    birthPlace: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ value: faker.word.sample(), ...overrideResponse })),
+    death: faker.helpers.arrayElement([faker.word.sample(), null]),
+    deathPlace: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ value: faker.word.sample(), ...overrideResponse })),
+    enName: faker.helpers.arrayElement([faker.word.sample(), null]),
     growth: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
     id: faker.number.int({ min: undefined, max: undefined }),
-    name: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    photo: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    profession: faker.helpers.arrayElement([
-      Array.from(
-        { length: faker.number.int({ min: 1, max: 10 }) },
-        (_, i) => i + 1,
-      ).map(() => ({
-        value: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-        ...overrideResponse,
-      })),
-      undefined,
-    ]),
-    sex: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
+    photo: faker.helpers.arrayElement([faker.word.sample(), null]),
+    profession: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => ({ value: faker.word.sample(), ...overrideResponse })),
+    sex: faker.helpers.arrayElement([faker.word.sample(), null]),
     ...overrideResponse,
   })),
   limit: faker.number.int({ min: undefined, max: undefined }),
@@ -3619,66 +1317,36 @@ export const getPersonControllerFindManyAwardsV14ResponseMock = (
     (_, i) => i + 1,
   ).map(() => ({
     createdAt: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        `${faker.date.past().toISOString().split(".")[0]}Z`,
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
+    ]),
+    movie: {
+      id: faker.number.int({ min: undefined, max: undefined }),
+      name: faker.helpers.arrayElement([faker.word.sample(), null]),
+      rating: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
         null,
       ]),
-      undefined,
-    ]),
-    movie: faker.helpers.arrayElement([
-      {
-        id: faker.number.int({ min: undefined, max: undefined }),
-        name: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        rating: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([
-            faker.number.int({ min: undefined, max: undefined }),
-            null,
-          ]),
-          undefined,
+      ...overrideResponse,
+    },
+    nomination: {
+      award: {
+        title: faker.helpers.arrayElement([faker.word.sample(), null]),
+        year: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
         ]),
         ...overrideResponse,
       },
-      undefined,
-    ]),
-    nomination: faker.helpers.arrayElement([
-      {
-        award: faker.helpers.arrayElement([
-          {
-            title: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([faker.word.sample(), null]),
-              undefined,
-            ]),
-            year: faker.helpers.arrayElement([
-              faker.helpers.arrayElement([
-                faker.number.int({ min: undefined, max: undefined }),
-                null,
-              ]),
-              undefined,
-            ]),
-            ...overrideResponse,
-          },
-          undefined,
-        ]),
-        title: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
+      title: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
     personId: faker.number.int({ min: undefined, max: undefined }),
     updatedAt: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        `${faker.date.past().toISOString().split(".")[0]}Z`,
-        null,
-      ]),
-      undefined,
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
     ]),
-    winning: faker.helpers.arrayElement([faker.datatype.boolean(), undefined]),
+    winning: faker.datatype.boolean(),
     ...overrideResponse,
   })),
   limit: faker.number.int({ min: undefined, max: undefined }),
@@ -3697,30 +1365,18 @@ export const getStudioControllerFindManyV14ResponseMock = (
   ).map(() => ({
     createdAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
     id: faker.word.sample(),
-    movies: faker.helpers.arrayElement([
-      {
-        id: faker.number.int({ min: undefined, max: undefined }),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    subType: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    title: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
+    movies: {
+      id: faker.number.int({ min: undefined, max: undefined }),
+      ...overrideResponse,
+    },
+    subType: faker.helpers.arrayElement([faker.word.sample(), null]),
+    title: faker.helpers.arrayElement([faker.word.sample(), null]),
     type: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        "Производство",
-        "Спецэффекты",
-        "Прокат",
-        "Студия дубляжа",
-      ] as const),
-      undefined,
-    ]),
+      "Производство",
+      "Спецэффекты",
+      "Прокат",
+      "Студия дубляжа",
+    ] as const),
     updatedAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
     ...overrideResponse,
   })),
@@ -3740,17 +1396,11 @@ export const getKeywordControllerFindManyV14ResponseMock = (
   ).map(() => ({
     createdAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
     id: faker.number.int({ min: undefined, max: undefined }),
-    movies: faker.helpers.arrayElement([
-      {
-        id: faker.number.int({ min: undefined, max: undefined }),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
-    title: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
+    movies: {
+      id: faker.number.int({ min: undefined, max: undefined }),
+      ...overrideResponse,
+    },
+    title: faker.helpers.arrayElement([faker.word.sample(), null]),
     updatedAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
     ...overrideResponse,
   })),
@@ -3769,20 +1419,14 @@ export const getImageControllerFindManyV14ResponseMock = (
     (_, i) => i + 1,
   ).map(() => ({
     createdAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
-    height: faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      undefined,
-    ]),
-    language: faker.helpers.arrayElement([faker.word.sample(), undefined]),
+    height: faker.number.int({ min: undefined, max: undefined }),
+    language: faker.word.sample(),
     movieId: faker.number.int({ min: undefined, max: undefined }),
-    previewUrl: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-    type: faker.helpers.arrayElement([faker.word.sample(), undefined]),
+    previewUrl: faker.word.sample(),
+    type: faker.word.sample(),
     updatedAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
-    url: faker.helpers.arrayElement([faker.word.sample(), undefined]),
-    width: faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      undefined,
-    ]),
+    url: faker.word.sample(),
+    width: faker.number.int({ min: undefined, max: undefined }),
     ...overrideResponse,
   })),
   limit: faker.number.int({ min: undefined, max: undefined }),
@@ -3799,37 +1443,19 @@ export const getListControllerFindManyV14ResponseMock = (
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
   ).map(() => ({
-    category: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
-    cover: faker.helpers.arrayElement([
-      {
-        previewUrl: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        url: faker.helpers.arrayElement([
-          faker.helpers.arrayElement([faker.word.sample(), null]),
-          undefined,
-        ]),
-        ...overrideResponse,
-      },
-      undefined,
-    ]),
+    category: faker.helpers.arrayElement([faker.word.sample(), null]),
+    cover: {
+      previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
+      ...overrideResponse,
+    },
     createdAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
     moviesCount: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([
-        faker.number.int({ min: undefined, max: undefined }),
-        null,
-      ]),
-      undefined,
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
     ]),
     name: faker.word.sample(),
-    slug: faker.helpers.arrayElement([
-      faker.helpers.arrayElement([faker.word.sample(), null]),
-      undefined,
-    ]),
+    slug: faker.helpers.arrayElement([faker.word.sample(), null]),
     updatedAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
     ...overrideResponse,
   })),
@@ -3843,37 +1469,19 @@ export const getListControllerFindManyV14ResponseMock = (
 export const getListControllerFindOneV14ResponseMock = (
   overrideResponse: any = {},
 ): List => ({
-  category: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
-  cover: faker.helpers.arrayElement([
-    {
-      previewUrl: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      url: faker.helpers.arrayElement([
-        faker.helpers.arrayElement([faker.word.sample(), null]),
-        undefined,
-      ]),
-      ...overrideResponse,
-    },
-    undefined,
-  ]),
+  category: faker.helpers.arrayElement([faker.word.sample(), null]),
+  cover: {
+    previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
+    url: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ...overrideResponse,
+  },
   createdAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
   moviesCount: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([
-      faker.number.int({ min: undefined, max: undefined }),
-      null,
-    ]),
-    undefined,
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
   ]),
   name: faker.word.sample(),
-  slug: faker.helpers.arrayElement([
-    faker.helpers.arrayElement([faker.word.sample(), null]),
-    undefined,
-  ]),
+  slug: faker.helpers.arrayElement([faker.word.sample(), null]),
   updatedAt: `${faker.date.past().toISOString().split(".")[0]}Z`,
   ...overrideResponse,
 });

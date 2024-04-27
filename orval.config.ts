@@ -1,3 +1,4 @@
+import { faker } from "@faker-js/faker";
 import { defineConfig } from "orval";
 export default defineConfig({
   kinopoisk: {
@@ -9,7 +10,17 @@ export default defineConfig({
       client: "axios-functions",
       workspace: "src/shared/api",
       mode: "split",
-      mock: true,
+      mock: {
+        type: 'msw',
+        locale: 'ru',
+      },
+      prettier: true,
+      override: {
+        mock: {
+          useExamples: true,
+          required: true,
+        }
+      }
     },
   },
 });
