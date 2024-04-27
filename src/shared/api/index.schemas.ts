@@ -56,2011 +56,2014 @@ API работает по принципу REST, все запросы отпр�
 
  * OpenAPI spec version: 1.4
  */
-export type ListControllerFindManyV14CategoryItem = typeof ListControllerFindManyV14CategoryItem[keyof typeof ListControllerFindManyV14CategoryItem];
-
+export type ListControllerFindManyV14CategoryItem =
+  (typeof ListControllerFindManyV14CategoryItem)[keyof typeof ListControllerFindManyV14CategoryItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ListControllerFindManyV14CategoryItem = {
-  'Онлайн-кинотеатр': 'Онлайн-кинотеатр',
-  Премии: 'Премии',
-  Сборы: 'Сборы',
-  Сериалы: 'Сериалы',
-  Фильмы: 'Фильмы',
+  "Онлайн-кинотеатр": "Онлайн-кинотеатр",
+  Премии: "Премии",
+  Сборы: "Сборы",
+  Сериалы: "Сериалы",
+  Фильмы: "Фильмы",
 } as const;
 
-export type ListControllerFindManyV14SortFieldItem = typeof ListControllerFindManyV14SortFieldItem[keyof typeof ListControllerFindManyV14SortFieldItem];
-
+export type ListControllerFindManyV14SortFieldItem =
+  (typeof ListControllerFindManyV14SortFieldItem)[keyof typeof ListControllerFindManyV14SortFieldItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ListControllerFindManyV14SortFieldItem = {
-  name: 'name',
-  category: 'category',
-  slug: 'slug',
-  moviesCount: 'moviesCount',
-  coverurl: 'cover.url',
-  coverpreviewUrl: 'cover.previewUrl',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  name: "name",
+  category: "category",
+  slug: "slug",
+  moviesCount: "moviesCount",
+  coverurl: "cover.url",
+  coverpreviewUrl: "cover.previewUrl",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type ListControllerFindManyV14NotNullFieldsItem = typeof ListControllerFindManyV14NotNullFieldsItem[keyof typeof ListControllerFindManyV14NotNullFieldsItem];
-
+export type ListControllerFindManyV14NotNullFieldsItem =
+  (typeof ListControllerFindManyV14NotNullFieldsItem)[keyof typeof ListControllerFindManyV14NotNullFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ListControllerFindManyV14NotNullFieldsItem = {
-  name: 'name',
-  category: 'category',
-  slug: 'slug',
-  moviesCount: 'moviesCount',
-  coverurl: 'cover.url',
-  coverpreviewUrl: 'cover.previewUrl',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  name: "name",
+  category: "category",
+  slug: "slug",
+  moviesCount: "moviesCount",
+  coverurl: "cover.url",
+  coverpreviewUrl: "cover.previewUrl",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type ListControllerFindManyV14SelectFieldsItem = typeof ListControllerFindManyV14SelectFieldsItem[keyof typeof ListControllerFindManyV14SelectFieldsItem];
-
+export type ListControllerFindManyV14SelectFieldsItem =
+  (typeof ListControllerFindManyV14SelectFieldsItem)[keyof typeof ListControllerFindManyV14SelectFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ListControllerFindManyV14SelectFieldsItem = {
-  name: 'name',
-  category: 'category',
-  slug: 'slug',
-  moviesCount: 'moviesCount',
-  cover: 'cover',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  name: "name",
+  category: "category",
+  slug: "slug",
+  moviesCount: "moviesCount",
+  cover: "cover",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
 export type ListControllerFindManyV14Params = {
-/**
- * Номер страницы
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Список полей требуемых в ответе из модели
- */
-selectFields?: ListControllerFindManyV14SelectFieldsItem[];
-/**
- * Список полей которые не должны быть null или пусты
- */
-notNullFields?: ListControllerFindManyV14NotNullFieldsItem[];
-/**
- * Сортировка по полям из модели
- */
-sortField?: ListControllerFindManyV14SortFieldItem[];
-/**
- * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
- */
-sortType?: string[];
-/**
- * Поиск slug (пример: `"!top250", "top250"`)
- */
-slug?: string[] | null;
-/**
- * Поиск по категории (пример: `"Фильмы", "!Фильмы"`)
- */
-category?: ListControllerFindManyV14CategoryItem[] | null;
-/**
- * Поиск по количеству фильмов (пример: `"1-200", "10"`)
- */
-moviesCount?: string[] | null;
-/**
- * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-updatedAt?: string[] | null;
-/**
- * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-createdAt?: string[] | null;
+  /**
+   * Номер страницы
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Список полей требуемых в ответе из модели
+   */
+  selectFields?: ListControllerFindManyV14SelectFieldsItem[];
+  /**
+   * Список полей которые не должны быть null или пусты
+   */
+  notNullFields?: ListControllerFindManyV14NotNullFieldsItem[];
+  /**
+   * Сортировка по полям из модели
+   */
+  sortField?: ListControllerFindManyV14SortFieldItem[];
+  /**
+   * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
+   */
+  sortType?: string[];
+  /**
+   * Поиск slug (пример: `"!top250", "top250"`)
+   */
+  slug?: string[] | null;
+  /**
+   * Поиск по категории (пример: `"Фильмы", "!Фильмы"`)
+   */
+  category?: ListControllerFindManyV14CategoryItem[] | null;
+  /**
+   * Поиск по количеству фильмов (пример: `"1-200", "10"`)
+   */
+  moviesCount?: string[] | null;
+  /**
+   * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  updatedAt?: string[] | null;
+  /**
+   * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  createdAt?: string[] | null;
 };
 
-export type ImageControllerFindManyV14LanguageItem = typeof ImageControllerFindManyV14LanguageItem[keyof typeof ImageControllerFindManyV14LanguageItem];
-
+export type ImageControllerFindManyV14LanguageItem =
+  (typeof ImageControllerFindManyV14LanguageItem)[keyof typeof ImageControllerFindManyV14LanguageItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ImageControllerFindManyV14LanguageItem = {
-  ab: 'ab',
-  af: 'af',
-  am: 'am',
-  ar: 'ar',
-  as: 'as',
-  av: 'av',
-  ba: 'ba',
-  be: 'be',
-  bg: 'bg',
-  bn: 'bn',
-  ca: 'ca',
-  ce: 'ce',
-  cn: 'cn',
-  cs: 'cs',
-  cu: 'cu',
-  cv: 'cv',
-  da: 'da',
-  de: 'de',
+  ab: "ab",
+  af: "af",
+  am: "am",
+  ar: "ar",
+  as: "as",
+  av: "av",
+  ba: "ba",
+  be: "be",
+  bg: "bg",
+  bn: "bn",
+  ca: "ca",
+  ce: "ce",
+  cn: "cn",
+  cs: "cs",
+  cu: "cu",
+  cv: "cv",
+  da: "da",
+  de: "de",
 } as const;
 
-export type ImageControllerFindManyV14TypeItem = typeof ImageControllerFindManyV14TypeItem[keyof typeof ImageControllerFindManyV14TypeItem];
-
+export type ImageControllerFindManyV14TypeItem =
+  (typeof ImageControllerFindManyV14TypeItem)[keyof typeof ImageControllerFindManyV14TypeItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ImageControllerFindManyV14TypeItem = {
-  backdrops: 'backdrops',
-  cover: 'cover',
-  frame: 'frame',
-  promo: 'promo',
-  screenshot: 'screenshot',
-  shooting: 'shooting',
-  still: 'still',
-  wallpaper: 'wallpaper',
+  backdrops: "backdrops",
+  cover: "cover",
+  frame: "frame",
+  promo: "promo",
+  screenshot: "screenshot",
+  shooting: "shooting",
+  still: "still",
+  wallpaper: "wallpaper",
 } as const;
 
-export type ImageControllerFindManyV14SortFieldItem = typeof ImageControllerFindManyV14SortFieldItem[keyof typeof ImageControllerFindManyV14SortFieldItem];
-
+export type ImageControllerFindManyV14SortFieldItem =
+  (typeof ImageControllerFindManyV14SortFieldItem)[keyof typeof ImageControllerFindManyV14SortFieldItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ImageControllerFindManyV14SortFieldItem = {
-  movieId: 'movieId',
-  type: 'type',
-  language: 'language',
-  url: 'url',
-  previewUrl: 'previewUrl',
-  height: 'height',
-  width: 'width',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  movieId: "movieId",
+  type: "type",
+  language: "language",
+  url: "url",
+  previewUrl: "previewUrl",
+  height: "height",
+  width: "width",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type ImageControllerFindManyV14NotNullFieldsItem = typeof ImageControllerFindManyV14NotNullFieldsItem[keyof typeof ImageControllerFindManyV14NotNullFieldsItem];
-
+export type ImageControllerFindManyV14NotNullFieldsItem =
+  (typeof ImageControllerFindManyV14NotNullFieldsItem)[keyof typeof ImageControllerFindManyV14NotNullFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ImageControllerFindManyV14NotNullFieldsItem = {
-  movieId: 'movieId',
-  type: 'type',
-  language: 'language',
-  url: 'url',
-  previewUrl: 'previewUrl',
-  height: 'height',
-  width: 'width',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  movieId: "movieId",
+  type: "type",
+  language: "language",
+  url: "url",
+  previewUrl: "previewUrl",
+  height: "height",
+  width: "width",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type ImageControllerFindManyV14SelectFieldsItem = typeof ImageControllerFindManyV14SelectFieldsItem[keyof typeof ImageControllerFindManyV14SelectFieldsItem];
-
+export type ImageControllerFindManyV14SelectFieldsItem =
+  (typeof ImageControllerFindManyV14SelectFieldsItem)[keyof typeof ImageControllerFindManyV14SelectFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ImageControllerFindManyV14SelectFieldsItem = {
-  movieId: 'movieId',
-  type: 'type',
-  language: 'language',
-  url: 'url',
-  previewUrl: 'previewUrl',
-  height: 'height',
-  width: 'width',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  movieId: "movieId",
+  type: "type",
+  language: "language",
+  url: "url",
+  previewUrl: "previewUrl",
+  height: "height",
+  width: "width",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
 export type ImageControllerFindManyV14Params = {
-/**
- * Номер страницы
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Список полей требуемых в ответе из модели
- */
-selectFields?: ImageControllerFindManyV14SelectFieldsItem[];
-/**
- * Список полей которые не должны быть null или пусты
- */
-notNullFields?: ImageControllerFindManyV14NotNullFieldsItem[];
-/**
- * Сортировка по полям из модели
- */
-sortField?: ImageControllerFindManyV14SortFieldItem[];
-/**
- * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
- */
-sortType?: string[];
-/**
- * Поиск картинок по id фильма (пример: `"666", "!666"`)
- */
-movieId?: string[];
-/**
- * Поиск картинок по типу (пример: `"cover", "!cover"`)
- */
-type?: ImageControllerFindManyV14TypeItem[];
-/**
- * Поиск картинок по языку (пример: `"en", "!de"`)
- */
-language?: ImageControllerFindManyV14LanguageItem[];
-/**
- * Поиск картинок по высоте (пример: `"1920", "360-1920"`)
- */
-height?: string[];
-/**
- * Поиск картинок по ширине (пример: `"1080", "320-1080"`)
- */
-width?: string[];
-/**
- * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-updatedAt?: string[] | null;
-/**
- * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-createdAt?: string[] | null;
+  /**
+   * Номер страницы
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Список полей требуемых в ответе из модели
+   */
+  selectFields?: ImageControllerFindManyV14SelectFieldsItem[];
+  /**
+   * Список полей которые не должны быть null или пусты
+   */
+  notNullFields?: ImageControllerFindManyV14NotNullFieldsItem[];
+  /**
+   * Сортировка по полям из модели
+   */
+  sortField?: ImageControllerFindManyV14SortFieldItem[];
+  /**
+   * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
+   */
+  sortType?: string[];
+  /**
+   * Поиск картинок по id фильма (пример: `"666", "!666"`)
+   */
+  movieId?: string[];
+  /**
+   * Поиск картинок по типу (пример: `"cover", "!cover"`)
+   */
+  type?: ImageControllerFindManyV14TypeItem[];
+  /**
+   * Поиск картинок по языку (пример: `"en", "!de"`)
+   */
+  language?: ImageControllerFindManyV14LanguageItem[];
+  /**
+   * Поиск картинок по высоте (пример: `"1920", "360-1920"`)
+   */
+  height?: string[];
+  /**
+   * Поиск картинок по ширине (пример: `"1080", "320-1080"`)
+   */
+  width?: string[];
+  /**
+   * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  updatedAt?: string[] | null;
+  /**
+   * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  createdAt?: string[] | null;
 };
 
-export type KeywordControllerFindManyV14SortFieldItem = typeof KeywordControllerFindManyV14SortFieldItem[keyof typeof KeywordControllerFindManyV14SortFieldItem];
-
+export type KeywordControllerFindManyV14SortFieldItem =
+  (typeof KeywordControllerFindManyV14SortFieldItem)[keyof typeof KeywordControllerFindManyV14SortFieldItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const KeywordControllerFindManyV14SortFieldItem = {
-  id: 'id',
-  moviesid: 'movies.id',
-  title: 'title',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  moviesid: "movies.id",
+  title: "title",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type KeywordControllerFindManyV14NotNullFieldsItem = typeof KeywordControllerFindManyV14NotNullFieldsItem[keyof typeof KeywordControllerFindManyV14NotNullFieldsItem];
-
+export type KeywordControllerFindManyV14NotNullFieldsItem =
+  (typeof KeywordControllerFindManyV14NotNullFieldsItem)[keyof typeof KeywordControllerFindManyV14NotNullFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const KeywordControllerFindManyV14NotNullFieldsItem = {
-  id: 'id',
-  moviesid: 'movies.id',
-  title: 'title',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  moviesid: "movies.id",
+  title: "title",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type KeywordControllerFindManyV14SelectFieldsItem = typeof KeywordControllerFindManyV14SelectFieldsItem[keyof typeof KeywordControllerFindManyV14SelectFieldsItem];
-
+export type KeywordControllerFindManyV14SelectFieldsItem =
+  (typeof KeywordControllerFindManyV14SelectFieldsItem)[keyof typeof KeywordControllerFindManyV14SelectFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const KeywordControllerFindManyV14SelectFieldsItem = {
-  id: 'id',
-  movies: 'movies',
-  title: 'title',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  movies: "movies",
+  title: "title",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
 export type KeywordControllerFindManyV14Params = {
-/**
- * Номер страницы
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Список полей требуемых в ответе из модели
- */
-selectFields?: KeywordControllerFindManyV14SelectFieldsItem[];
-/**
- * Список полей которые не должны быть null или пусты
- */
-notNullFields?: KeywordControllerFindManyV14NotNullFieldsItem[];
-/**
- * Сортировка по полям из модели
- */
-sortField?: KeywordControllerFindManyV14SortFieldItem[];
-/**
- * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
- */
-sortType?: string[];
-/**
- * Поиск ключевого слова по id (пример: `"666", "!666"`)
- */
-id?: string[];
-/**
- * Поиск ключевых слов по id фильма (пример: `"666", "!666"`)
- */
-'movies.id'?: string[];
-/**
- * Поиск ключевых слов по наименованию (пример: `"1980-е", "!1980-е"`)
- */
-title?: string[];
-/**
- * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-updatedAt?: string[] | null;
-/**
- * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-createdAt?: string[] | null;
+  /**
+   * Номер страницы
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Список полей требуемых в ответе из модели
+   */
+  selectFields?: KeywordControllerFindManyV14SelectFieldsItem[];
+  /**
+   * Список полей которые не должны быть null или пусты
+   */
+  notNullFields?: KeywordControllerFindManyV14NotNullFieldsItem[];
+  /**
+   * Сортировка по полям из модели
+   */
+  sortField?: KeywordControllerFindManyV14SortFieldItem[];
+  /**
+   * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
+   */
+  sortType?: string[];
+  /**
+   * Поиск ключевого слова по id (пример: `"666", "!666"`)
+   */
+  id?: string[];
+  /**
+   * Поиск ключевых слов по id фильма (пример: `"666", "!666"`)
+   */
+  "movies.id"?: string[];
+  /**
+   * Поиск ключевых слов по наименованию (пример: `"1980-е", "!1980-е"`)
+   */
+  title?: string[];
+  /**
+   * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  updatedAt?: string[] | null;
+  /**
+   * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  createdAt?: string[] | null;
 };
 
-export type StudioControllerFindManyV14SortFieldItem = typeof StudioControllerFindManyV14SortFieldItem[keyof typeof StudioControllerFindManyV14SortFieldItem];
-
+export type StudioControllerFindManyV14SortFieldItem =
+  (typeof StudioControllerFindManyV14SortFieldItem)[keyof typeof StudioControllerFindManyV14SortFieldItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const StudioControllerFindManyV14SortFieldItem = {
-  id: 'id',
-  subType: 'subType',
-  title: 'title',
-  type: 'type',
-  moviesid: 'movies.id',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  subType: "subType",
+  title: "title",
+  type: "type",
+  moviesid: "movies.id",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type StudioControllerFindManyV14NotNullFieldsItem = typeof StudioControllerFindManyV14NotNullFieldsItem[keyof typeof StudioControllerFindManyV14NotNullFieldsItem];
-
+export type StudioControllerFindManyV14NotNullFieldsItem =
+  (typeof StudioControllerFindManyV14NotNullFieldsItem)[keyof typeof StudioControllerFindManyV14NotNullFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const StudioControllerFindManyV14NotNullFieldsItem = {
-  id: 'id',
-  subType: 'subType',
-  title: 'title',
-  type: 'type',
-  moviesid: 'movies.id',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  subType: "subType",
+  title: "title",
+  type: "type",
+  moviesid: "movies.id",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type StudioControllerFindManyV14SelectFieldsItem = typeof StudioControllerFindManyV14SelectFieldsItem[keyof typeof StudioControllerFindManyV14SelectFieldsItem];
-
+export type StudioControllerFindManyV14SelectFieldsItem =
+  (typeof StudioControllerFindManyV14SelectFieldsItem)[keyof typeof StudioControllerFindManyV14SelectFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const StudioControllerFindManyV14SelectFieldsItem = {
-  id: 'id',
-  subType: 'subType',
-  title: 'title',
-  type: 'type',
-  movies: 'movies',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  subType: "subType",
+  title: "title",
+  type: "type",
+  movies: "movies",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
 export type StudioControllerFindManyV14Params = {
-/**
- * Номер страницы
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Список полей требуемых в ответе из модели
- */
-selectFields?: StudioControllerFindManyV14SelectFieldsItem[];
-/**
- * Список полей которые не должны быть null или пусты
- */
-notNullFields?: StudioControllerFindManyV14NotNullFieldsItem[];
-/**
- * Сортировка по полям из модели
- */
-sortField?: StudioControllerFindManyV14SortFieldItem[];
-/**
- * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
- */
-sortType?: string[];
-/**
- * Поиск по ID KinoPoisk (пример: `"warnerbros", "222", "!666"`)
- */
-id?: string[] | null;
-/**
- * Поиск по ID фильма (пример: `"666", "555", "!666"`)
- */
-'movies.id'?: string[] | null;
-/**
- * Поиск по типу студии (пример: `"Производство", "Студия дубляжа"`)
- */
-type?: string[] | null;
-/**
- * Поиск по типу студии (пример: `"company", "studio"`)
- */
-subType?: string[] | null;
-/**
- * Поиск по названию студии (пример: `"Warner Bros.", "!Warner Bros."`)
- */
-title?: string[] | null;
-/**
- * Поиск по дате обновления (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-updatedAt?: string[] | null;
-/**
- * Поиск по дате добавления (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-createdAt?: string[] | null;
+  /**
+   * Номер страницы
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Список полей требуемых в ответе из модели
+   */
+  selectFields?: StudioControllerFindManyV14SelectFieldsItem[];
+  /**
+   * Список полей которые не должны быть null или пусты
+   */
+  notNullFields?: StudioControllerFindManyV14NotNullFieldsItem[];
+  /**
+   * Сортировка по полям из модели
+   */
+  sortField?: StudioControllerFindManyV14SortFieldItem[];
+  /**
+   * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
+   */
+  sortType?: string[];
+  /**
+   * Поиск по ID KinoPoisk (пример: `"warnerbros", "222", "!666"`)
+   */
+  id?: string[] | null;
+  /**
+   * Поиск по ID фильма (пример: `"666", "555", "!666"`)
+   */
+  "movies.id"?: string[] | null;
+  /**
+   * Поиск по типу студии (пример: `"Производство", "Студия дубляжа"`)
+   */
+  type?: string[] | null;
+  /**
+   * Поиск по типу студии (пример: `"company", "studio"`)
+   */
+  subType?: string[] | null;
+  /**
+   * Поиск по названию студии (пример: `"Warner Bros.", "!Warner Bros."`)
+   */
+  title?: string[] | null;
+  /**
+   * Поиск по дате обновления (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  updatedAt?: string[] | null;
+  /**
+   * Поиск по дате добавления (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  createdAt?: string[] | null;
 };
 
-export type PersonControllerFindManyAwardsV14SortFieldItem = typeof PersonControllerFindManyAwardsV14SortFieldItem[keyof typeof PersonControllerFindManyAwardsV14SortFieldItem];
-
+export type PersonControllerFindManyAwardsV14SortFieldItem =
+  (typeof PersonControllerFindManyAwardsV14SortFieldItem)[keyof typeof PersonControllerFindManyAwardsV14SortFieldItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const PersonControllerFindManyAwardsV14SortFieldItem = {
-  personId: 'personId',
-  winning: 'winning',
-  nominationawardtitle: 'nomination.award.title',
-  nominationawardyear: 'nomination.award.year',
-  nominationtitle: 'nomination.title',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  personId: "personId",
+  winning: "winning",
+  nominationawardtitle: "nomination.award.title",
+  nominationawardyear: "nomination.award.year",
+  nominationtitle: "nomination.title",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type PersonControllerFindManyAwardsV14NotNullFieldsItem = typeof PersonControllerFindManyAwardsV14NotNullFieldsItem[keyof typeof PersonControllerFindManyAwardsV14NotNullFieldsItem];
-
+export type PersonControllerFindManyAwardsV14NotNullFieldsItem =
+  (typeof PersonControllerFindManyAwardsV14NotNullFieldsItem)[keyof typeof PersonControllerFindManyAwardsV14NotNullFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const PersonControllerFindManyAwardsV14NotNullFieldsItem = {
-  personId: 'personId',
-  winning: 'winning',
-  nominationawardtitle: 'nomination.award.title',
-  nominationawardyear: 'nomination.award.year',
-  nominationtitle: 'nomination.title',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  personId: "personId",
+  winning: "winning",
+  nominationawardtitle: "nomination.award.title",
+  nominationawardyear: "nomination.award.year",
+  nominationtitle: "nomination.title",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type PersonControllerFindManyAwardsV14SelectFieldsItem = typeof PersonControllerFindManyAwardsV14SelectFieldsItem[keyof typeof PersonControllerFindManyAwardsV14SelectFieldsItem];
-
+export type PersonControllerFindManyAwardsV14SelectFieldsItem =
+  (typeof PersonControllerFindManyAwardsV14SelectFieldsItem)[keyof typeof PersonControllerFindManyAwardsV14SelectFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const PersonControllerFindManyAwardsV14SelectFieldsItem = {
-  personId: 'personId',
-  winning: 'winning',
-  nomination: 'nomination',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  personId: "personId",
+  winning: "winning",
+  nomination: "nomination",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
 export type PersonControllerFindManyAwardsV14Params = {
-/**
- * Номер страницы
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Список полей требуемых в ответе из модели
- */
-selectFields?: PersonControllerFindManyAwardsV14SelectFieldsItem[];
-/**
- * Список полей которые не должны быть null или пусты
- */
-notNullFields?: PersonControllerFindManyAwardsV14NotNullFieldsItem[];
-/**
- * Сортировка по полям из модели
- */
-sortField?: PersonControllerFindManyAwardsV14SortFieldItem[];
-/**
- * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
- */
-sortType?: string[];
-/**
- * Поиск по ID персоны (пример: `"666", "555", "!666"`)
- */
-personId?: string[] | null;
-/**
- * Поиск по номинациям (пример: `"Оскар", "Золотой глобус"`)
- */
-'nomination.title'?: string[] | null;
-/**
- * Поиск по наградам (пример: `"Лучший фильм", "Лучший актер"`)
- */
-'nomination.award.title'?: string[] | null;
-/**
- * Поиск по году награды (пример: `"2019", "2020"`)
- */
-'nomination.award.year'?: string[] | null;
-/**
- * Поиск по победам (пример: `"true", "false"`)
- */
-winning?: string | null;
-/**
- * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-updatedAt?: string[] | null;
-/**
- * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-createdAt?: string[] | null;
+  /**
+   * Номер страницы
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Список полей требуемых в ответе из модели
+   */
+  selectFields?: PersonControllerFindManyAwardsV14SelectFieldsItem[];
+  /**
+   * Список полей которые не должны быть null или пусты
+   */
+  notNullFields?: PersonControllerFindManyAwardsV14NotNullFieldsItem[];
+  /**
+   * Сортировка по полям из модели
+   */
+  sortField?: PersonControllerFindManyAwardsV14SortFieldItem[];
+  /**
+   * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
+   */
+  sortType?: string[];
+  /**
+   * Поиск по ID персоны (пример: `"666", "555", "!666"`)
+   */
+  personId?: string[] | null;
+  /**
+   * Поиск по номинациям (пример: `"Оскар", "Золотой глобус"`)
+   */
+  "nomination.title"?: string[] | null;
+  /**
+   * Поиск по наградам (пример: `"Лучший фильм", "Лучший актер"`)
+   */
+  "nomination.award.title"?: string[] | null;
+  /**
+   * Поиск по году награды (пример: `"2019", "2020"`)
+   */
+  "nomination.award.year"?: string[] | null;
+  /**
+   * Поиск по победам (пример: `"true", "false"`)
+   */
+  winning?: string | null;
+  /**
+   * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  updatedAt?: string[] | null;
+  /**
+   * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  createdAt?: string[] | null;
 };
 
 export type PersonControllerSearchPersonV14Params = {
-/**
- * Страница выборки
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Поисковый запрос
- */
-query: string;
+  /**
+   * Страница выборки
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Поисковый запрос
+   */
+  query: string;
 };
 
-export type PersonControllerFindManyV14MoviesEnProfessionItem = typeof PersonControllerFindManyV14MoviesEnProfessionItem[keyof typeof PersonControllerFindManyV14MoviesEnProfessionItem];
-
+export type PersonControllerFindManyV14MoviesEnProfessionItem =
+  (typeof PersonControllerFindManyV14MoviesEnProfessionItem)[keyof typeof PersonControllerFindManyV14MoviesEnProfessionItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const PersonControllerFindManyV14MoviesEnProfessionItem = {
-  actor: 'actor',
-  cameo: 'cameo',
-  composer: 'composer',
-  design: 'design',
-  director: 'director',
-  director_ussr: 'director_ussr',
-  editor: 'editor',
-  group_cameo: 'group_cameo',
-  group_uncredited: 'group_uncredited',
-  operator: 'operator',
-  producer: 'producer',
-  sound_designer: 'sound_designer',
-  translator: 'translator',
-  uncredited: 'uncredited',
-  voice_director: 'voice_director',
-  voiceover: 'voiceover',
-  writer: 'writer',
+  actor: "actor",
+  cameo: "cameo",
+  composer: "composer",
+  design: "design",
+  director: "director",
+  director_ussr: "director_ussr",
+  editor: "editor",
+  group_cameo: "group_cameo",
+  group_uncredited: "group_uncredited",
+  operator: "operator",
+  producer: "producer",
+  sound_designer: "sound_designer",
+  translator: "translator",
+  uncredited: "uncredited",
+  voice_director: "voice_director",
+  voiceover: "voiceover",
+  writer: "writer",
 } as const;
 
-export type PersonControllerFindManyV14ProfessionValueItem = typeof PersonControllerFindManyV14ProfessionValueItem[keyof typeof PersonControllerFindManyV14ProfessionValueItem];
-
+export type PersonControllerFindManyV14ProfessionValueItem =
+  (typeof PersonControllerFindManyV14ProfessionValueItem)[keyof typeof PersonControllerFindManyV14ProfessionValueItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const PersonControllerFindManyV14ProfessionValueItem = {
-  Актер: 'Актер',
-  Актер_дубляжа: 'Актер дубляжа',
-  Актриса: 'Актриса',
-  Актриса_дубляжа: 'Актриса дубляжа',
-  В_титрах_не_указаны: 'В титрах не указаны',
-  'Группа:_Хроника': 'Группа: Хроника',
-  'Группа:_играют_самих_себя': 'Группа: играют самих себя',
-  Директор_фильма: 'Директор фильма',
-  Звукорежиссер: 'Звукорежиссер',
-  Композитор: 'Композитор',
-  Монтажер: 'Монтажер',
-  Озвучка: 'Озвучка',
-  Оператор: 'Оператор',
-  Переводчик: 'Переводчик',
-  Продюсер: 'Продюсер',
-  Режиссер: 'Режиссер',
-  Режиссер_дубляжа: 'Режиссер дубляжа',
-  Сценарист: 'Сценарист',
-  Художник: 'Художник',
+  Актер: "Актер",
+  Актер_дубляжа: "Актер дубляжа",
+  Актриса: "Актриса",
+  Актриса_дубляжа: "Актриса дубляжа",
+  В_титрах_не_указаны: "В титрах не указаны",
+  "Группа:_Хроника": "Группа: Хроника",
+  "Группа:_играют_самих_себя": "Группа: играют самих себя",
+  Директор_фильма: "Директор фильма",
+  Звукорежиссер: "Звукорежиссер",
+  Композитор: "Композитор",
+  Монтажер: "Монтажер",
+  Озвучка: "Озвучка",
+  Оператор: "Оператор",
+  Переводчик: "Переводчик",
+  Продюсер: "Продюсер",
+  Режиссер: "Режиссер",
+  Режиссер_дубляжа: "Режиссер дубляжа",
+  Сценарист: "Сценарист",
+  Художник: "Художник",
 } as const;
 
-export type PersonControllerFindManyV14SpousesSexItem = typeof PersonControllerFindManyV14SpousesSexItem[keyof typeof PersonControllerFindManyV14SpousesSexItem];
-
+export type PersonControllerFindManyV14SpousesSexItem =
+  (typeof PersonControllerFindManyV14SpousesSexItem)[keyof typeof PersonControllerFindManyV14SpousesSexItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const PersonControllerFindManyV14SpousesSexItem = {
-  Женский: 'Женский',
-  Мужской: 'Мужской',
+  Женский: "Женский",
+  Мужской: "Мужской",
 } as const;
 
-export type PersonControllerFindManyV14SexItem = typeof PersonControllerFindManyV14SexItem[keyof typeof PersonControllerFindManyV14SexItem];
-
+export type PersonControllerFindManyV14SexItem =
+  (typeof PersonControllerFindManyV14SexItem)[keyof typeof PersonControllerFindManyV14SexItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const PersonControllerFindManyV14SexItem = {
-  Женский: 'Женский',
-  Мужской: 'Мужской',
+  Женский: "Женский",
+  Мужской: "Мужской",
 } as const;
 
-export type PersonControllerFindManyV14SortFieldItem = typeof PersonControllerFindManyV14SortFieldItem[keyof typeof PersonControllerFindManyV14SortFieldItem];
-
+export type PersonControllerFindManyV14SortFieldItem =
+  (typeof PersonControllerFindManyV14SortFieldItem)[keyof typeof PersonControllerFindManyV14SortFieldItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const PersonControllerFindManyV14SortFieldItem = {
-  id: 'id',
-  name: 'name',
-  enName: 'enName',
-  photo: 'photo',
-  sex: 'sex',
-  growth: 'growth',
-  birthday: 'birthday',
-  death: 'death',
-  age: 'age',
-  birthPlacevalue: 'birthPlace.value',
-  deathPlacevalue: 'deathPlace.value',
-  spousesid: 'spouses.id',
-  spousesname: 'spouses.name',
-  spousesdivorced: 'spouses.divorced',
-  spousesdivorcedReason: 'spouses.divorcedReason',
-  spousessex: 'spouses.sex',
-  spouseschildren: 'spouses.children',
-  spousesrelation: 'spouses.relation',
-  countAwards: 'countAwards',
-  professionvalue: 'profession.value',
-  factsvalue: 'facts.value',
-  moviesid: 'movies.id',
-  moviesname: 'movies.name',
-  moviesalternativeName: 'movies.alternativeName',
-  moviesrating: 'movies.rating',
-  moviesgeneral: 'movies.general',
-  moviesdescription: 'movies.description',
-  moviesenProfession: 'movies.enProfession',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  name: "name",
+  enName: "enName",
+  photo: "photo",
+  sex: "sex",
+  growth: "growth",
+  birthday: "birthday",
+  death: "death",
+  age: "age",
+  birthPlacevalue: "birthPlace.value",
+  deathPlacevalue: "deathPlace.value",
+  spousesid: "spouses.id",
+  spousesname: "spouses.name",
+  spousesdivorced: "spouses.divorced",
+  spousesdivorcedReason: "spouses.divorcedReason",
+  spousessex: "spouses.sex",
+  spouseschildren: "spouses.children",
+  spousesrelation: "spouses.relation",
+  countAwards: "countAwards",
+  professionvalue: "profession.value",
+  factsvalue: "facts.value",
+  moviesid: "movies.id",
+  moviesname: "movies.name",
+  moviesalternativeName: "movies.alternativeName",
+  moviesrating: "movies.rating",
+  moviesgeneral: "movies.general",
+  moviesdescription: "movies.description",
+  moviesenProfession: "movies.enProfession",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type PersonControllerFindManyV14NotNullFieldsItem = typeof PersonControllerFindManyV14NotNullFieldsItem[keyof typeof PersonControllerFindManyV14NotNullFieldsItem];
-
+export type PersonControllerFindManyV14NotNullFieldsItem =
+  (typeof PersonControllerFindManyV14NotNullFieldsItem)[keyof typeof PersonControllerFindManyV14NotNullFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const PersonControllerFindManyV14NotNullFieldsItem = {
-  id: 'id',
-  name: 'name',
-  enName: 'enName',
-  photo: 'photo',
-  sex: 'sex',
-  growth: 'growth',
-  birthday: 'birthday',
-  death: 'death',
-  age: 'age',
-  birthPlacevalue: 'birthPlace.value',
-  deathPlacevalue: 'deathPlace.value',
-  spousesid: 'spouses.id',
-  spousesname: 'spouses.name',
-  spousesdivorced: 'spouses.divorced',
-  spousesdivorcedReason: 'spouses.divorcedReason',
-  spousessex: 'spouses.sex',
-  spouseschildren: 'spouses.children',
-  spousesrelation: 'spouses.relation',
-  countAwards: 'countAwards',
-  professionvalue: 'profession.value',
-  factsvalue: 'facts.value',
-  moviesid: 'movies.id',
-  moviesname: 'movies.name',
-  moviesalternativeName: 'movies.alternativeName',
-  moviesrating: 'movies.rating',
-  moviesgeneral: 'movies.general',
-  moviesdescription: 'movies.description',
-  moviesenProfession: 'movies.enProfession',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  name: "name",
+  enName: "enName",
+  photo: "photo",
+  sex: "sex",
+  growth: "growth",
+  birthday: "birthday",
+  death: "death",
+  age: "age",
+  birthPlacevalue: "birthPlace.value",
+  deathPlacevalue: "deathPlace.value",
+  spousesid: "spouses.id",
+  spousesname: "spouses.name",
+  spousesdivorced: "spouses.divorced",
+  spousesdivorcedReason: "spouses.divorcedReason",
+  spousessex: "spouses.sex",
+  spouseschildren: "spouses.children",
+  spousesrelation: "spouses.relation",
+  countAwards: "countAwards",
+  professionvalue: "profession.value",
+  factsvalue: "facts.value",
+  moviesid: "movies.id",
+  moviesname: "movies.name",
+  moviesalternativeName: "movies.alternativeName",
+  moviesrating: "movies.rating",
+  moviesgeneral: "movies.general",
+  moviesdescription: "movies.description",
+  moviesenProfession: "movies.enProfession",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type PersonControllerFindManyV14SelectFieldsItem = typeof PersonControllerFindManyV14SelectFieldsItem[keyof typeof PersonControllerFindManyV14SelectFieldsItem];
-
+export type PersonControllerFindManyV14SelectFieldsItem =
+  (typeof PersonControllerFindManyV14SelectFieldsItem)[keyof typeof PersonControllerFindManyV14SelectFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const PersonControllerFindManyV14SelectFieldsItem = {
-  id: 'id',
-  name: 'name',
-  enName: 'enName',
-  photo: 'photo',
-  sex: 'sex',
-  growth: 'growth',
-  birthday: 'birthday',
-  death: 'death',
-  age: 'age',
-  birthPlace: 'birthPlace',
-  deathPlace: 'deathPlace',
-  spouses: 'spouses',
-  countAwards: 'countAwards',
-  profession: 'profession',
-  facts: 'facts',
-  movies: 'movies',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  name: "name",
+  enName: "enName",
+  photo: "photo",
+  sex: "sex",
+  growth: "growth",
+  birthday: "birthday",
+  death: "death",
+  age: "age",
+  birthPlace: "birthPlace",
+  deathPlace: "deathPlace",
+  spouses: "spouses",
+  countAwards: "countAwards",
+  profession: "profession",
+  facts: "facts",
+  movies: "movies",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
 export type PersonControllerFindManyV14Params = {
-/**
- * Номер страницы
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Список полей требуемых в ответе из модели
- */
-selectFields?: PersonControllerFindManyV14SelectFieldsItem[];
-/**
- * Список полей которые не должны быть null или пусты
- */
-notNullFields?: PersonControllerFindManyV14NotNullFieldsItem[];
-/**
- * Сортировка по полям из модели
- */
-sortField?: PersonControllerFindManyV14SortFieldItem[];
-/**
- * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
- */
-sortType?: string[];
-/**
- * Поиск по ID KinoPoisk (пример: `"111", "222", "!666"`)
- */
-id?: string[] | null;
-/**
- * Поиск по ID фильма (пример: `"666", "555", "!666"`)
- */
-'movies.id'?: string[] | null;
-/**
- * Поиск по гендеру (пример: `Женский, Мужской`)
- */
-sex?: PersonControllerFindManyV14SexItem[] | null;
-/**
- * Поиск по росту (пример: `170-180, 180`)
- */
-growth?: string[] | null;
-/**
- * Поиск по дате рождения (пример: `01.01.2000-01.01.2001, 01.01.2000`)
- */
-birthday?: string[] | null;
-/**
- * Поиск по дате смерти (пример: `01.01.2000-01.01.2001, 01.01.2000`)
- */
-death?: string[] | null;
-/**
- * Поиск по возрасту (пример: `18-25, 25`)
- */
-age?: string[] | null;
-/**
- * Поиск по месту рождения (пример: `Москва, Санкт-Петербург`)
- */
-'birthPlace.value'?: string[] | null;
-/**
- * Поиск по месту смерти (пример: `Москва, Санкт-Петербург`)
- */
-'deathPlace.value'?: string[] | null;
-/**
- * Поиск по ID супруги(супруга) (пример: `111, 222`)
- */
-'spouses.id'?: string[] | null;
-/**
- * Поиск по статусу развода (пример: `true, false`)
- */
-'spouses.divorced'?: string | null;
-/**
- * Поиск по гендеру супруги(супруга) (пример: `Женский, Мужской`)
- */
-'spouses.sex'?: PersonControllerFindManyV14SpousesSexItem[] | null;
-/**
- * Поиск по количеству наград (пример: `1-10, 10`)
- */
-countAwards?: string[] | null;
-/**
- * Поиск по профессии (пример: `Актер, Режиссер`)
- */
-'profession.value'?: PersonControllerFindManyV14ProfessionValueItem[] | null;
-/**
- * Поиск по рейтингу фильма (пример: `1-10, 10`)
- */
-'movies.rating'?: string[] | null;
-/**
- * Поиск по профессии в фильмах на английском (пример: `actor, director`)
- */
-'movies.enProfession'?: PersonControllerFindManyV14MoviesEnProfessionItem[] | null;
-/**
- * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-updatedAt?: string[] | null;
-/**
- * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-createdAt?: string[] | null;
+  /**
+   * Номер страницы
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Список полей требуемых в ответе из модели
+   */
+  selectFields?: PersonControllerFindManyV14SelectFieldsItem[];
+  /**
+   * Список полей которые не должны быть null или пусты
+   */
+  notNullFields?: PersonControllerFindManyV14NotNullFieldsItem[];
+  /**
+   * Сортировка по полям из модели
+   */
+  sortField?: PersonControllerFindManyV14SortFieldItem[];
+  /**
+   * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
+   */
+  sortType?: string[];
+  /**
+   * Поиск по ID KinoPoisk (пример: `"111", "222", "!666"`)
+   */
+  id?: string[] | null;
+  /**
+   * Поиск по ID фильма (пример: `"666", "555", "!666"`)
+   */
+  "movies.id"?: string[] | null;
+  /**
+   * Поиск по гендеру (пример: `Женский, Мужской`)
+   */
+  sex?: PersonControllerFindManyV14SexItem[] | null;
+  /**
+   * Поиск по росту (пример: `170-180, 180`)
+   */
+  growth?: string[] | null;
+  /**
+   * Поиск по дате рождения (пример: `01.01.2000-01.01.2001, 01.01.2000`)
+   */
+  birthday?: string[] | null;
+  /**
+   * Поиск по дате смерти (пример: `01.01.2000-01.01.2001, 01.01.2000`)
+   */
+  death?: string[] | null;
+  /**
+   * Поиск по возрасту (пример: `18-25, 25`)
+   */
+  age?: string[] | null;
+  /**
+   * Поиск по месту рождения (пример: `Москва, Санкт-Петербург`)
+   */
+  "birthPlace.value"?: string[] | null;
+  /**
+   * Поиск по месту смерти (пример: `Москва, Санкт-Петербург`)
+   */
+  "deathPlace.value"?: string[] | null;
+  /**
+   * Поиск по ID супруги(супруга) (пример: `111, 222`)
+   */
+  "spouses.id"?: string[] | null;
+  /**
+   * Поиск по статусу развода (пример: `true, false`)
+   */
+  "spouses.divorced"?: string | null;
+  /**
+   * Поиск по гендеру супруги(супруга) (пример: `Женский, Мужской`)
+   */
+  "spouses.sex"?: PersonControllerFindManyV14SpousesSexItem[] | null;
+  /**
+   * Поиск по количеству наград (пример: `1-10, 10`)
+   */
+  countAwards?: string[] | null;
+  /**
+   * Поиск по профессии (пример: `Актер, Режиссер`)
+   */
+  "profession.value"?: PersonControllerFindManyV14ProfessionValueItem[] | null;
+  /**
+   * Поиск по рейтингу фильма (пример: `1-10, 10`)
+   */
+  "movies.rating"?: string[] | null;
+  /**
+   * Поиск по профессии в фильмах на английском (пример: `actor, director`)
+   */
+  "movies.enProfession"?:
+    | PersonControllerFindManyV14MoviesEnProfessionItem[]
+    | null;
+  /**
+   * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  updatedAt?: string[] | null;
+  /**
+   * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  createdAt?: string[] | null;
 };
 
-export type ReviewControllerFindManyV14TypeItem = typeof ReviewControllerFindManyV14TypeItem[keyof typeof ReviewControllerFindManyV14TypeItem];
-
+export type ReviewControllerFindManyV14TypeItem =
+  (typeof ReviewControllerFindManyV14TypeItem)[keyof typeof ReviewControllerFindManyV14TypeItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ReviewControllerFindManyV14TypeItem = {
-  Негативный: 'Негативный',
-  Нейтральный: 'Нейтральный',
-  Позитивный: 'Позитивный',
+  Негативный: "Негативный",
+  Нейтральный: "Нейтральный",
+  Позитивный: "Позитивный",
 } as const;
 
-export type ReviewControllerFindManyV14SortFieldItem = typeof ReviewControllerFindManyV14SortFieldItem[keyof typeof ReviewControllerFindManyV14SortFieldItem];
-
+export type ReviewControllerFindManyV14SortFieldItem =
+  (typeof ReviewControllerFindManyV14SortFieldItem)[keyof typeof ReviewControllerFindManyV14SortFieldItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ReviewControllerFindManyV14SortFieldItem = {
-  id: 'id',
-  movieId: 'movieId',
-  title: 'title',
-  type: 'type',
-  review: 'review',
-  date: 'date',
-  author: 'author',
-  authorId: 'authorId',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  movieId: "movieId",
+  title: "title",
+  type: "type",
+  review: "review",
+  date: "date",
+  author: "author",
+  authorId: "authorId",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type ReviewControllerFindManyV14NotNullFieldsItem = typeof ReviewControllerFindManyV14NotNullFieldsItem[keyof typeof ReviewControllerFindManyV14NotNullFieldsItem];
-
+export type ReviewControllerFindManyV14NotNullFieldsItem =
+  (typeof ReviewControllerFindManyV14NotNullFieldsItem)[keyof typeof ReviewControllerFindManyV14NotNullFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ReviewControllerFindManyV14NotNullFieldsItem = {
-  id: 'id',
-  movieId: 'movieId',
-  title: 'title',
-  type: 'type',
-  review: 'review',
-  date: 'date',
-  author: 'author',
-  authorId: 'authorId',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  movieId: "movieId",
+  title: "title",
+  type: "type",
+  review: "review",
+  date: "date",
+  author: "author",
+  authorId: "authorId",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type ReviewControllerFindManyV14SelectFieldsItem = typeof ReviewControllerFindManyV14SelectFieldsItem[keyof typeof ReviewControllerFindManyV14SelectFieldsItem];
-
+export type ReviewControllerFindManyV14SelectFieldsItem =
+  (typeof ReviewControllerFindManyV14SelectFieldsItem)[keyof typeof ReviewControllerFindManyV14SelectFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ReviewControllerFindManyV14SelectFieldsItem = {
-  id: 'id',
-  movieId: 'movieId',
-  title: 'title',
-  type: 'type',
-  review: 'review',
-  date: 'date',
-  author: 'author',
-  authorId: 'authorId',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  movieId: "movieId",
+  title: "title",
+  type: "type",
+  review: "review",
+  date: "date",
+  author: "author",
+  authorId: "authorId",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
 export type ReviewControllerFindManyV14Params = {
-/**
- * Номер страницы
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Список полей требуемых в ответе из модели
- */
-selectFields?: ReviewControllerFindManyV14SelectFieldsItem[];
-/**
- * Список полей которые не должны быть null или пусты
- */
-notNullFields?: ReviewControllerFindManyV14NotNullFieldsItem[];
-/**
- * Сортировка по полям из модели
- */
-sortField?: ReviewControllerFindManyV14SortFieldItem[];
-/**
- * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
- */
-sortType?: string[];
-/**
- * Поиск по ID отзыва (пример: `"111", "222", "!666"`)
- */
-id?: string[] | null;
-/**
- * Поиск по ID фильма (пример: `"666", "555", "!666"`)
- */
-movieId?: string[] | null;
-/**
- * Поиск отзывов по ID автора (пример: `"666", "555", "!666"`)
- */
-authorId?: string[] | null;
-/**
- * Поиск по имени автора отзыва (пример: `"КиноПоиск", "!КиноПоиск"`)
- */
-author?: string[] | null;
-/**
- * Поиск по типу отзыва (пример: `"!Негативный", "Нейтральный", "Позитивный"`)
- */
-type?: ReviewControllerFindManyV14TypeItem[] | null;
-/**
- * Поиск по дате создания отзыва (пример: `"01.01.2021-01.01.2022", "01.01.2021"`)
- */
-date?: string[] | null;
-/**
- * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-updatedAt?: string[] | null;
-/**
- * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-createdAt?: string[] | null;
+  /**
+   * Номер страницы
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Список полей требуемых в ответе из модели
+   */
+  selectFields?: ReviewControllerFindManyV14SelectFieldsItem[];
+  /**
+   * Список полей которые не должны быть null или пусты
+   */
+  notNullFields?: ReviewControllerFindManyV14NotNullFieldsItem[];
+  /**
+   * Сортировка по полям из модели
+   */
+  sortField?: ReviewControllerFindManyV14SortFieldItem[];
+  /**
+   * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
+   */
+  sortType?: string[];
+  /**
+   * Поиск по ID отзыва (пример: `"111", "222", "!666"`)
+   */
+  id?: string[] | null;
+  /**
+   * Поиск по ID фильма (пример: `"666", "555", "!666"`)
+   */
+  movieId?: string[] | null;
+  /**
+   * Поиск отзывов по ID автора (пример: `"666", "555", "!666"`)
+   */
+  authorId?: string[] | null;
+  /**
+   * Поиск по имени автора отзыва (пример: `"КиноПоиск", "!КиноПоиск"`)
+   */
+  author?: string[] | null;
+  /**
+   * Поиск по типу отзыва (пример: `"!Негативный", "Нейтральный", "Позитивный"`)
+   */
+  type?: ReviewControllerFindManyV14TypeItem[] | null;
+  /**
+   * Поиск по дате создания отзыва (пример: `"01.01.2021-01.01.2022", "01.01.2021"`)
+   */
+  date?: string[] | null;
+  /**
+   * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  updatedAt?: string[] | null;
+  /**
+   * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  createdAt?: string[] | null;
 };
 
-export type SeasonControllerFindManyV14SortFieldItem = typeof SeasonControllerFindManyV14SortFieldItem[keyof typeof SeasonControllerFindManyV14SortFieldItem];
-
+export type SeasonControllerFindManyV14SortFieldItem =
+  (typeof SeasonControllerFindManyV14SortFieldItem)[keyof typeof SeasonControllerFindManyV14SortFieldItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const SeasonControllerFindManyV14SortFieldItem = {
-  movieId: 'movieId',
-  posterurl: 'poster.url',
-  posterpreviewUrl: 'poster.previewUrl',
-  number: 'number',
-  name: 'name',
-  enName: 'enName',
-  episodesCount: 'episodesCount',
-  airDate: 'airDate',
-  duration: 'duration',
-  description: 'description',
-  enDescription: 'enDescription',
-  episodesnumber: 'episodes.number',
-  episodesname: 'episodes.name',
-  episodesenName: 'episodes.enName',
-  episodesairDate: 'episodes.airDate',
-  episodesdate: 'episodes.date',
-  episodesdescription: 'episodes.description',
-  episodesenDescription: 'episodes.enDescription',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  movieId: "movieId",
+  posterurl: "poster.url",
+  posterpreviewUrl: "poster.previewUrl",
+  number: "number",
+  name: "name",
+  enName: "enName",
+  episodesCount: "episodesCount",
+  airDate: "airDate",
+  duration: "duration",
+  description: "description",
+  enDescription: "enDescription",
+  episodesnumber: "episodes.number",
+  episodesname: "episodes.name",
+  episodesenName: "episodes.enName",
+  episodesairDate: "episodes.airDate",
+  episodesdate: "episodes.date",
+  episodesdescription: "episodes.description",
+  episodesenDescription: "episodes.enDescription",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type SeasonControllerFindManyV14NotNullFieldsItem = typeof SeasonControllerFindManyV14NotNullFieldsItem[keyof typeof SeasonControllerFindManyV14NotNullFieldsItem];
-
+export type SeasonControllerFindManyV14NotNullFieldsItem =
+  (typeof SeasonControllerFindManyV14NotNullFieldsItem)[keyof typeof SeasonControllerFindManyV14NotNullFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const SeasonControllerFindManyV14NotNullFieldsItem = {
-  movieId: 'movieId',
-  posterurl: 'poster.url',
-  posterpreviewUrl: 'poster.previewUrl',
-  number: 'number',
-  name: 'name',
-  enName: 'enName',
-  episodesCount: 'episodesCount',
-  airDate: 'airDate',
-  duration: 'duration',
-  description: 'description',
-  enDescription: 'enDescription',
-  episodesnumber: 'episodes.number',
-  episodesname: 'episodes.name',
-  episodesenName: 'episodes.enName',
-  episodesairDate: 'episodes.airDate',
-  episodesdate: 'episodes.date',
-  episodesdescription: 'episodes.description',
-  episodesenDescription: 'episodes.enDescription',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  movieId: "movieId",
+  posterurl: "poster.url",
+  posterpreviewUrl: "poster.previewUrl",
+  number: "number",
+  name: "name",
+  enName: "enName",
+  episodesCount: "episodesCount",
+  airDate: "airDate",
+  duration: "duration",
+  description: "description",
+  enDescription: "enDescription",
+  episodesnumber: "episodes.number",
+  episodesname: "episodes.name",
+  episodesenName: "episodes.enName",
+  episodesairDate: "episodes.airDate",
+  episodesdate: "episodes.date",
+  episodesdescription: "episodes.description",
+  episodesenDescription: "episodes.enDescription",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type SeasonControllerFindManyV14SelectFieldsItem = typeof SeasonControllerFindManyV14SelectFieldsItem[keyof typeof SeasonControllerFindManyV14SelectFieldsItem];
-
+export type SeasonControllerFindManyV14SelectFieldsItem =
+  (typeof SeasonControllerFindManyV14SelectFieldsItem)[keyof typeof SeasonControllerFindManyV14SelectFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const SeasonControllerFindManyV14SelectFieldsItem = {
-  movieId: 'movieId',
-  poster: 'poster',
-  number: 'number',
-  name: 'name',
-  enName: 'enName',
-  duration: 'duration',
-  description: 'description',
-  enDescription: 'enDescription',
-  episodesCount: 'episodesCount',
-  airDate: 'airDate',
-  episodes: 'episodes',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  movieId: "movieId",
+  poster: "poster",
+  number: "number",
+  name: "name",
+  enName: "enName",
+  duration: "duration",
+  description: "description",
+  enDescription: "enDescription",
+  episodesCount: "episodesCount",
+  airDate: "airDate",
+  episodes: "episodes",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
 export type SeasonControllerFindManyV14Params = {
-/**
- * Номер страницы
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Список полей требуемых в ответе из модели
- */
-selectFields?: SeasonControllerFindManyV14SelectFieldsItem[];
-/**
- * Список полей которые не должны быть null или пусты
- */
-notNullFields?: SeasonControllerFindManyV14NotNullFieldsItem[];
-/**
- * Сортировка по полям из модели
- */
-sortField?: SeasonControllerFindManyV14SortFieldItem[];
-/**
- * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
- */
-sortType?: string[];
-/**
- * Поиск по ID фильма (пример: `"666", "555", "!666"`)
- */
-movieId?: string[] | null;
-/**
- * Поиск по номеру сезона (пример: `"1", "1-19", "!3"`)
- */
-number?: string[] | null;
-/**
- * Поиск по нормеру эпизода (пример: `"1", "1-19", "!3"`)
- */
-'episodes.number'?: string[] | null;
-/**
- * Поиск по дате выхода сезона (пример: `"2020-01-01-2020-12-31", "2020-01-01"`)
- */
-airDate?: string[] | null;
-/**
- * Поиск по дате выхода эпизода (пример: `"2020-01-01-2020-12-31", "2020-01-01"`)
- */
-'episodes.airDate'?: string[] | null;
-/**
- * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-updatedAt?: string[] | null;
-/**
- * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-createdAt?: string[] | null;
+  /**
+   * Номер страницы
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Список полей требуемых в ответе из модели
+   */
+  selectFields?: SeasonControllerFindManyV14SelectFieldsItem[];
+  /**
+   * Список полей которые не должны быть null или пусты
+   */
+  notNullFields?: SeasonControllerFindManyV14NotNullFieldsItem[];
+  /**
+   * Сортировка по полям из модели
+   */
+  sortField?: SeasonControllerFindManyV14SortFieldItem[];
+  /**
+   * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
+   */
+  sortType?: string[];
+  /**
+   * Поиск по ID фильма (пример: `"666", "555", "!666"`)
+   */
+  movieId?: string[] | null;
+  /**
+   * Поиск по номеру сезона (пример: `"1", "1-19", "!3"`)
+   */
+  number?: string[] | null;
+  /**
+   * Поиск по нормеру эпизода (пример: `"1", "1-19", "!3"`)
+   */
+  "episodes.number"?: string[] | null;
+  /**
+   * Поиск по дате выхода сезона (пример: `"2020-01-01-2020-12-31", "2020-01-01"`)
+   */
+  airDate?: string[] | null;
+  /**
+   * Поиск по дате выхода эпизода (пример: `"2020-01-01-2020-12-31", "2020-01-01"`)
+   */
+  "episodes.airDate"?: string[] | null;
+  /**
+   * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  updatedAt?: string[] | null;
+  /**
+   * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  createdAt?: string[] | null;
 };
 
-export type MovieControllerGetPossibleValuesByFieldNameField = typeof MovieControllerGetPossibleValuesByFieldNameField[keyof typeof MovieControllerGetPossibleValuesByFieldNameField] | null;
-
+export type MovieControllerGetPossibleValuesByFieldNameField =
+  | (typeof MovieControllerGetPossibleValuesByFieldNameField)[keyof typeof MovieControllerGetPossibleValuesByFieldNameField]
+  | null;
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerGetPossibleValuesByFieldNameField = {
-  genresname: 'genres.name',
-  countriesname: 'countries.name',
-  type: 'type',
-  typeNumber: 'typeNumber',
-  status: 'status',
+  genresname: "genres.name",
+  countriesname: "countries.name",
+  type: "type",
+  typeNumber: "typeNumber",
+  status: "status",
 } as const;
 
 export type MovieControllerGetPossibleValuesByFieldNameParams = {
-field?: MovieControllerGetPossibleValuesByFieldNameField;
+  field?: MovieControllerGetPossibleValuesByFieldNameField;
 };
 
-export type MovieControllerFindManyAwardsV14SortFieldItem = typeof MovieControllerFindManyAwardsV14SortFieldItem[keyof typeof MovieControllerFindManyAwardsV14SortFieldItem];
-
+export type MovieControllerFindManyAwardsV14SortFieldItem =
+  (typeof MovieControllerFindManyAwardsV14SortFieldItem)[keyof typeof MovieControllerFindManyAwardsV14SortFieldItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerFindManyAwardsV14SortFieldItem = {
-  movieId: 'movieId',
-  winning: 'winning',
-  nominationawardtitle: 'nomination.award.title',
-  nominationawardyear: 'nomination.award.year',
-  nominationtitle: 'nomination.title',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  movieId: "movieId",
+  winning: "winning",
+  nominationawardtitle: "nomination.award.title",
+  nominationawardyear: "nomination.award.year",
+  nominationtitle: "nomination.title",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type MovieControllerFindManyAwardsV14NotNullFieldsItem = typeof MovieControllerFindManyAwardsV14NotNullFieldsItem[keyof typeof MovieControllerFindManyAwardsV14NotNullFieldsItem];
-
+export type MovieControllerFindManyAwardsV14NotNullFieldsItem =
+  (typeof MovieControllerFindManyAwardsV14NotNullFieldsItem)[keyof typeof MovieControllerFindManyAwardsV14NotNullFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerFindManyAwardsV14NotNullFieldsItem = {
-  movieId: 'movieId',
-  winning: 'winning',
-  nominationawardtitle: 'nomination.award.title',
-  nominationawardyear: 'nomination.award.year',
-  nominationtitle: 'nomination.title',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  movieId: "movieId",
+  winning: "winning",
+  nominationawardtitle: "nomination.award.title",
+  nominationawardyear: "nomination.award.year",
+  nominationtitle: "nomination.title",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type MovieControllerFindManyAwardsV14SelectFieldsItem = typeof MovieControllerFindManyAwardsV14SelectFieldsItem[keyof typeof MovieControllerFindManyAwardsV14SelectFieldsItem];
-
+export type MovieControllerFindManyAwardsV14SelectFieldsItem =
+  (typeof MovieControllerFindManyAwardsV14SelectFieldsItem)[keyof typeof MovieControllerFindManyAwardsV14SelectFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerFindManyAwardsV14SelectFieldsItem = {
-  movieId: 'movieId',
-  winning: 'winning',
-  nomination: 'nomination',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  movieId: "movieId",
+  winning: "winning",
+  nomination: "nomination",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
 export type MovieControllerFindManyAwardsV14Params = {
-/**
- * Номер страницы
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Список полей требуемых в ответе из модели
- */
-selectFields?: MovieControllerFindManyAwardsV14SelectFieldsItem[];
-/**
- * Список полей которые не должны быть null или пусты
- */
-notNullFields?: MovieControllerFindManyAwardsV14NotNullFieldsItem[];
-/**
- * Сортировка по полям из модели
- */
-sortField?: MovieControllerFindManyAwardsV14SortFieldItem[];
-/**
- * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
- */
-sortType?: string[];
-/**
- * Поиск по ID фильма (пример: `"666", "555", "!666"`)
- */
-movieId?: string[] | null;
-/**
- * Поиск по номинациям (пример: `"Оскар", "Золотой глобус"`)
- */
-'nomination.title'?: string[] | null;
-/**
- * Поиск по наградам (пример: `"Лучший фильм", "Лучший актер"`)
- */
-'nomination.award.title'?: string[] | null;
-/**
- * Поиск по году награды (пример: `"2019", "2020"`)
- */
-'nomination.award.year'?: string[] | null;
-/**
- * Поиск по победам (пример: `"true", "false"`)
- */
-winning?: string[] | null;
-/**
- * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-updatedAt?: string[] | null;
-/**
- * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-createdAt?: string[] | null;
+  /**
+   * Номер страницы
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Список полей требуемых в ответе из модели
+   */
+  selectFields?: MovieControllerFindManyAwardsV14SelectFieldsItem[];
+  /**
+   * Список полей которые не должны быть null или пусты
+   */
+  notNullFields?: MovieControllerFindManyAwardsV14NotNullFieldsItem[];
+  /**
+   * Сортировка по полям из модели
+   */
+  sortField?: MovieControllerFindManyAwardsV14SortFieldItem[];
+  /**
+   * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
+   */
+  sortType?: string[];
+  /**
+   * Поиск по ID фильма (пример: `"666", "555", "!666"`)
+   */
+  movieId?: string[] | null;
+  /**
+   * Поиск по номинациям (пример: `"Оскар", "Золотой глобус"`)
+   */
+  "nomination.title"?: string[] | null;
+  /**
+   * Поиск по наградам (пример: `"Лучший фильм", "Лучший актер"`)
+   */
+  "nomination.award.title"?: string[] | null;
+  /**
+   * Поиск по году награды (пример: `"2019", "2020"`)
+   */
+  "nomination.award.year"?: string[] | null;
+  /**
+   * Поиск по победам (пример: `"true", "false"`)
+   */
+  winning?: string[] | null;
+  /**
+   * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  updatedAt?: string[] | null;
+  /**
+   * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  createdAt?: string[] | null;
 };
 
-export type MovieControllerGetRandomMovieV14StatusItem = typeof MovieControllerGetRandomMovieV14StatusItem[keyof typeof MovieControllerGetRandomMovieV14StatusItem];
-
+export type MovieControllerGetRandomMovieV14StatusItem =
+  (typeof MovieControllerGetRandomMovieV14StatusItem)[keyof typeof MovieControllerGetRandomMovieV14StatusItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerGetRandomMovieV14StatusItem = {
-  announced: 'announced',
-  completed: 'completed',
-  filming: 'filming',
-  'post-production': 'post-production',
-  'pre-production': 'pre-production',
+  announced: "announced",
+  completed: "completed",
+  filming: "filming",
+  "post-production": "post-production",
+  "pre-production": "pre-production",
 } as const;
 
-export type MovieControllerGetRandomMovieV14TypeItem = typeof MovieControllerGetRandomMovieV14TypeItem[keyof typeof MovieControllerGetRandomMovieV14TypeItem];
-
+export type MovieControllerGetRandomMovieV14TypeItem =
+  (typeof MovieControllerGetRandomMovieV14TypeItem)[keyof typeof MovieControllerGetRandomMovieV14TypeItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerGetRandomMovieV14TypeItem = {
-  movie: 'movie',
-  'tv-series': 'tv-series',
-  cartoon: 'cartoon',
-  'animated-series': 'animated-series',
-  anime: 'anime',
+  movie: "movie",
+  "tv-series": "tv-series",
+  cartoon: "cartoon",
+  "animated-series": "animated-series",
+  anime: "anime",
 } as const;
 
-export type MovieControllerGetRandomMovieV14NotNullFieldsItem = typeof MovieControllerGetRandomMovieV14NotNullFieldsItem[keyof typeof MovieControllerGetRandomMovieV14NotNullFieldsItem];
-
+export type MovieControllerGetRandomMovieV14NotNullFieldsItem =
+  (typeof MovieControllerGetRandomMovieV14NotNullFieldsItem)[keyof typeof MovieControllerGetRandomMovieV14NotNullFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerGetRandomMovieV14NotNullFieldsItem = {
-  id: 'id',
-  externalIdimdb: 'externalId.imdb',
-  externalIdtmdb: 'externalId.tmdb',
-  externalIdkpHD: 'externalId.kpHD',
-  name: 'name',
-  enName: 'enName',
-  alternativeName: 'alternativeName',
-  namesname: 'names.name',
-  description: 'description',
-  shortDescription: 'shortDescription',
-  slogan: 'slogan',
-  type: 'type',
-  typeNumber: 'typeNumber',
-  isSeries: 'isSeries',
-  status: 'status',
-  year: 'year',
-  releaseYearsstart: 'releaseYears.start',
-  releaseYearsend: 'releaseYears.end',
-  ratingkp: 'rating.kp',
-  ratingimdb: 'rating.imdb',
-  ratingtmdb: 'rating.tmdb',
-  ratingfilmCritics: 'rating.filmCritics',
-  ratingrussianFilmCritics: 'rating.russianFilmCritics',
-  ratingawait: 'rating.await',
-  ratingMpaa: 'ratingMpaa',
-  ageRating: 'ageRating',
-  voteskp: 'votes.kp',
-  votesimdb: 'votes.imdb',
-  votestmdb: 'votes.tmdb',
-  votesfilmCritics: 'votes.filmCritics',
-  votesrussianFilmCritics: 'votes.russianFilmCritics',
-  votesawait: 'votes.await',
-  budgetvalue: 'budget.value',
-  budgetcurrency: 'budget.currency',
-  audiencecount: 'audience.count',
-  audiencecountry: 'audience.country',
-  movieLength: 'movieLength',
-  seriesLength: 'seriesLength',
-  totalSeriesLength: 'totalSeriesLength',
-  genresname: 'genres.name',
-  countriesname: 'countries.name',
-  posterurl: 'poster.url',
-  backdropurl: 'backdrop.url',
-  logourl: 'logo.url',
-  ticketsOnSale: 'ticketsOnSale',
-  videostrailersurl: 'videos.trailers.url',
-  videostrailerssite: 'videos.trailers.site',
-  videostrailersname: 'videos.trailers.name',
-  networksitemsname: 'networks.items.name',
-  networksitemslogourl: 'networks.items.logo.url',
-  personsid: 'persons.id',
-  personsname: 'persons.name',
-  personsenName: 'persons.enName',
-  personsphoto: 'persons.photo',
-  personsdescription: 'persons.description',
-  personsprofession: 'persons.profession',
-  personsenProfession: 'persons.enProfession',
-  factstype: 'facts.type',
-  factsvalue: 'facts.value',
-  factsspoiler: 'facts.spoiler',
-  feesworldvalue: 'fees.world.value',
-  feesusavalue: 'fees.usa.value',
-  feesrussiavalue: 'fees.russia.value',
-  premiereworld: 'premiere.world',
-  premiereusa: 'premiere.usa',
-  premiererussia: 'premiere.russia',
-  premieredigital: 'premiere.digital',
-  premieredvd: 'premiere.dvd',
-  premierebluRay: 'premiere.bluRay',
-  premierecinema: 'premiere.cinema',
-  premierecountry: 'premiere.country',
-  similarMoviesid: 'similarMovies.id',
-  similarMoviesname: 'similarMovies.name',
-  similarMoviesenName: 'similarMovies.enName',
-  similarMoviesalternativeName: 'similarMovies.alternativeName',
-  similarMoviesposterurl: 'similarMovies.poster.url',
-  similarMoviesratingkp: 'similarMovies.rating.kp',
-  similarMoviesratingimdb: 'similarMovies.rating.imdb',
-  similarMoviesratingtmdb: 'similarMovies.rating.tmdb',
-  similarMoviesyear: 'similarMovies.year',
-  sequelsAndPrequelsid: 'sequelsAndPrequels.id',
-  sequelsAndPrequelsname: 'sequelsAndPrequels.name',
-  sequelsAndPrequelsenName: 'sequelsAndPrequels.enName',
-  sequelsAndPrequelsalternativeName: 'sequelsAndPrequels.alternativeName',
-  sequelsAndPrequelsposterurl: 'sequelsAndPrequels.poster.url',
-  sequelsAndPrequelsratingkp: 'sequelsAndPrequels.rating.kp',
-  sequelsAndPrequelsratingimdb: 'sequelsAndPrequels.rating.imdb',
-  sequelsAndPrequelsratingtmdb: 'sequelsAndPrequels.rating.tmdb',
-  sequelsAndPrequelsyear: 'sequelsAndPrequels.year',
-  watchabilityitemsname: 'watchability.items.name',
-  watchabilityitemsurl: 'watchability.items.url',
-  watchabilityitemslogourl: 'watchability.items.logo.url',
-  lists: 'lists',
-  top10: 'top10',
-  top250: 'top250',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  externalIdimdb: "externalId.imdb",
+  externalIdtmdb: "externalId.tmdb",
+  externalIdkpHD: "externalId.kpHD",
+  name: "name",
+  enName: "enName",
+  alternativeName: "alternativeName",
+  namesname: "names.name",
+  description: "description",
+  shortDescription: "shortDescription",
+  slogan: "slogan",
+  type: "type",
+  typeNumber: "typeNumber",
+  isSeries: "isSeries",
+  status: "status",
+  year: "year",
+  releaseYearsstart: "releaseYears.start",
+  releaseYearsend: "releaseYears.end",
+  ratingkp: "rating.kp",
+  ratingimdb: "rating.imdb",
+  ratingtmdb: "rating.tmdb",
+  ratingfilmCritics: "rating.filmCritics",
+  ratingrussianFilmCritics: "rating.russianFilmCritics",
+  ratingawait: "rating.await",
+  ratingMpaa: "ratingMpaa",
+  ageRating: "ageRating",
+  voteskp: "votes.kp",
+  votesimdb: "votes.imdb",
+  votestmdb: "votes.tmdb",
+  votesfilmCritics: "votes.filmCritics",
+  votesrussianFilmCritics: "votes.russianFilmCritics",
+  votesawait: "votes.await",
+  budgetvalue: "budget.value",
+  budgetcurrency: "budget.currency",
+  audiencecount: "audience.count",
+  audiencecountry: "audience.country",
+  movieLength: "movieLength",
+  seriesLength: "seriesLength",
+  totalSeriesLength: "totalSeriesLength",
+  genresname: "genres.name",
+  countriesname: "countries.name",
+  posterurl: "poster.url",
+  backdropurl: "backdrop.url",
+  logourl: "logo.url",
+  ticketsOnSale: "ticketsOnSale",
+  videostrailersurl: "videos.trailers.url",
+  videostrailerssite: "videos.trailers.site",
+  videostrailersname: "videos.trailers.name",
+  networksitemsname: "networks.items.name",
+  networksitemslogourl: "networks.items.logo.url",
+  personsid: "persons.id",
+  personsname: "persons.name",
+  personsenName: "persons.enName",
+  personsphoto: "persons.photo",
+  personsdescription: "persons.description",
+  personsprofession: "persons.profession",
+  personsenProfession: "persons.enProfession",
+  factstype: "facts.type",
+  factsvalue: "facts.value",
+  factsspoiler: "facts.spoiler",
+  feesworldvalue: "fees.world.value",
+  feesusavalue: "fees.usa.value",
+  feesrussiavalue: "fees.russia.value",
+  premiereworld: "premiere.world",
+  premiereusa: "premiere.usa",
+  premiererussia: "premiere.russia",
+  premieredigital: "premiere.digital",
+  premieredvd: "premiere.dvd",
+  premierebluRay: "premiere.bluRay",
+  premierecinema: "premiere.cinema",
+  premierecountry: "premiere.country",
+  similarMoviesid: "similarMovies.id",
+  similarMoviesname: "similarMovies.name",
+  similarMoviesenName: "similarMovies.enName",
+  similarMoviesalternativeName: "similarMovies.alternativeName",
+  similarMoviesposterurl: "similarMovies.poster.url",
+  similarMoviesratingkp: "similarMovies.rating.kp",
+  similarMoviesratingimdb: "similarMovies.rating.imdb",
+  similarMoviesratingtmdb: "similarMovies.rating.tmdb",
+  similarMoviesyear: "similarMovies.year",
+  sequelsAndPrequelsid: "sequelsAndPrequels.id",
+  sequelsAndPrequelsname: "sequelsAndPrequels.name",
+  sequelsAndPrequelsenName: "sequelsAndPrequels.enName",
+  sequelsAndPrequelsalternativeName: "sequelsAndPrequels.alternativeName",
+  sequelsAndPrequelsposterurl: "sequelsAndPrequels.poster.url",
+  sequelsAndPrequelsratingkp: "sequelsAndPrequels.rating.kp",
+  sequelsAndPrequelsratingimdb: "sequelsAndPrequels.rating.imdb",
+  sequelsAndPrequelsratingtmdb: "sequelsAndPrequels.rating.tmdb",
+  sequelsAndPrequelsyear: "sequelsAndPrequels.year",
+  watchabilityitemsname: "watchability.items.name",
+  watchabilityitemsurl: "watchability.items.url",
+  watchabilityitemslogourl: "watchability.items.logo.url",
+  lists: "lists",
+  top10: "top10",
+  top250: "top250",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
 export type MovieControllerGetRandomMovieV14Params = {
-/**
- * Список полей которые не должны быть null или пусты
- */
-notNullFields?: MovieControllerGetRandomMovieV14NotNullFieldsItem[];
-/**
- * Поиск по ID KinoPoisk (пример: `"666", "555", "!666"`)
- */
-id?: string[] | null;
-/**
- * Поиск по IMDB ID (пример: `"tt666", "tt555", "!tt666"`)
- */
-'externalId.imdb'?: string[] | null;
-/**
- * Поиск по TMDB ID (пример: `666, 555, !666`)
- */
-'externalId.tmdb'?: number[] | null;
-/**
- * Поиск по id KinoPoisk HD (пример: `"48e8d0acb0f62d8585101798eaeceec5", "!48e8d0acb0f62d8585101798eaeceec5"`)
- */
-'externalId.kpHD'?: string[] | null;
-/**
- * Поиск по типу фильма (пример: `"movie", "tv-series", "!anime"`)
- */
-type?: MovieControllerGetRandomMovieV14TypeItem[] | null;
-/**
- * Поиск по номеру типа фильма (пример: `1, 2, !3`). Список типов: 1 (movie), 2 (tv-series), 3 (cartoon), 4 (anime), 5 (animated-series).
- */
-typeNumber?: string[] | null;
-/**
- * Поиск по индикатору сериала (пример: `true, false`)
- */
-isSeries?: string[] | null;
-/**
- * Поиск по статусу фильма (пример: `"announced", "completed", "!filming"`)
- */
-status?: MovieControllerGetRandomMovieV14StatusItem[] | null;
-/**
- * Поиск по году (пример: `1874, 2050, !2020, 2020-2024`)
- */
-year?: string[] | null;
-/**
- * Поиск по года начала релиза (пример: `1874, 2050, !2020, 2020-2024`)
- */
-'releaseYears.start'?: string[] | null;
-/**
- * Поиск по года окончания релиза (пример: `1874, 2050, !2020, 2020-2024`)
- */
-'releaseYears.end'?: string[] | null;
-/**
- * Поиск по рейтингу Кинопоиск (пример: `7, 10, 7.2-10`)
- */
-'rating.kp'?: string[] | null;
-/**
- * Поиск по рейтингу IMDB (пример: `7, 10, 7.2-10`)
- */
-'rating.imdb'?: string[] | null;
-/**
- * Поиск по рейтингу TMDB (пример: `7, 10, 7.2-10`)
- */
-'rating.tmdb'?: string[] | null;
-/**
- * Поиск по рейтингу MPAA (пример: `"G", "NC-17", "!R"`)
- */
-ratingMpaa?: string[] | null;
-/**
- * Поиск по возрастному рейтингу (пример: `12, !18, 12-18`)
- */
-ageRating?: string[] | null;
-/**
- * Поиск по количеству голосов на KP (пример: `1000-6666666`)
- */
-'votes.kp'?: string[] | null;
-/**
- * Поиск по количеству голосов на IMDB (пример: `1000-6666666`)
- */
-'votes.imdb'?: string[] | null;
-/**
- * Поиск по количеству голосов на TMDB (пример: `1000-6666666`)
- */
-'votes.tmdb'?: string[] | null;
-/**
- * Поиск по количеству голосов кинокритиков (пример: `1000-6666666`)
- */
-'votes.filmCritics'?: string[] | null;
-/**
- * Поиск по количеству голосов кинокритиков из России (пример: `1000-6666666`)
- */
-'votes.russianFilmCritics'?: string[] | null;
-/**
- * Поиск по количеству голосов ожидания на Кинопоиске (пример: `1000-6666666`)
- */
-'votes.await'?: string[] | null;
-/**
- * Поиск по бюджету фильма (пример: `1000-6666666`)
- */
-'budget.value'?: string[] | null;
-/**
- * Поиск по количеству аудитории (пример: `1000-6666666`)
- */
-'audience.count'?: string[] | null;
-/**
- * Поиск по продолжительности фильма (пример: `100-120`)
- */
-movieLength?: string[] | null;
-/**
- * Поиск по всей продолжительности одной серии (пример: `20-60`)
- */
-seriesLength?: string[] | null;
-/**
- * Поиск по всей продолжительности сериала (пример: `100-120`)
- */
-totalSeriesLength?: string[] | null;
-/**
- * Поиск по жанрам (пример: `"драма", "комедия", "!мелодрама", "+ужасы"`)
- */
-'genres.name'?: string[] | null;
-/**
- * Поиск по странам (пример: `"США", "Россия", "!Франция" , "+Великобритания"`)
- */
-'countries.name'?: string[] | null;
-/**
- * Поиск по наличию билетов в продаже (пример: `true, false`)
- */
-ticketsOnSale?: string[] | null;
-/**
- * Поиск по сетям производства фильма (пример: `"HBO", "Netflix", "!Amazon"`)
- */
-'networks.items.name'?: string[] | null;
-/**
- * Поиск по ID персон (пример: `666, 555, !666`)
- */
-'persons.id'?: string[] | null;
-/**
- * Поиск по профессиям персон (пример: `"актер", "режиссер", "!сценарист"`)
- */
-'persons.profession'?: string[] | null;
-/**
- * Поиск по английским профессиям персон (пример: `"actor", "director", "!writer"`)
- */
-'persons.enProfession'?: string[] | null;
-/**
- * Поиск по сборам в мире (пример: `1000-6666666`)
- */
-'fees.world'?: string[] | null;
-/**
- * Поиск по сборам в США (пример: `1000-6666666`)
- */
-'fees.usa'?: string[] | null;
-/**
- * Поиск по сборам в России (пример: `1000-6666666`)
- */
-'fees.russia'?: string[] | null;
-/**
- * Поиск по дате премьеры в мире (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-'premiere.world'?: string[] | null;
-/**
- * Поиск по дате премьеры в США (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-'premiere.usa'?: string[] | null;
-/**
- * Поиск по дате премьеры в России (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-'premiere.russia'?: string[] | null;
-/**
- * Поиск по дате премьеры в стриминговых сервисах (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-'premiere.digital'?: string[] | null;
-/**
- * Поиск по дате премьеры в кинотеатрах (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-'premiere.cinema'?: string[] | null;
-/**
- * Поиск по стране премьеры (пример: `"США", "Россия", "!Франция" , "+Великобритания"`)
- */
-'premiere.country'?: string[] | null;
-/**
- * Поиск по ID KinoPoisk из списка похожих фильмов (пример: `666, 555, !666`)
- */
-'similarMovies.id'?: string[] | null;
-/**
- * Поиск по ID KinoPoisk из списка сиквелов и преквелов (пример: `666, 555, !666`)
- */
-'sequelsAndPrequels.id'?: string[] | null;
-/**
- * Поиск по доуступным платформам для просмотра (пример: `"ivi", "okko", "!megogo"`)
- */
-'watchability.items.name'?: string[] | null;
-/**
- * Поиск по коллекциям из KinoPoisk (пример: `"top250", "top-100-indian-movies", "!top-100-movies"`)
- */
-lists?: string[] | null;
+  /**
+   * Список полей которые не должны быть null или пусты
+   */
+  notNullFields?: MovieControllerGetRandomMovieV14NotNullFieldsItem[];
+  /**
+   * Поиск по ID KinoPoisk (пример: `"666", "555", "!666"`)
+   */
+  id?: string[] | null;
+  /**
+   * Поиск по IMDB ID (пример: `"tt666", "tt555", "!tt666"`)
+   */
+  "externalId.imdb"?: string[] | null;
+  /**
+   * Поиск по TMDB ID (пример: `666, 555, !666`)
+   */
+  "externalId.tmdb"?: number[] | null;
+  /**
+   * Поиск по id KinoPoisk HD (пример: `"48e8d0acb0f62d8585101798eaeceec5", "!48e8d0acb0f62d8585101798eaeceec5"`)
+   */
+  "externalId.kpHD"?: string[] | null;
+  /**
+   * Поиск по типу фильма (пример: `"movie", "tv-series", "!anime"`)
+   */
+  type?: MovieControllerGetRandomMovieV14TypeItem[] | null;
+  /**
+   * Поиск по номеру типа фильма (пример: `1, 2, !3`). Список типов: 1 (movie), 2 (tv-series), 3 (cartoon), 4 (anime), 5 (animated-series).
+   */
+  typeNumber?: string[] | null;
+  /**
+   * Поиск по индикатору сериала (пример: `true, false`)
+   */
+  isSeries?: string[] | null;
+  /**
+   * Поиск по статусу фильма (пример: `"announced", "completed", "!filming"`)
+   */
+  status?: MovieControllerGetRandomMovieV14StatusItem[] | null;
+  /**
+   * Поиск по году (пример: `1874, 2050, !2020, 2020-2024`)
+   */
+  year?: string[] | null;
+  /**
+   * Поиск по года начала релиза (пример: `1874, 2050, !2020, 2020-2024`)
+   */
+  "releaseYears.start"?: string[] | null;
+  /**
+   * Поиск по года окончания релиза (пример: `1874, 2050, !2020, 2020-2024`)
+   */
+  "releaseYears.end"?: string[] | null;
+  /**
+   * Поиск по рейтингу Кинопоиск (пример: `7, 10, 7.2-10`)
+   */
+  "rating.kp"?: string[] | null;
+  /**
+   * Поиск по рейтингу IMDB (пример: `7, 10, 7.2-10`)
+   */
+  "rating.imdb"?: string[] | null;
+  /**
+   * Поиск по рейтингу TMDB (пример: `7, 10, 7.2-10`)
+   */
+  "rating.tmdb"?: string[] | null;
+  /**
+   * Поиск по рейтингу MPAA (пример: `"G", "NC-17", "!R"`)
+   */
+  ratingMpaa?: string[] | null;
+  /**
+   * Поиск по возрастному рейтингу (пример: `12, !18, 12-18`)
+   */
+  ageRating?: string[] | null;
+  /**
+   * Поиск по количеству голосов на KP (пример: `1000-6666666`)
+   */
+  "votes.kp"?: string[] | null;
+  /**
+   * Поиск по количеству голосов на IMDB (пример: `1000-6666666`)
+   */
+  "votes.imdb"?: string[] | null;
+  /**
+   * Поиск по количеству голосов на TMDB (пример: `1000-6666666`)
+   */
+  "votes.tmdb"?: string[] | null;
+  /**
+   * Поиск по количеству голосов кинокритиков (пример: `1000-6666666`)
+   */
+  "votes.filmCritics"?: string[] | null;
+  /**
+   * Поиск по количеству голосов кинокритиков из России (пример: `1000-6666666`)
+   */
+  "votes.russianFilmCritics"?: string[] | null;
+  /**
+   * Поиск по количеству голосов ожидания на Кинопоиске (пример: `1000-6666666`)
+   */
+  "votes.await"?: string[] | null;
+  /**
+   * Поиск по бюджету фильма (пример: `1000-6666666`)
+   */
+  "budget.value"?: string[] | null;
+  /**
+   * Поиск по количеству аудитории (пример: `1000-6666666`)
+   */
+  "audience.count"?: string[] | null;
+  /**
+   * Поиск по продолжительности фильма (пример: `100-120`)
+   */
+  movieLength?: string[] | null;
+  /**
+   * Поиск по всей продолжительности одной серии (пример: `20-60`)
+   */
+  seriesLength?: string[] | null;
+  /**
+   * Поиск по всей продолжительности сериала (пример: `100-120`)
+   */
+  totalSeriesLength?: string[] | null;
+  /**
+   * Поиск по жанрам (пример: `"драма", "комедия", "!мелодрама", "+ужасы"`)
+   */
+  "genres.name"?: string[] | null;
+  /**
+   * Поиск по странам (пример: `"США", "Россия", "!Франция" , "+Великобритания"`)
+   */
+  "countries.name"?: string[] | null;
+  /**
+   * Поиск по наличию билетов в продаже (пример: `true, false`)
+   */
+  ticketsOnSale?: string[] | null;
+  /**
+   * Поиск по сетям производства фильма (пример: `"HBO", "Netflix", "!Amazon"`)
+   */
+  "networks.items.name"?: string[] | null;
+  /**
+   * Поиск по ID персон (пример: `666, 555, !666`)
+   */
+  "persons.id"?: string[] | null;
+  /**
+   * Поиск по профессиям персон (пример: `"актер", "режиссер", "!сценарист"`)
+   */
+  "persons.profession"?: string[] | null;
+  /**
+   * Поиск по английским профессиям персон (пример: `"actor", "director", "!writer"`)
+   */
+  "persons.enProfession"?: string[] | null;
+  /**
+   * Поиск по сборам в мире (пример: `1000-6666666`)
+   */
+  "fees.world"?: string[] | null;
+  /**
+   * Поиск по сборам в США (пример: `1000-6666666`)
+   */
+  "fees.usa"?: string[] | null;
+  /**
+   * Поиск по сборам в России (пример: `1000-6666666`)
+   */
+  "fees.russia"?: string[] | null;
+  /**
+   * Поиск по дате премьеры в мире (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  "premiere.world"?: string[] | null;
+  /**
+   * Поиск по дате премьеры в США (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  "premiere.usa"?: string[] | null;
+  /**
+   * Поиск по дате премьеры в России (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  "premiere.russia"?: string[] | null;
+  /**
+   * Поиск по дате премьеры в стриминговых сервисах (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  "premiere.digital"?: string[] | null;
+  /**
+   * Поиск по дате премьеры в кинотеатрах (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  "premiere.cinema"?: string[] | null;
+  /**
+   * Поиск по стране премьеры (пример: `"США", "Россия", "!Франция" , "+Великобритания"`)
+   */
+  "premiere.country"?: string[] | null;
+  /**
+   * Поиск по ID KinoPoisk из списка похожих фильмов (пример: `666, 555, !666`)
+   */
+  "similarMovies.id"?: string[] | null;
+  /**
+   * Поиск по ID KinoPoisk из списка сиквелов и преквелов (пример: `666, 555, !666`)
+   */
+  "sequelsAndPrequels.id"?: string[] | null;
+  /**
+   * Поиск по доуступным платформам для просмотра (пример: `"ivi", "okko", "!megogo"`)
+   */
+  "watchability.items.name"?: string[] | null;
+  /**
+   * Поиск по коллекциям из KinoPoisk (пример: `"top250", "top-100-indian-movies", "!top-100-movies"`)
+   */
+  lists?: string[] | null;
 };
 
 export type MovieControllerSearchMovieV14Params = {
-/**
- * Страница выборки
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Поисковый запрос
- */
-query: string;
+  /**
+   * Страница выборки
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Поисковый запрос
+   */
+  query: string;
 };
 
-export type MovieControllerFindManyByQueryV14StatusItem = typeof MovieControllerFindManyByQueryV14StatusItem[keyof typeof MovieControllerFindManyByQueryV14StatusItem];
-
+export type MovieControllerFindManyByQueryV14StatusItem =
+  (typeof MovieControllerFindManyByQueryV14StatusItem)[keyof typeof MovieControllerFindManyByQueryV14StatusItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerFindManyByQueryV14StatusItem = {
-  announced: 'announced',
-  completed: 'completed',
-  filming: 'filming',
-  'post-production': 'post-production',
-  'pre-production': 'pre-production',
+  announced: "announced",
+  completed: "completed",
+  filming: "filming",
+  "post-production": "post-production",
+  "pre-production": "pre-production",
 } as const;
 
-export type MovieControllerFindManyByQueryV14TypeItem = typeof MovieControllerFindManyByQueryV14TypeItem[keyof typeof MovieControllerFindManyByQueryV14TypeItem];
-
+export type MovieControllerFindManyByQueryV14TypeItem =
+  (typeof MovieControllerFindManyByQueryV14TypeItem)[keyof typeof MovieControllerFindManyByQueryV14TypeItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerFindManyByQueryV14TypeItem = {
-  movie: 'movie',
-  'tv-series': 'tv-series',
-  cartoon: 'cartoon',
-  'animated-series': 'animated-series',
-  anime: 'anime',
+  movie: "movie",
+  "tv-series": "tv-series",
+  cartoon: "cartoon",
+  "animated-series": "animated-series",
+  anime: "anime",
 } as const;
 
-export type MovieControllerFindManyByQueryV14SortFieldItem = typeof MovieControllerFindManyByQueryV14SortFieldItem[keyof typeof MovieControllerFindManyByQueryV14SortFieldItem];
-
+export type MovieControllerFindManyByQueryV14SortFieldItem =
+  (typeof MovieControllerFindManyByQueryV14SortFieldItem)[keyof typeof MovieControllerFindManyByQueryV14SortFieldItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerFindManyByQueryV14SortFieldItem = {
-  id: 'id',
-  externalIdimdb: 'externalId.imdb',
-  externalIdtmdb: 'externalId.tmdb',
-  externalIdkpHD: 'externalId.kpHD',
-  name: 'name',
-  enName: 'enName',
-  alternativeName: 'alternativeName',
-  namesname: 'names.name',
-  description: 'description',
-  shortDescription: 'shortDescription',
-  slogan: 'slogan',
-  type: 'type',
-  typeNumber: 'typeNumber',
-  isSeries: 'isSeries',
-  status: 'status',
-  year: 'year',
-  releaseYearsstart: 'releaseYears.start',
-  releaseYearsend: 'releaseYears.end',
-  ratingkp: 'rating.kp',
-  ratingimdb: 'rating.imdb',
-  ratingtmdb: 'rating.tmdb',
-  ratingfilmCritics: 'rating.filmCritics',
-  ratingrussianFilmCritics: 'rating.russianFilmCritics',
-  ratingawait: 'rating.await',
-  ratingMpaa: 'ratingMpaa',
-  ageRating: 'ageRating',
-  voteskp: 'votes.kp',
-  votesimdb: 'votes.imdb',
-  votestmdb: 'votes.tmdb',
-  votesfilmCritics: 'votes.filmCritics',
-  votesrussianFilmCritics: 'votes.russianFilmCritics',
-  votesawait: 'votes.await',
-  budgetvalue: 'budget.value',
-  budgetcurrency: 'budget.currency',
-  audiencecount: 'audience.count',
-  audiencecountry: 'audience.country',
-  movieLength: 'movieLength',
-  seriesLength: 'seriesLength',
-  totalSeriesLength: 'totalSeriesLength',
-  genresname: 'genres.name',
-  countriesname: 'countries.name',
-  posterurl: 'poster.url',
-  backdropurl: 'backdrop.url',
-  logourl: 'logo.url',
-  ticketsOnSale: 'ticketsOnSale',
-  videostrailersurl: 'videos.trailers.url',
-  videostrailerssite: 'videos.trailers.site',
-  videostrailersname: 'videos.trailers.name',
-  networksitemsname: 'networks.items.name',
-  networksitemslogourl: 'networks.items.logo.url',
-  personsid: 'persons.id',
-  personsname: 'persons.name',
-  personsenName: 'persons.enName',
-  personsphoto: 'persons.photo',
-  personsdescription: 'persons.description',
-  personsprofession: 'persons.profession',
-  personsenProfession: 'persons.enProfession',
-  factstype: 'facts.type',
-  factsvalue: 'facts.value',
-  factsspoiler: 'facts.spoiler',
-  feesworldvalue: 'fees.world.value',
-  feesusavalue: 'fees.usa.value',
-  feesrussiavalue: 'fees.russia.value',
-  premiereworld: 'premiere.world',
-  premiereusa: 'premiere.usa',
-  premiererussia: 'premiere.russia',
-  premieredigital: 'premiere.digital',
-  premieredvd: 'premiere.dvd',
-  premierebluRay: 'premiere.bluRay',
-  premierecinema: 'premiere.cinema',
-  premierecountry: 'premiere.country',
-  similarMoviesid: 'similarMovies.id',
-  similarMoviesname: 'similarMovies.name',
-  similarMoviesenName: 'similarMovies.enName',
-  similarMoviesalternativeName: 'similarMovies.alternativeName',
-  similarMoviesposterurl: 'similarMovies.poster.url',
-  similarMoviesratingkp: 'similarMovies.rating.kp',
-  similarMoviesratingimdb: 'similarMovies.rating.imdb',
-  similarMoviesratingtmdb: 'similarMovies.rating.tmdb',
-  similarMoviesyear: 'similarMovies.year',
-  sequelsAndPrequelsid: 'sequelsAndPrequels.id',
-  sequelsAndPrequelsname: 'sequelsAndPrequels.name',
-  sequelsAndPrequelsenName: 'sequelsAndPrequels.enName',
-  sequelsAndPrequelsalternativeName: 'sequelsAndPrequels.alternativeName',
-  sequelsAndPrequelsposterurl: 'sequelsAndPrequels.poster.url',
-  sequelsAndPrequelsratingkp: 'sequelsAndPrequels.rating.kp',
-  sequelsAndPrequelsratingimdb: 'sequelsAndPrequels.rating.imdb',
-  sequelsAndPrequelsratingtmdb: 'sequelsAndPrequels.rating.tmdb',
-  sequelsAndPrequelsyear: 'sequelsAndPrequels.year',
-  watchabilityitemsname: 'watchability.items.name',
-  watchabilityitemsurl: 'watchability.items.url',
-  watchabilityitemslogourl: 'watchability.items.logo.url',
-  lists: 'lists',
-  top10: 'top10',
-  top250: 'top250',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  externalIdimdb: "externalId.imdb",
+  externalIdtmdb: "externalId.tmdb",
+  externalIdkpHD: "externalId.kpHD",
+  name: "name",
+  enName: "enName",
+  alternativeName: "alternativeName",
+  namesname: "names.name",
+  description: "description",
+  shortDescription: "shortDescription",
+  slogan: "slogan",
+  type: "type",
+  typeNumber: "typeNumber",
+  isSeries: "isSeries",
+  status: "status",
+  year: "year",
+  releaseYearsstart: "releaseYears.start",
+  releaseYearsend: "releaseYears.end",
+  ratingkp: "rating.kp",
+  ratingimdb: "rating.imdb",
+  ratingtmdb: "rating.tmdb",
+  ratingfilmCritics: "rating.filmCritics",
+  ratingrussianFilmCritics: "rating.russianFilmCritics",
+  ratingawait: "rating.await",
+  ratingMpaa: "ratingMpaa",
+  ageRating: "ageRating",
+  voteskp: "votes.kp",
+  votesimdb: "votes.imdb",
+  votestmdb: "votes.tmdb",
+  votesfilmCritics: "votes.filmCritics",
+  votesrussianFilmCritics: "votes.russianFilmCritics",
+  votesawait: "votes.await",
+  budgetvalue: "budget.value",
+  budgetcurrency: "budget.currency",
+  audiencecount: "audience.count",
+  audiencecountry: "audience.country",
+  movieLength: "movieLength",
+  seriesLength: "seriesLength",
+  totalSeriesLength: "totalSeriesLength",
+  genresname: "genres.name",
+  countriesname: "countries.name",
+  posterurl: "poster.url",
+  backdropurl: "backdrop.url",
+  logourl: "logo.url",
+  ticketsOnSale: "ticketsOnSale",
+  videostrailersurl: "videos.trailers.url",
+  videostrailerssite: "videos.trailers.site",
+  videostrailersname: "videos.trailers.name",
+  networksitemsname: "networks.items.name",
+  networksitemslogourl: "networks.items.logo.url",
+  personsid: "persons.id",
+  personsname: "persons.name",
+  personsenName: "persons.enName",
+  personsphoto: "persons.photo",
+  personsdescription: "persons.description",
+  personsprofession: "persons.profession",
+  personsenProfession: "persons.enProfession",
+  factstype: "facts.type",
+  factsvalue: "facts.value",
+  factsspoiler: "facts.spoiler",
+  feesworldvalue: "fees.world.value",
+  feesusavalue: "fees.usa.value",
+  feesrussiavalue: "fees.russia.value",
+  premiereworld: "premiere.world",
+  premiereusa: "premiere.usa",
+  premiererussia: "premiere.russia",
+  premieredigital: "premiere.digital",
+  premieredvd: "premiere.dvd",
+  premierebluRay: "premiere.bluRay",
+  premierecinema: "premiere.cinema",
+  premierecountry: "premiere.country",
+  similarMoviesid: "similarMovies.id",
+  similarMoviesname: "similarMovies.name",
+  similarMoviesenName: "similarMovies.enName",
+  similarMoviesalternativeName: "similarMovies.alternativeName",
+  similarMoviesposterurl: "similarMovies.poster.url",
+  similarMoviesratingkp: "similarMovies.rating.kp",
+  similarMoviesratingimdb: "similarMovies.rating.imdb",
+  similarMoviesratingtmdb: "similarMovies.rating.tmdb",
+  similarMoviesyear: "similarMovies.year",
+  sequelsAndPrequelsid: "sequelsAndPrequels.id",
+  sequelsAndPrequelsname: "sequelsAndPrequels.name",
+  sequelsAndPrequelsenName: "sequelsAndPrequels.enName",
+  sequelsAndPrequelsalternativeName: "sequelsAndPrequels.alternativeName",
+  sequelsAndPrequelsposterurl: "sequelsAndPrequels.poster.url",
+  sequelsAndPrequelsratingkp: "sequelsAndPrequels.rating.kp",
+  sequelsAndPrequelsratingimdb: "sequelsAndPrequels.rating.imdb",
+  sequelsAndPrequelsratingtmdb: "sequelsAndPrequels.rating.tmdb",
+  sequelsAndPrequelsyear: "sequelsAndPrequels.year",
+  watchabilityitemsname: "watchability.items.name",
+  watchabilityitemsurl: "watchability.items.url",
+  watchabilityitemslogourl: "watchability.items.logo.url",
+  lists: "lists",
+  top10: "top10",
+  top250: "top250",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type MovieControllerFindManyByQueryV14NotNullFieldsItem = typeof MovieControllerFindManyByQueryV14NotNullFieldsItem[keyof typeof MovieControllerFindManyByQueryV14NotNullFieldsItem];
-
+export type MovieControllerFindManyByQueryV14NotNullFieldsItem =
+  (typeof MovieControllerFindManyByQueryV14NotNullFieldsItem)[keyof typeof MovieControllerFindManyByQueryV14NotNullFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerFindManyByQueryV14NotNullFieldsItem = {
-  id: 'id',
-  externalIdimdb: 'externalId.imdb',
-  externalIdtmdb: 'externalId.tmdb',
-  externalIdkpHD: 'externalId.kpHD',
-  name: 'name',
-  enName: 'enName',
-  alternativeName: 'alternativeName',
-  namesname: 'names.name',
-  description: 'description',
-  shortDescription: 'shortDescription',
-  slogan: 'slogan',
-  type: 'type',
-  typeNumber: 'typeNumber',
-  isSeries: 'isSeries',
-  status: 'status',
-  year: 'year',
-  releaseYearsstart: 'releaseYears.start',
-  releaseYearsend: 'releaseYears.end',
-  ratingkp: 'rating.kp',
-  ratingimdb: 'rating.imdb',
-  ratingtmdb: 'rating.tmdb',
-  ratingfilmCritics: 'rating.filmCritics',
-  ratingrussianFilmCritics: 'rating.russianFilmCritics',
-  ratingawait: 'rating.await',
-  ratingMpaa: 'ratingMpaa',
-  ageRating: 'ageRating',
-  voteskp: 'votes.kp',
-  votesimdb: 'votes.imdb',
-  votestmdb: 'votes.tmdb',
-  votesfilmCritics: 'votes.filmCritics',
-  votesrussianFilmCritics: 'votes.russianFilmCritics',
-  votesawait: 'votes.await',
-  budgetvalue: 'budget.value',
-  budgetcurrency: 'budget.currency',
-  audiencecount: 'audience.count',
-  audiencecountry: 'audience.country',
-  movieLength: 'movieLength',
-  seriesLength: 'seriesLength',
-  totalSeriesLength: 'totalSeriesLength',
-  genresname: 'genres.name',
-  countriesname: 'countries.name',
-  posterurl: 'poster.url',
-  backdropurl: 'backdrop.url',
-  logourl: 'logo.url',
-  ticketsOnSale: 'ticketsOnSale',
-  videostrailersurl: 'videos.trailers.url',
-  videostrailerssite: 'videos.trailers.site',
-  videostrailersname: 'videos.trailers.name',
-  networksitemsname: 'networks.items.name',
-  networksitemslogourl: 'networks.items.logo.url',
-  personsid: 'persons.id',
-  personsname: 'persons.name',
-  personsenName: 'persons.enName',
-  personsphoto: 'persons.photo',
-  personsdescription: 'persons.description',
-  personsprofession: 'persons.profession',
-  personsenProfession: 'persons.enProfession',
-  factstype: 'facts.type',
-  factsvalue: 'facts.value',
-  factsspoiler: 'facts.spoiler',
-  feesworldvalue: 'fees.world.value',
-  feesusavalue: 'fees.usa.value',
-  feesrussiavalue: 'fees.russia.value',
-  premiereworld: 'premiere.world',
-  premiereusa: 'premiere.usa',
-  premiererussia: 'premiere.russia',
-  premieredigital: 'premiere.digital',
-  premieredvd: 'premiere.dvd',
-  premierebluRay: 'premiere.bluRay',
-  premierecinema: 'premiere.cinema',
-  premierecountry: 'premiere.country',
-  similarMoviesid: 'similarMovies.id',
-  similarMoviesname: 'similarMovies.name',
-  similarMoviesenName: 'similarMovies.enName',
-  similarMoviesalternativeName: 'similarMovies.alternativeName',
-  similarMoviesposterurl: 'similarMovies.poster.url',
-  similarMoviesratingkp: 'similarMovies.rating.kp',
-  similarMoviesratingimdb: 'similarMovies.rating.imdb',
-  similarMoviesratingtmdb: 'similarMovies.rating.tmdb',
-  similarMoviesyear: 'similarMovies.year',
-  sequelsAndPrequelsid: 'sequelsAndPrequels.id',
-  sequelsAndPrequelsname: 'sequelsAndPrequels.name',
-  sequelsAndPrequelsenName: 'sequelsAndPrequels.enName',
-  sequelsAndPrequelsalternativeName: 'sequelsAndPrequels.alternativeName',
-  sequelsAndPrequelsposterurl: 'sequelsAndPrequels.poster.url',
-  sequelsAndPrequelsratingkp: 'sequelsAndPrequels.rating.kp',
-  sequelsAndPrequelsratingimdb: 'sequelsAndPrequels.rating.imdb',
-  sequelsAndPrequelsratingtmdb: 'sequelsAndPrequels.rating.tmdb',
-  sequelsAndPrequelsyear: 'sequelsAndPrequels.year',
-  watchabilityitemsname: 'watchability.items.name',
-  watchabilityitemsurl: 'watchability.items.url',
-  watchabilityitemslogourl: 'watchability.items.logo.url',
-  lists: 'lists',
-  top10: 'top10',
-  top250: 'top250',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  externalIdimdb: "externalId.imdb",
+  externalIdtmdb: "externalId.tmdb",
+  externalIdkpHD: "externalId.kpHD",
+  name: "name",
+  enName: "enName",
+  alternativeName: "alternativeName",
+  namesname: "names.name",
+  description: "description",
+  shortDescription: "shortDescription",
+  slogan: "slogan",
+  type: "type",
+  typeNumber: "typeNumber",
+  isSeries: "isSeries",
+  status: "status",
+  year: "year",
+  releaseYearsstart: "releaseYears.start",
+  releaseYearsend: "releaseYears.end",
+  ratingkp: "rating.kp",
+  ratingimdb: "rating.imdb",
+  ratingtmdb: "rating.tmdb",
+  ratingfilmCritics: "rating.filmCritics",
+  ratingrussianFilmCritics: "rating.russianFilmCritics",
+  ratingawait: "rating.await",
+  ratingMpaa: "ratingMpaa",
+  ageRating: "ageRating",
+  voteskp: "votes.kp",
+  votesimdb: "votes.imdb",
+  votestmdb: "votes.tmdb",
+  votesfilmCritics: "votes.filmCritics",
+  votesrussianFilmCritics: "votes.russianFilmCritics",
+  votesawait: "votes.await",
+  budgetvalue: "budget.value",
+  budgetcurrency: "budget.currency",
+  audiencecount: "audience.count",
+  audiencecountry: "audience.country",
+  movieLength: "movieLength",
+  seriesLength: "seriesLength",
+  totalSeriesLength: "totalSeriesLength",
+  genresname: "genres.name",
+  countriesname: "countries.name",
+  posterurl: "poster.url",
+  backdropurl: "backdrop.url",
+  logourl: "logo.url",
+  ticketsOnSale: "ticketsOnSale",
+  videostrailersurl: "videos.trailers.url",
+  videostrailerssite: "videos.trailers.site",
+  videostrailersname: "videos.trailers.name",
+  networksitemsname: "networks.items.name",
+  networksitemslogourl: "networks.items.logo.url",
+  personsid: "persons.id",
+  personsname: "persons.name",
+  personsenName: "persons.enName",
+  personsphoto: "persons.photo",
+  personsdescription: "persons.description",
+  personsprofession: "persons.profession",
+  personsenProfession: "persons.enProfession",
+  factstype: "facts.type",
+  factsvalue: "facts.value",
+  factsspoiler: "facts.spoiler",
+  feesworldvalue: "fees.world.value",
+  feesusavalue: "fees.usa.value",
+  feesrussiavalue: "fees.russia.value",
+  premiereworld: "premiere.world",
+  premiereusa: "premiere.usa",
+  premiererussia: "premiere.russia",
+  premieredigital: "premiere.digital",
+  premieredvd: "premiere.dvd",
+  premierebluRay: "premiere.bluRay",
+  premierecinema: "premiere.cinema",
+  premierecountry: "premiere.country",
+  similarMoviesid: "similarMovies.id",
+  similarMoviesname: "similarMovies.name",
+  similarMoviesenName: "similarMovies.enName",
+  similarMoviesalternativeName: "similarMovies.alternativeName",
+  similarMoviesposterurl: "similarMovies.poster.url",
+  similarMoviesratingkp: "similarMovies.rating.kp",
+  similarMoviesratingimdb: "similarMovies.rating.imdb",
+  similarMoviesratingtmdb: "similarMovies.rating.tmdb",
+  similarMoviesyear: "similarMovies.year",
+  sequelsAndPrequelsid: "sequelsAndPrequels.id",
+  sequelsAndPrequelsname: "sequelsAndPrequels.name",
+  sequelsAndPrequelsenName: "sequelsAndPrequels.enName",
+  sequelsAndPrequelsalternativeName: "sequelsAndPrequels.alternativeName",
+  sequelsAndPrequelsposterurl: "sequelsAndPrequels.poster.url",
+  sequelsAndPrequelsratingkp: "sequelsAndPrequels.rating.kp",
+  sequelsAndPrequelsratingimdb: "sequelsAndPrequels.rating.imdb",
+  sequelsAndPrequelsratingtmdb: "sequelsAndPrequels.rating.tmdb",
+  sequelsAndPrequelsyear: "sequelsAndPrequels.year",
+  watchabilityitemsname: "watchability.items.name",
+  watchabilityitemsurl: "watchability.items.url",
+  watchabilityitemslogourl: "watchability.items.logo.url",
+  lists: "lists",
+  top10: "top10",
+  top250: "top250",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
-export type MovieControllerFindManyByQueryV14SelectFieldsItem = typeof MovieControllerFindManyByQueryV14SelectFieldsItem[keyof typeof MovieControllerFindManyByQueryV14SelectFieldsItem];
-
+export type MovieControllerFindManyByQueryV14SelectFieldsItem =
+  (typeof MovieControllerFindManyByQueryV14SelectFieldsItem)[keyof typeof MovieControllerFindManyByQueryV14SelectFieldsItem];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const MovieControllerFindManyByQueryV14SelectFieldsItem = {
-  id: 'id',
-  externalId: 'externalId',
-  name: 'name',
-  enName: 'enName',
-  alternativeName: 'alternativeName',
-  names: 'names',
-  description: 'description',
-  shortDescription: 'shortDescription',
-  slogan: 'slogan',
-  type: 'type',
-  typeNumber: 'typeNumber',
-  isSeries: 'isSeries',
-  status: 'status',
-  year: 'year',
-  releaseYears: 'releaseYears',
-  rating: 'rating',
-  ratingMpaa: 'ratingMpaa',
-  ageRating: 'ageRating',
-  votes: 'votes',
-  seasonsInfo: 'seasonsInfo',
-  budget: 'budget',
-  audience: 'audience',
-  movieLength: 'movieLength',
-  seriesLength: 'seriesLength',
-  totalSeriesLength: 'totalSeriesLength',
-  genres: 'genres',
-  countries: 'countries',
-  poster: 'poster',
-  backdrop: 'backdrop',
-  logo: 'logo',
-  ticketsOnSale: 'ticketsOnSale',
-  videos: 'videos',
-  networks: 'networks',
-  persons: 'persons',
-  facts: 'facts',
-  fees: 'fees',
-  premiere: 'premiere',
-  similarMovies: 'similarMovies',
-  sequelsAndPrequels: 'sequelsAndPrequels',
-  watchability: 'watchability',
-  lists: 'lists',
-  top10: 'top10',
-  top250: 'top250',
-  updatedAt: 'updatedAt',
-  createdAt: 'createdAt',
+  id: "id",
+  externalId: "externalId",
+  name: "name",
+  enName: "enName",
+  alternativeName: "alternativeName",
+  names: "names",
+  description: "description",
+  shortDescription: "shortDescription",
+  slogan: "slogan",
+  type: "type",
+  typeNumber: "typeNumber",
+  isSeries: "isSeries",
+  status: "status",
+  year: "year",
+  releaseYears: "releaseYears",
+  rating: "rating",
+  ratingMpaa: "ratingMpaa",
+  ageRating: "ageRating",
+  votes: "votes",
+  seasonsInfo: "seasonsInfo",
+  budget: "budget",
+  audience: "audience",
+  movieLength: "movieLength",
+  seriesLength: "seriesLength",
+  totalSeriesLength: "totalSeriesLength",
+  genres: "genres",
+  countries: "countries",
+  poster: "poster",
+  backdrop: "backdrop",
+  logo: "logo",
+  ticketsOnSale: "ticketsOnSale",
+  videos: "videos",
+  networks: "networks",
+  persons: "persons",
+  facts: "facts",
+  fees: "fees",
+  premiere: "premiere",
+  similarMovies: "similarMovies",
+  sequelsAndPrequels: "sequelsAndPrequels",
+  watchability: "watchability",
+  lists: "lists",
+  top10: "top10",
+  top250: "top250",
+  updatedAt: "updatedAt",
+  createdAt: "createdAt",
 } as const;
 
 export type MovieControllerFindManyByQueryV14Params = {
-/**
- * Номер страницы
- */
-page?: number;
-/**
- * Количество элементов на странице
- */
-limit?: number;
-/**
- * Список полей требуемых в ответе из модели
- */
-selectFields?: MovieControllerFindManyByQueryV14SelectFieldsItem[];
-/**
- * Список полей которые не должны быть null или пусты
- */
-notNullFields?: MovieControllerFindManyByQueryV14NotNullFieldsItem[];
-/**
- * Сортировка по полям из модели
- */
-sortField?: MovieControllerFindManyByQueryV14SortFieldItem[];
-/**
- * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
- */
-sortType?: string[];
-/**
- * Поиск по ID KinoPoisk (пример: `"666", "555", "!666"`)
- */
-id?: string[] | null;
-/**
- * Поиск по IMDB ID (пример: `"tt666", "tt555", "!tt666"`)
- */
-'externalId.imdb'?: string[] | null;
-/**
- * Поиск по TMDB ID (пример: `666, 555, !666`)
- */
-'externalId.tmdb'?: number[] | null;
-/**
- * Поиск по id KinoPoisk HD (пример: `"48e8d0acb0f62d8585101798eaeceec5", "!48e8d0acb0f62d8585101798eaeceec5"`)
- */
-'externalId.kpHD'?: string[] | null;
-/**
- * Поиск по типу фильма (пример: `"movie", "tv-series", "!anime"`)
- */
-type?: MovieControllerFindManyByQueryV14TypeItem[] | null;
-/**
- * Поиск по номеру типа фильма (пример: `1, 2, !3`). Список типов: 1 (movie), 2 (tv-series), 3 (cartoon), 4 (anime), 5 (animated-series).
- */
-typeNumber?: string[] | null;
-/**
- * Поиск по индикатору сериала (пример: `true, false`)
- */
-isSeries?: string[] | null;
-/**
- * Поиск по статусу фильма (пример: `"announced", "completed", "!filming"`)
- */
-status?: MovieControllerFindManyByQueryV14StatusItem[] | null;
-/**
- * Поиск по году (пример: `1874, 2050, !2020, 2020-2024`)
- */
-year?: string[] | null;
-/**
- * Поиск по года начала релиза (пример: `1874, 2050, !2020, 2020-2024`)
- */
-'releaseYears.start'?: string[] | null;
-/**
- * Поиск по года окончания релиза (пример: `1874, 2050, !2020, 2020-2024`)
- */
-'releaseYears.end'?: string[] | null;
-/**
- * Поиск по рейтингу Кинопоиск (пример: `7, 10, 7.2-10`)
- */
-'rating.kp'?: string[] | null;
-/**
- * Поиск по рейтингу IMDB (пример: `7, 10, 7.2-10`)
- */
-'rating.imdb'?: string[] | null;
-/**
- * Поиск по рейтингу TMDB (пример: `7, 10, 7.2-10`)
- */
-'rating.tmdb'?: string[] | null;
-/**
- * Поиск по рейтингу MPAA (пример: `"G", "NC-17", "!R"`)
- */
-ratingMpaa?: string[] | null;
-/**
- * Поиск по возрастному рейтингу (пример: `12, !18, 12-18`)
- */
-ageRating?: string[] | null;
-/**
- * Поиск по количеству голосов на KP (пример: `1000-6666666`)
- */
-'votes.kp'?: string[] | null;
-/**
- * Поиск по количеству голосов на IMDB (пример: `1000-6666666`)
- */
-'votes.imdb'?: string[] | null;
-/**
- * Поиск по количеству голосов на TMDB (пример: `1000-6666666`)
- */
-'votes.tmdb'?: string[] | null;
-/**
- * Поиск по количеству голосов кинокритиков (пример: `1000-6666666`)
- */
-'votes.filmCritics'?: string[] | null;
-/**
- * Поиск по количеству голосов кинокритиков из России (пример: `1000-6666666`)
- */
-'votes.russianFilmCritics'?: string[] | null;
-/**
- * Поиск по количеству голосов ожидания на Кинопоиске (пример: `1000-6666666`)
- */
-'votes.await'?: string[] | null;
-/**
- * Поиск по бюджету фильма (пример: `1000-6666666`)
- */
-'budget.value'?: string[] | null;
-/**
- * Поиск по количеству аудитории (пример: `1000-6666666`)
- */
-'audience.count'?: string[] | null;
-/**
- * Поиск по продолжительности фильма (пример: `100-120`)
- */
-movieLength?: string[] | null;
-/**
- * Поиск по всей продолжительности одной серии (пример: `20-60`)
- */
-seriesLength?: string[] | null;
-/**
- * Поиск по всей продолжительности сериала (пример: `100-120`)
- */
-totalSeriesLength?: string[] | null;
-/**
- * Поиск по жанрам (пример: `"драма", "комедия", "!мелодрама", "+ужасы"`)
- */
-'genres.name'?: string[] | null;
-/**
- * Поиск по странам (пример: `"США", "Россия", "!Франция" , "+Великобритания"`)
- */
-'countries.name'?: string[] | null;
-/**
- * Поиск по наличию билетов в продаже (пример: `true, false`)
- */
-ticketsOnSale?: string[] | null;
-/**
- * Поиск по сетям производства фильма (пример: `"HBO", "Netflix", "!Amazon"`)
- */
-'networks.items.name'?: string[] | null;
-/**
- * Поиск по ID персон (пример: `666, 555, !666`)
- */
-'persons.id'?: string[] | null;
-/**
- * Поиск по профессиям персон (пример: `"актер", "режиссер", "!сценарист"`)
- */
-'persons.profession'?: string[] | null;
-/**
- * Поиск по английским профессиям персон (пример: `"actor", "director", "!writer"`)
- */
-'persons.enProfession'?: string[] | null;
-/**
- * Поиск по сборам в мире (пример: `1000-6666666`)
- */
-'fees.world'?: string[] | null;
-/**
- * Поиск по сборам в США (пример: `1000-6666666`)
- */
-'fees.usa'?: string[] | null;
-/**
- * Поиск по сборам в России (пример: `1000-6666666`)
- */
-'fees.russia'?: string[] | null;
-/**
- * Поиск по дате премьеры в мире (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-'premiere.world'?: string[] | null;
-/**
- * Поиск по дате премьеры в США (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-'premiere.usa'?: string[] | null;
-/**
- * Поиск по дате премьеры в России (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-'premiere.russia'?: string[] | null;
-/**
- * Поиск по дате премьеры в стриминговых сервисах (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-'premiere.digital'?: string[] | null;
-/**
- * Поиск по дате премьеры в кинотеатрах (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-'premiere.cinema'?: string[] | null;
-/**
- * Поиск по стране премьеры (пример: `"США", "Россия", "!Франция" , "+Великобритания"`)
- */
-'premiere.country'?: string[] | null;
-/**
- * Поиск по ID KinoPoisk из списка похожих фильмов (пример: `666, 555, !666`)
- */
-'similarMovies.id'?: string[] | null;
-/**
- * Поиск по ID KinoPoisk из списка сиквелов и преквелов (пример: `666, 555, !666`)
- */
-'sequelsAndPrequels.id'?: string[] | null;
-/**
- * Поиск по доуступным платформам для просмотра (пример: `"ivi", "okko", "!megogo"`)
- */
-'watchability.items.name'?: string[] | null;
-/**
- * Поиск по коллекциям из KinoPoisk (пример: `"top250", "top-100-indian-movies", "!top-100-movies"`)
- */
-lists?: string[] | null;
-/**
- * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-updatedAt?: string[] | null;
-/**
- * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
- */
-createdAt?: string[] | null;
+  /**
+   * Номер страницы
+   */
+  page?: number;
+  /**
+   * Количество элементов на странице
+   */
+  limit?: number;
+  /**
+   * Список полей требуемых в ответе из модели
+   */
+  selectFields?: MovieControllerFindManyByQueryV14SelectFieldsItem[];
+  /**
+   * Список полей которые не должны быть null или пусты
+   */
+  notNullFields?: MovieControllerFindManyByQueryV14NotNullFieldsItem[];
+  /**
+   * Сортировка по полям из модели
+   */
+  sortField?: MovieControllerFindManyByQueryV14SortFieldItem[];
+  /**
+   * Тип сортировки применительно к полям из sortField (пример: `"1", "-1"`)
+   */
+  sortType?: string[];
+  /**
+   * Поиск по ID KinoPoisk (пример: `"666", "555", "!666"`)
+   */
+  id?: string[] | null;
+  /**
+   * Поиск по IMDB ID (пример: `"tt666", "tt555", "!tt666"`)
+   */
+  "externalId.imdb"?: string[] | null;
+  /**
+   * Поиск по TMDB ID (пример: `666, 555, !666`)
+   */
+  "externalId.tmdb"?: number[] | null;
+  /**
+   * Поиск по id KinoPoisk HD (пример: `"48e8d0acb0f62d8585101798eaeceec5", "!48e8d0acb0f62d8585101798eaeceec5"`)
+   */
+  "externalId.kpHD"?: string[] | null;
+  /**
+   * Поиск по типу фильма (пример: `"movie", "tv-series", "!anime"`)
+   */
+  type?: MovieControllerFindManyByQueryV14TypeItem[] | null;
+  /**
+   * Поиск по номеру типа фильма (пример: `1, 2, !3`). Список типов: 1 (movie), 2 (tv-series), 3 (cartoon), 4 (anime), 5 (animated-series).
+   */
+  typeNumber?: string[] | null;
+  /**
+   * Поиск по индикатору сериала (пример: `true, false`)
+   */
+  isSeries?: string[] | null;
+  /**
+   * Поиск по статусу фильма (пример: `"announced", "completed", "!filming"`)
+   */
+  status?: MovieControllerFindManyByQueryV14StatusItem[] | null;
+  /**
+   * Поиск по году (пример: `1874, 2050, !2020, 2020-2024`)
+   */
+  year?: string[] | null;
+  /**
+   * Поиск по года начала релиза (пример: `1874, 2050, !2020, 2020-2024`)
+   */
+  "releaseYears.start"?: string[] | null;
+  /**
+   * Поиск по года окончания релиза (пример: `1874, 2050, !2020, 2020-2024`)
+   */
+  "releaseYears.end"?: string[] | null;
+  /**
+   * Поиск по рейтингу Кинопоиск (пример: `7, 10, 7.2-10`)
+   */
+  "rating.kp"?: string[] | null;
+  /**
+   * Поиск по рейтингу IMDB (пример: `7, 10, 7.2-10`)
+   */
+  "rating.imdb"?: string[] | null;
+  /**
+   * Поиск по рейтингу TMDB (пример: `7, 10, 7.2-10`)
+   */
+  "rating.tmdb"?: string[] | null;
+  /**
+   * Поиск по рейтингу MPAA (пример: `"G", "NC-17", "!R"`)
+   */
+  ratingMpaa?: string[] | null;
+  /**
+   * Поиск по возрастному рейтингу (пример: `12, !18, 12-18`)
+   */
+  ageRating?: string[] | null;
+  /**
+   * Поиск по количеству голосов на KP (пример: `1000-6666666`)
+   */
+  "votes.kp"?: string[] | null;
+  /**
+   * Поиск по количеству голосов на IMDB (пример: `1000-6666666`)
+   */
+  "votes.imdb"?: string[] | null;
+  /**
+   * Поиск по количеству голосов на TMDB (пример: `1000-6666666`)
+   */
+  "votes.tmdb"?: string[] | null;
+  /**
+   * Поиск по количеству голосов кинокритиков (пример: `1000-6666666`)
+   */
+  "votes.filmCritics"?: string[] | null;
+  /**
+   * Поиск по количеству голосов кинокритиков из России (пример: `1000-6666666`)
+   */
+  "votes.russianFilmCritics"?: string[] | null;
+  /**
+   * Поиск по количеству голосов ожидания на Кинопоиске (пример: `1000-6666666`)
+   */
+  "votes.await"?: string[] | null;
+  /**
+   * Поиск по бюджету фильма (пример: `1000-6666666`)
+   */
+  "budget.value"?: string[] | null;
+  /**
+   * Поиск по количеству аудитории (пример: `1000-6666666`)
+   */
+  "audience.count"?: string[] | null;
+  /**
+   * Поиск по продолжительности фильма (пример: `100-120`)
+   */
+  movieLength?: string[] | null;
+  /**
+   * Поиск по всей продолжительности одной серии (пример: `20-60`)
+   */
+  seriesLength?: string[] | null;
+  /**
+   * Поиск по всей продолжительности сериала (пример: `100-120`)
+   */
+  totalSeriesLength?: string[] | null;
+  /**
+   * Поиск по жанрам (пример: `"драма", "комедия", "!мелодрама", "+ужасы"`)
+   */
+  "genres.name"?: string[] | null;
+  /**
+   * Поиск по странам (пример: `"США", "Россия", "!Франция" , "+Великобритания"`)
+   */
+  "countries.name"?: string[] | null;
+  /**
+   * Поиск по наличию билетов в продаже (пример: `true, false`)
+   */
+  ticketsOnSale?: string[] | null;
+  /**
+   * Поиск по сетям производства фильма (пример: `"HBO", "Netflix", "!Amazon"`)
+   */
+  "networks.items.name"?: string[] | null;
+  /**
+   * Поиск по ID персон (пример: `666, 555, !666`)
+   */
+  "persons.id"?: string[] | null;
+  /**
+   * Поиск по профессиям персон (пример: `"актер", "режиссер", "!сценарист"`)
+   */
+  "persons.profession"?: string[] | null;
+  /**
+   * Поиск по английским профессиям персон (пример: `"actor", "director", "!writer"`)
+   */
+  "persons.enProfession"?: string[] | null;
+  /**
+   * Поиск по сборам в мире (пример: `1000-6666666`)
+   */
+  "fees.world"?: string[] | null;
+  /**
+   * Поиск по сборам в США (пример: `1000-6666666`)
+   */
+  "fees.usa"?: string[] | null;
+  /**
+   * Поиск по сборам в России (пример: `1000-6666666`)
+   */
+  "fees.russia"?: string[] | null;
+  /**
+   * Поиск по дате премьеры в мире (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  "premiere.world"?: string[] | null;
+  /**
+   * Поиск по дате премьеры в США (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  "premiere.usa"?: string[] | null;
+  /**
+   * Поиск по дате премьеры в России (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  "premiere.russia"?: string[] | null;
+  /**
+   * Поиск по дате премьеры в стриминговых сервисах (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  "premiere.digital"?: string[] | null;
+  /**
+   * Поиск по дате премьеры в кинотеатрах (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  "premiere.cinema"?: string[] | null;
+  /**
+   * Поиск по стране премьеры (пример: `"США", "Россия", "!Франция" , "+Великобритания"`)
+   */
+  "premiere.country"?: string[] | null;
+  /**
+   * Поиск по ID KinoPoisk из списка похожих фильмов (пример: `666, 555, !666`)
+   */
+  "similarMovies.id"?: string[] | null;
+  /**
+   * Поиск по ID KinoPoisk из списка сиквелов и преквелов (пример: `666, 555, !666`)
+   */
+  "sequelsAndPrequels.id"?: string[] | null;
+  /**
+   * Поиск по доуступным платформам для просмотра (пример: `"ivi", "okko", "!megogo"`)
+   */
+  "watchability.items.name"?: string[] | null;
+  /**
+   * Поиск по коллекциям из KinoPoisk (пример: `"top250", "top-100-indian-movies", "!top-100-movies"`)
+   */
+  lists?: string[] | null;
+  /**
+   * Поиск по дате обновления в базе (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  updatedAt?: string[] | null;
+  /**
+   * Поиск по дате добавления в базу (пример: `01.01.2020, 01.01.2020-31.12.2020`)
+   */
+  createdAt?: string[] | null;
 };
 
 /**
@@ -2167,15 +2170,14 @@ export interface StudioDocsResponseDtoV14 {
   total: number;
 }
 
-export type StudioType = typeof StudioType[keyof typeof StudioType];
-
+export type StudioType = (typeof StudioType)[keyof typeof StudioType];
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const StudioType = {
-  Производство: 'Производство',
-  Спецэффекты: 'Спецэффекты',
-  Прокат: 'Прокат',
-  Студия_дубляжа: 'Студия дубляжа',
+  Производство: "Производство",
+  Спецэффекты: "Спецэффекты",
+  Прокат: "Прокат",
+  Студия_дубляжа: "Студия дубляжа",
 } as const;
 
 export interface MovieFromStudio {
@@ -3039,4 +3041,3 @@ export interface ExternalId {
   /** @nullable */
   tmdb?: number | null;
 }
-

@@ -1,6 +1,7 @@
 # Feature-Sliced Design + React + TypeScript template
 
 ### Stack
+
 - React, TypeScript
 - Tailwind CSS for styling, shadcn/ui
 - TanStack Router, TanStack Query
