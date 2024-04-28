@@ -1,7 +1,10 @@
 import { formatDuration } from "date-fns";
 import { ru } from "date-fns/locale";
-import { Movie } from "@/entities/movie";
+import { Movie, MovieCard, getMoviesQueryOptions } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
+import { useSuspenseQueries } from "node_modules/@tanstack/react-query/build/modern/useSuspenseQueries.d.cts";
+import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
+import React from "react";
 
 export function MoviePage({ movie }: { movie: Movie }) {
   return (
@@ -52,9 +55,41 @@ export function MoviePage({ movie }: { movie: Movie }) {
 
 function YouWillProbablyLike({ movie }: { movie: Movie }) {
   return (
-    <div className="container mt-8">
+    <div className="container mt-8 space-y-4">
       <h1 className="text-xl font-bold">Фильмы, похожие на этот</h1>
-      <div></div>
+      <div>
+        <MoviesGrid type={movie.type} />
+      </div>
     </div>
+  );
+}
+
+function MoviesGrid({ type }: { type: Movie["type"] }) {
+  const { data, hasNextPage, fetchNextPage, isFetching } =
+    useSuspenseInfiniteQuery(getMoviesQueryOptions({ limit: 25, type }));
+  return (
+    <>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {data.pages.map((page) => (
+          <React.Fragment key={page.page}>
+            {page.movies.map((movie) => (
+              <MovieCard key={movie.id} movie={movie} />
+            ))}
+          </React.Fragment>
+        ))}
+      </div>
+      {hasNextPage && (
+        <div className="flex ">
+          <Button
+            onClick={() => fetchNextPage()}
+            disabled={isFetching}
+            variant="link"
+            className="mx-auto"
+          >
+            Загрузить еще
+          </Button>
+        </div>
+      )}
+    </>
   );
 }
