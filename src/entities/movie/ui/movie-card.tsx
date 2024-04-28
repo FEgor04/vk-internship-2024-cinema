@@ -57,9 +57,9 @@ export function MovieCard({ movie, className }: Props) {
 
 function MovieRating({ rating, name }: { rating: number; name: string }) {
   return (
-    <span className="rounded bg-black/60 px-1 py-0.5 text-xs font-semibold text-secondary">
+    <span className="rounded bg-black/60 px-1 py-0.5 text-xs text-secondary">
       {name}
-      <span className="ml-2">{rating}</span>
+      <span className="ml-2 font-semibold ">{rating}</span>
     </span>
   );
 }
