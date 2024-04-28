@@ -1,11 +1,13 @@
-import { useSuspenseQuery } from "@tanstack/react-query";
+import {
+  useSuspenseInfiniteQuery,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
 import React from "react";
 import { MovieCard, MovieCardFallback } from "@/entities/movie";
 import { getMoviesQueryOptions } from "@/entities/movie";
+import { Button } from "@/shared/ui/button";
 
 type Props = {
-  page: number;
-  pageSize: number;
   onSetPagination: (params: { page: number; pageSize: number }) => void;
 };
 
@@ -13,28 +15,40 @@ export function MoviesListPage(props: Props) {
   return <ListWithTitle {...props} title="Лучшие фильмы" />;
 }
 
-function ListWithTitle(props: {
-  page: number;
-  pageSize: number;
-  title: string;
-}) {
+function ListWithTitle(props: { title: string }) {
   return (
     <div className="container mx-auto mt-8 space-y-4">
       <h3 className="text-2xl font-bold">{props.title}</h3>
       <div className="flex flex-row gap-4 overflow-x-scroll">
         <React.Suspense fallback={<MoviesListFallback />}>
-          <MoviesList pageSize={props.pageSize} page={props.page} />
+          <MoviesList />
         </React.Suspense>
       </div>
     </div>
   );
 }
 
-function MoviesList(props: { page: number; pageSize: number }) {
-  const { data } = useSuspenseQuery(
-    getMoviesQueryOptions({ page: props.page, limit: props.pageSize }),
+function MoviesList() {
+  const { data, fetchNextPage, hasNextPage, isLoading } =
+    useSuspenseInfiniteQuery(getMoviesQueryOptions({ limit: 10 }));
+  return (
+    <>
+      {data.pages.map((page) => (
+        <React.Fragment key={page.page}>
+          {page.movies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+        </React.Fragment>
+      ))}
+      {hasNextPage && (
+        <div className="flex flex-col items-center justify-center">
+          <Button disabled={isLoading} onClick={() => fetchNextPage()}>
+            Загрузить еще
+          </Button>
+        </div>
+      )}
+    </>
   );
-  return data.movies.map((it) => <MovieCard key={it.id} movie={it} />);
 }
 
 function MoviesListFallback() {

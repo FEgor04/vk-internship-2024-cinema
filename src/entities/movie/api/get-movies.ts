@@ -1,10 +1,9 @@
-import { queryOptions } from "@tanstack/react-query";
+import { infiniteQueryOptions, queryOptions } from "@tanstack/react-query";
 import { movieControllerFindManyByQueryV14 } from "@/shared/api";
 import { MovieDtoV14 } from "@/shared/api/index.schemas";
 import { Movie, movieSchema } from "../model/movie";
 
 type Query = {
-  page: number;
   limit: number;
 };
 
@@ -15,11 +14,18 @@ type Response = {
 };
 
 export const getMoviesQueryOptions = (query: Query) =>
-  queryOptions({
-    queryKey: ["movies", "list", query],
-    queryFn: async () => {
+  infiniteQueryOptions({
+    queryKey: ["movies", "list_infinite", query],
+    initialPageParam: 0,
+    getNextPageParam: (response: Response) => {
+      if (response.page < response.pages) {
+        return response.page + 1;
+      }
+      return undefined;
+    },
+    queryFn: async (params) => {
       const { data } = await movieControllerFindManyByQueryV14({
-        page: query.page,
+        page: params.pageParam,
         limit: query.limit,
         selectFields: [
           "id",
