@@ -10,11 +10,22 @@ type Props = {
 };
 
 export function MoviesListPage(props: Props) {
+  return <ListWithTitle {...props} title="Лучшие фильмы" />;
+}
+
+function ListWithTitle(props: {
+  page: number;
+  pageSize: number;
+  title: string;
+}) {
   return (
-    <div className="container mx-auto mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-      <React.Suspense fallback={<MoviesListFallback />}>
-        <MoviesList pageSize={props.pageSize} page={props.page} />
-      </React.Suspense>
+    <div className="container mx-auto mt-8 space-y-4">
+      <h3 className="text-2xl font-bold">{props.title}</h3>
+      <div className="flex flex-row gap-4 overflow-x-scroll">
+        <React.Suspense fallback={<MoviesListFallback />}>
+          <MoviesList pageSize={props.pageSize} page={props.page} />
+        </React.Suspense>
+      </div>
     </div>
   );
 }
