@@ -25,7 +25,7 @@ function ListWithTitle(props: { title: string; type?: Movie["type"] }) {
   return (
     <div className="container mx-auto mt-8 space-y-4">
       <h3 className="text-2xl font-bold">{props.title}</h3>
-      <div className="flex flex-row gap-4 overflow-x-scroll">
+      <div className="flex snap-x snap-proximity flex-row gap-4 overflow-x-scroll md:snap-none">
         <React.Suspense fallback={<MoviesListFallback />}>
           <MoviesList type={props.type} />
         </React.Suspense>
@@ -35,14 +35,14 @@ function ListWithTitle(props: { title: string; type?: Movie["type"] }) {
 }
 
 function MoviesList({ type }: { type?: Movie["type"] }) {
-  const { data, fetchNextPage, hasNextPage, isLoading } =
+  const { data, fetchNextPage, hasNextPage, isFetching } =
     useSuspenseInfiniteQuery(getMoviesQueryOptions({ limit: 10, type }));
   return (
     <>
       {data.pages.map((page) => (
         <React.Fragment key={page.page}>
           {page.movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+            <MovieCard key={movie.id} movie={movie} className="snap-start" />
           ))}
         </React.Fragment>
       ))}
@@ -50,7 +50,7 @@ function MoviesList({ type }: { type?: Movie["type"] }) {
         <div className="flex flex-col items-center justify-center">
           <Button
             variant="link"
-            disabled={isLoading}
+            disabled={isFetching}
             onClick={() => fetchNextPage()}
           >
             Загрузить еще
