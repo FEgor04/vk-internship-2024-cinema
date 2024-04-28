@@ -78,7 +78,13 @@ export function MovieGenres({ movie }: { movie: Movie }) {
   return (
     <>
       {movie.genres.map((it) => (
-        <li key={it}>{it}</li>
+        <li
+          className="cursor-pointer hover:text-primary"
+          onClick={() => alert("TBD: Movies by genre")}
+          key={it}
+        >
+          {it}
+        </li>
       ))}
     </>
   );
@@ -88,7 +94,13 @@ export function MovieCountries({ movie }: { movie: Movie }) {
   return (
     <>
       {movie.countries.map((it) => (
-        <li key={it}>{it}</li>
+        <li
+          className="cursor-pointer hover:text-primary"
+          onClick={() => alert("TBD: Movies by country")}
+          key={it}
+        >
+          {it}
+        </li>
       ))}
     </>
   );
