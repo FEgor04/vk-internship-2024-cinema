@@ -10,8 +10,8 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       retry: false,
-    }
-  }
+    },
+  },
 });
 
 const router = createRouter({ routeTree, context: { queryClient } });
@@ -22,7 +22,7 @@ declare module "@tanstack/react-router" {
   }
 }
 
-worker.start().then(_ => {
+worker.start().then((_) => {
   ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
@@ -30,5 +30,4 @@ worker.start().then(_ => {
       </QueryClientProvider>
     </React.StrictMode>,
   );
-})
-
+});

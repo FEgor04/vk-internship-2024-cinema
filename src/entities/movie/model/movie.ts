@@ -1,6 +1,19 @@
-import { infer as zInfer, number, object, string, enum as zEnum, coerce } from "zod"
+import {
+  infer as zInfer,
+  number,
+  object,
+  string,
+  enum as zEnum,
+  coerce,
+} from "zod";
 
-const zMovieStatus = zEnum(["filming" , "pre-production" , "completed" , "announced" , "post-production"])
+const zMovieStatus = zEnum([
+  "filming",
+  "pre-production",
+  "completed",
+  "announced",
+  "post-production",
+]);
 
 export const movieSchema = object({
   id: number(),
@@ -25,8 +38,8 @@ export const movieSchema = object({
   ageRating: coerce.number().optional(),
   poster: object({
     url: string().url(),
-    previewUrl: string().url()
-  }).optional()
-})
+    previewUrl: string().url(),
+  }).optional(),
+});
 
-export type Movie = zInfer<typeof movieSchema>
+export type Movie = zInfer<typeof movieSchema>;
