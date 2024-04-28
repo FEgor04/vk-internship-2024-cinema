@@ -73,3 +73,23 @@ function MovieRating({ rating, name }: { rating: number; name: string }) {
 export function MovieCardFallback() {
   return <Skeleton className="h-[400px] w-[300px] shrink-0 grow-0 rounded" />;
 }
+
+export function MovieGenres({ movie }: { movie: Movie }) {
+  return (
+    <>
+      {movie.genres.map((it) => (
+        <li key={it}>{it}</li>
+      ))}
+    </>
+  );
+}
+
+export function MovieCountries({ movie }: { movie: Movie }) {
+  return (
+    <>
+      {movie.countries.map((it) => (
+        <li key={it}>{it}</li>
+      ))}
+    </>
+  );
+}

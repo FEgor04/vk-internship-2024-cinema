@@ -3,78 +3,93 @@ import { ReactNode } from "@tanstack/react-router";
 import { formatDuration } from "date-fns";
 import { ru } from "date-fns/locale";
 import React from "react";
-import { Movie, MovieCard, getMoviesQueryOptions } from "@/entities/movie";
+import {
+  Movie,
+  MovieCard,
+  MovieCountries,
+  MovieGenres,
+  getMoviesQueryOptions,
+} from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
+import { Play } from "lucide-react";
 
 export function MoviePage({ movie }: { movie: Movie }) {
   return (
-    <div>
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-8 px-4 py-12 md:flex-row md:px-6 md:py-20">
-        <div className="w-full flex-shrink-0 md:w-1/2">
-          <img
-            // В идеале переехать на Next.js и использовать встроенный функционал оптимизации изображений
-            alt="Постер фильма"
-            className="max-h-[600px] w-full rounded-lg object-cover shadow-lg"
-            height={900}
-            src={movie.poster?.url}
-            width={600}
-          />
-        </div>
-        <div className="w-full space-y-4 md:w-1/2">
-          <h1 className="text-3xl font-bold md:text-4xl">{movie.name}</h1>
-          <div className="space-y-2 text-muted-foreground">
-            <div className="flex items-center gap-4 text-sm">
-              <span>{movie.year}</span>
-              <span>•</span>
-              <span>
-                {formatDuration({ minutes: movie.movieLength }, { locale: ru })}
-              </span>
+    <div className="space-y-8">
+      <div className="flex flex-col space-y-4">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-4 py-12 md:flex-row md:px-6 md:py-20">
+          <div className="w-full flex-shrink-0 md:w-1/2">
+            <img
+              // В идеале переехать на Next.js и использовать встроенный функционал оптимизации изображений
+              alt="Постер фильма"
+              className="max-h-[600px] w-full rounded-lg object-cover shadow-lg"
+              height={900}
+              src={movie.poster?.url}
+              width={600}
+            />
+          </div>
+          <div className="w-full space-y-4 md:w-1/2">
+            <h1 className="text-3xl font-bold md:text-4xl">{movie.name}</h1>
+            <div className="space-y-2 text-muted-foreground">
+              <div className="flex items-center gap-4 text-sm">
+                <span>{movie.year}</span>
+                <span>•</span>
+                <span>
+                  {formatDuration(
+                    { minutes: movie.movieLength },
+                    { locale: ru },
+                  )}
+                </span>
+              </div>
+              <ul className="flex flex-row space-x-4">
+                <MovieGenres movie={movie} />
+              </ul>
+              <ul className="flex flex-row space-x-4">
+                <MovieCountries movie={movie} />
+              </ul>
             </div>
-            <div className="space-x-4">
-              {movie.genres.map((genre) => (
-                <Button className="h-6" variant="ghost" size="sm" key={genre}>
-                  {genre}
-                </Button>
-              ))}
-            </div>
-            <div className="space-x-4">
-              {movie.countries.map((country) => (
-                <Button className="h-6" variant="ghost" size="sm" key={country}>
-                  {country}
-                </Button>
-              ))}
+            <p className="text-lg leading-relaxed">
+              {movie.shortDescription ?? movie.description}
+            </p>
+            <div>
+              <Button
+                variant="default"
+                size="lg"
+                className="text-xl font-bold"
+                asChild
+              >
+                <a href={movie.trailer} target="_blank">
+                  <Play className="mr-2 h-6 w-6" /> Трейлер
+                </a>
+              </Button>
             </div>
           </div>
-          <p className="text-lg leading-relaxed">
-            {movie.shortDescription ?? movie.description}
-          </p>
         </div>
-      </div>
-      <div className="container mx-auto space-y-4">
-        <DescriptionItem name="Год выпуска" content={movie.year} />
-        <DescriptionItem
-          name="Страна"
-          content={
-            <div className="space-x-4">
-              {movie.countries.map((it) => (
-                <span>{it}</span>
-              ))}
-            </div>
-          }
-        />
-        <DescriptionItem
-          name="Жанр"
-          content={
-            <div className="space-x-4">
-              {movie.genres.map((it) => (
-                <span>{it}</span>
-              ))}
-            </div>
-          }
-        />
-        {movie.slogan && (
-          <DescriptionItem name="Слоган" content={movie.slogan} />
-        )}
+        <div className="container mx-auto space-y-4">
+          <DescriptionItem name="Год выпуска" content={movie.year} />
+          <DescriptionItem
+            name="Страна"
+            content={
+              <ul className="flex flex-row space-x-4">
+                <MovieCountries movie={movie} />
+              </ul>
+            }
+          />
+          <DescriptionItem
+            name="Жанр"
+            content={
+              <ul className="flex flex-row space-x-4">
+                <MovieGenres movie={movie} />
+              </ul>
+            }
+          />
+          {movie.slogan && (
+            <DescriptionItem
+              name="Слоган"
+              content={<span>&laquo;{movie.slogan}&raquo;</span>}
+            />
+          )}
+        </div>
       </div>
       <YouWillProbablyLike movie={movie} />
     </div>

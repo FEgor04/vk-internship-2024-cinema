@@ -18,5 +18,6 @@ export function fromDTO(dto: MovieDtoV14): Movie {
     movieLength: dto.movieLength ?? undefined,
     ageRating: dto.ageRating ?? undefined,
     poster: dto.poster ?? undefined,
+    trailer: dto.videos?.trailers ? dto.videos.trailers[0].url : undefined,
   });
 }

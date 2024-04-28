@@ -64,6 +64,7 @@ export const movieSchema = object({
     url: string().url(),
     previewUrl: string().url(),
   }).optional(),
+  trailer: string().optional(),
 });
 
 export type Movie = zInfer<typeof movieSchema>;
