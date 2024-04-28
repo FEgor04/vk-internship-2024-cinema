@@ -61,17 +61,5 @@ function MovieRating({ rating, name }: { rating: number; name: string }) {
 }
 
 export function MovieCardFallback() {
-  return (
-    <Card>
-      <Skeleton className="rounde-t-md aspect-[0.7] w-full" />
-      <CardHeader>
-        <Skeleton className="w-30 h-10" />
-      </CardHeader>
-      <CardContent className="space-y-2">
-        <Skeleton className="h-8 w-24" />
-        <Skeleton className="h-8 w-36" />
-        <Skeleton className="h-8 w-28" />
-      </CardContent>
-    </Card>
-  );
+  return <Skeleton className="h-[400px] w-[300px] shrink-0 grow-0 rounded" />;
 }
