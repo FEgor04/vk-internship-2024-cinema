@@ -15,6 +15,14 @@ const zMovieStatus = zEnum([
   "post-production",
 ]);
 
+const zMovieType = zEnum([
+  "movie",
+  "tv-series",
+  "cartoon",
+  "animated-series",
+  "anime",
+]);
+
 export const movieSchema = object({
   id: number(),
   name: string(),
@@ -26,6 +34,7 @@ export const movieSchema = object({
   year: number().optional(),
   slogan: string().optional(),
   status: zMovieStatus.optional(),
+  type: zMovieType.optional(),
   rating: object({
     kp: number(),
     imdb: number(),

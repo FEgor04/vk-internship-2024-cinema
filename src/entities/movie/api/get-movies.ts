@@ -5,6 +5,7 @@ import { Movie, movieSchema } from "../model/movie";
 
 type Query = {
   limit: number;
+  type: Movie["type"];
 };
 
 type Response = {
@@ -27,6 +28,7 @@ export const getMoviesQueryOptions = (query: Query) =>
       const { data } = await movieControllerFindManyByQueryV14({
         page: params.pageParam,
         limit: query.limit,
+        type: query.type ? [query.type] : undefined,
         selectFields: [
           "id",
           "name",
