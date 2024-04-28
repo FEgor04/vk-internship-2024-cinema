@@ -1,4 +1,4 @@
-import { infiniteQueryOptions, queryOptions } from "@tanstack/react-query";
+import { infiniteQueryOptions } from "@tanstack/react-query";
 import { movieControllerFindManyByQueryV14 } from "@/shared/api";
 import { MovieDtoV14 } from "@/shared/api/index.schemas";
 import { Movie, movieSchema } from "../model/movie";

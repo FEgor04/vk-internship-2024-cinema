@@ -1,18 +1,11 @@
-import {
-  useSuspenseInfiniteQuery,
-  useSuspenseQuery,
-} from "@tanstack/react-query";
+import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 import React from "react";
 import { MovieCard, MovieCardFallback } from "@/entities/movie";
 import { getMoviesQueryOptions } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
 
-type Props = {
-  onSetPagination: (params: { page: number; pageSize: number }) => void;
-};
-
-export function MoviesListPage(props: Props) {
-  return <ListWithTitle {...props} title="Лучшие фильмы" />;
+export function MoviesListPage() {
+  return <ListWithTitle title="Лучшие фильмы" />;
 }
 
 function ListWithTitle(props: { title: string }) {
