@@ -1,4 +1,10 @@
 import { setupWorker } from "msw/browser";
 import { getAPIKinopoiskDevMock } from "../api/index.msw";
 
-export const worker = setupWorker(...getAPIKinopoiskDevMock());
+const worker = setupWorker(...getAPIKinopoiskDevMock());
+
+export async function start(): Promise<void> {
+  if (import.meta.env.MODE == "dev") {
+    await worker.start();
+  }
+}

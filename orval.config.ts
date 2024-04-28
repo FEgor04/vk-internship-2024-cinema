@@ -6,6 +6,7 @@ export default defineConfig({
       target: "https://api.kinopoisk.dev/documentation-yaml",
     },
     output: {
+      baseUrl: "/api",
       target: "index.ts",
       client: "axios-functions",
       workspace: "src/shared/api",

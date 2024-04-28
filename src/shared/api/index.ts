@@ -99,7 +99,7 @@ export const movieControllerFindOneV14 = <TData = AxiosResponse<MovieDtoV14>>(
   id?: number | null,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/movie/${id}`, options);
+  return axios.default.get(`/api/v1.4/movie/${id}`, options);
 };
 
 /**
@@ -112,7 +112,7 @@ export const movieControllerFindManyByQueryV14 = <
   params?: MovieControllerFindManyByQueryV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/movie`, {
+  return axios.default.get(`/api/v1.4/movie`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -128,7 +128,7 @@ export const movieControllerSearchMovieV14 = <
   params: MovieControllerSearchMovieV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/movie/search`, {
+  return axios.default.get(`/api/v1.4/movie/search`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -144,7 +144,7 @@ export const movieControllerGetRandomMovieV14 = <
   params?: MovieControllerGetRandomMovieV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/movie/random`, {
+  return axios.default.get(`/api/v1.4/movie/random`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -159,7 +159,7 @@ export const movieControllerFindManyAwardsV14 = <
   params?: MovieControllerFindManyAwardsV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/movie/awards`, {
+  return axios.default.get(`/api/v1.4/movie/awards`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -175,7 +175,7 @@ export const movieControllerGetPossibleValuesByFieldName = <
   params?: MovieControllerGetPossibleValuesByFieldNameParams,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1/movie/possible-values-by-field`, {
+  return axios.default.get(`/api/v1/movie/possible-values-by-field`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -190,7 +190,7 @@ export const seasonControllerFindManyV14 = <
   params?: SeasonControllerFindManyV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/season`, {
+  return axios.default.get(`/api/v1.4/season`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -206,7 +206,7 @@ export const reviewControllerFindManyV14 = <
   params?: ReviewControllerFindManyV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/review`, {
+  return axios.default.get(`/api/v1.4/review`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -220,7 +220,7 @@ export const personControllerFindOneV14 = <TData = AxiosResponse<Person>>(
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/person/${id}`, options);
+  return axios.default.get(`/api/v1.4/person/${id}`, options);
 };
 
 /**
@@ -233,7 +233,7 @@ export const personControllerFindManyV14 = <
   params?: PersonControllerFindManyV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/person`, {
+  return axios.default.get(`/api/v1.4/person`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -249,7 +249,7 @@ export const personControllerSearchPersonV14 = <
   params: PersonControllerSearchPersonV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/person/search`, {
+  return axios.default.get(`/api/v1.4/person/search`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -264,7 +264,7 @@ export const personControllerFindManyAwardsV14 = <
   params?: PersonControllerFindManyAwardsV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/person/awards`, {
+  return axios.default.get(`/api/v1.4/person/awards`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -280,7 +280,7 @@ export const studioControllerFindManyV14 = <
   params?: StudioControllerFindManyV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/studio`, {
+  return axios.default.get(`/api/v1.4/studio`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -296,7 +296,7 @@ export const keywordControllerFindManyV14 = <
   params?: KeywordControllerFindManyV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/keyword`, {
+  return axios.default.get(`/api/v1.4/keyword`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -312,7 +312,7 @@ export const imageControllerFindManyV14 = <
   params?: ImageControllerFindManyV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/image`, {
+  return axios.default.get(`/api/v1.4/image`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -328,7 +328,7 @@ export const listControllerFindManyV14 = <
   params?: ListControllerFindManyV14Params,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/list`, {
+  return axios.default.get(`/api/v1.4/list`, {
     ...options,
     params: { ...params, ...options?.params },
   });
@@ -342,7 +342,7 @@ export const listControllerFindOneV14 = <TData = AxiosResponse<List>>(
   slug: string,
   options?: AxiosRequestConfig,
 ): Promise<TData> => {
-  return axios.default.get(`/v1.4/list/${slug}`, options);
+  return axios.default.get(`/api/v1.4/list/${slug}`, options);
 };
 
 export type MovieControllerFindOneV14Result = AxiosResponse<MovieDtoV14>;
