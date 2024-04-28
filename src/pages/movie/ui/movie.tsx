@@ -1,4 +1,5 @@
 import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
+import { ReactNode } from "@tanstack/react-router";
 import { formatDuration } from "date-fns";
 import { ru } from "date-fns/locale";
 import React from "react";
@@ -44,10 +45,53 @@ export function MoviePage({ movie }: { movie: Movie }) {
               ))}
             </div>
           </div>
-          <p className="text-lg leading-relaxed">{movie.description}</p>
+          <p className="text-lg leading-relaxed">
+            {movie.shortDescription ?? movie.description}
+          </p>
         </div>
       </div>
+      <div className="container mx-auto space-y-4">
+        <DescriptionItem name="Год выпуска" content={movie.year} />
+        <DescriptionItem
+          name="Страна"
+          content={
+            <div className="space-x-4">
+              {movie.countries.map((it) => (
+                <span>{it}</span>
+              ))}
+            </div>
+          }
+        />
+        <DescriptionItem
+          name="Жанр"
+          content={
+            <div className="space-x-4">
+              {movie.genres.map((it) => (
+                <span>{it}</span>
+              ))}
+            </div>
+          }
+        />
+        {movie.slogan && (
+          <DescriptionItem name="Слоган" content={movie.slogan} />
+        )}
+      </div>
       <YouWillProbablyLike movie={movie} />
+    </div>
+  );
+}
+
+function DescriptionItem({
+  name,
+  content,
+}: {
+  name: string;
+  content: ReactNode;
+}) {
+  return (
+    <div className="flex w-full flex-row items-center justify-between space-y-0">
+      <h6 className="min-w-32 text-muted-foreground">{name}</h6>
+      <p className="ml-4 flex-1">{content}</p>
     </div>
   );
 }
