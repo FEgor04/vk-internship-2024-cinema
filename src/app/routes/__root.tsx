@@ -14,7 +14,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
       <main className="mb-8">
         <Outlet />
       </main>
-      <TanStackRouterDevtools />
+      {import.meta.env.DEV && <TanStackRouterDevtools />}
     </>
   ),
 });
