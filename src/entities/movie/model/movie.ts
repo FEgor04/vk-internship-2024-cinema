@@ -7,6 +7,9 @@ import {
   coerce,
 } from "zod";
 
+const zMovieId = number().positive();
+export type MovieID = zInfer<typeof zMovieId>;
+
 const zMovieStatus = zEnum([
   "filming",
   "pre-production",
@@ -24,7 +27,7 @@ const zMovieType = zEnum([
 ]);
 
 export const movieSchema = object({
-  id: number(),
+  id: zMovieId,
   name: string(),
   enName: string().optional(),
   description: string().optional(),

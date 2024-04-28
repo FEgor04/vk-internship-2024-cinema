@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MoviePage } from "@/pages/movie";
+import { MovieID } from "@/entities/movie";
 
 class IdIsNanError extends Error {}
 
 export const Route = createFileRoute("/movies/$id")({
   beforeLoad: ({ params }) => {
-    const id = parseInt(params.id);
+    const id: MovieID = parseInt(params.id);
     if (isNaN(id)) {
       // refactor: create exception for that
       throw new IdIsNanError();
