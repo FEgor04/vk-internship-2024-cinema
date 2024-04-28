@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { formatDuration } from "date-fns";
 import { ru } from "date-fns/locale";
 import { cn } from "@/shared/lib";
-import { Card, CardContent, CardHeader } from "@/shared/ui/card";
 import { Skeleton } from "@/shared/ui/skeleton";
 import { Movie } from "../model/movie";
 
@@ -19,7 +18,11 @@ export function MovieCard({ movie, className }: Props) {
         className,
       )}
     >
-      <Link className="absolute inset-0 z-10" href="#">
+      <Link
+        className="absolute inset-0 z-10"
+        to="/movies/$id"
+        params={{ id: String(movie.id) }}
+      >
         <span className="sr-only">View movie details</span>
       </Link>
       <img
