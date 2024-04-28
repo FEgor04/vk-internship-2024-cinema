@@ -2,6 +2,7 @@ import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 import { ReactNode } from "@tanstack/react-router";
 import { formatDuration } from "date-fns";
 import { ru } from "date-fns/locale";
+import { Play } from "lucide-react";
 import React from "react";
 import {
   Movie,
@@ -11,7 +12,6 @@ import {
   getMoviesQueryOptions,
 } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
-import { Play } from "lucide-react";
 
 export function MoviePage({ movie }: { movie: Movie }) {
   return (

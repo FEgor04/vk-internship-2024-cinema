@@ -1,7 +1,7 @@
+import { Link } from "@tanstack/react-router";
 import { FileIcon, Film } from "lucide-react";
 import { Button } from "@/shared/ui/button";
 import { Card } from "@/shared/ui/card";
-import { Link } from "@tanstack/react-router";
 
 export function IndexPage() {
   return (
