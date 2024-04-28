@@ -39,12 +39,24 @@ export const movieSchema = object({
   status: zMovieStatus.optional(),
   type: zMovieType.optional(),
   rating: object({
-    kp: number(),
-    imdb: number(),
-    tmdb: number(),
-    filmCritics: number(),
-    russianFilmCritics: number(),
-    await: number(),
+    kp: number()
+      .nullish()
+      .transform((it) => it ?? undefined),
+    imdb: number()
+      .nullish()
+      .transform((it) => it ?? undefined),
+    tmdb: number()
+      .nullish()
+      .transform((it) => it ?? undefined),
+    filmCritics: number()
+      .nullish()
+      .transform((it) => it ?? undefined),
+    russianFilmCritics: number()
+      .nullish()
+      .transform((it) => it ?? undefined),
+    await: number()
+      .nullish()
+      .transform((it) => it ?? undefined),
   }).optional(),
   movieLength: number().optional(),
   ageRating: coerce.number().optional(),

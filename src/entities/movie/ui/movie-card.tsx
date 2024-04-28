@@ -28,15 +28,21 @@ export function MovieCard({ movie, className }: Props) {
       <img
         alt="Movie Poster"
         className="w-full object-cover transition-transform duration-300 group-hover:scale-105"
-        src={movie.poster?.url}
+        src={movie.poster?.previewUrl}
       />
       <div className="absolute inset-0 flex flex-col justify-between bg-black/40 p-4 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <div className="space-x-1">
           {movie.rating && (
             <>
-              <MovieRating rating={movie.rating.imdb} name="IMDB" />
-              <MovieRating rating={movie.rating.tmdb} name="TMDB" />
-              <MovieRating rating={movie.rating.kp} name="КП" />
+              {movie.rating.imdb && (
+                <MovieRating rating={movie.rating.imdb} name="IMDB" />
+              )}
+              {movie.rating.tmdb && (
+                <MovieRating rating={movie.rating.tmdb} name="TMDB" />
+              )}
+              {movie.rating.kp && (
+                <MovieRating rating={movie.rating.kp} name="КП" />
+              )}
             </>
           )}
         </div>
