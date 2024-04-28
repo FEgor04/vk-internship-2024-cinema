@@ -32,19 +32,21 @@ export function MoviePage({ movie }: { movie: Movie }) {
             <h1 className="text-3xl font-bold md:text-4xl">{movie.name}</h1>
             <div className="space-y-2 text-muted-foreground">
               <div className="flex items-center gap-4 text-sm">
-                <span>{movie.year}</span>
-                <span>•</span>
-                <span>
-                  {formatDuration(
-                    { minutes: movie.movieLength },
-                    { locale: ru },
-                  )}
-                </span>
+                {movie.year && <span>{movie.year}</span>}
+                {movie.movieLength && movie.year && <span>•</span>}
+                {movie.movieLength && (
+                  <span>
+                    {formatDuration(
+                      { minutes: movie.movieLength },
+                      { locale: ru },
+                    )}
+                  </span>
+                )}
               </div>
-              <ul className="flex flex-row space-x-4">
+              <ul className="flex flex-row flex-wrap gap-2">
                 <MovieGenres movie={movie} />
               </ul>
-              <ul className="flex flex-row space-x-4">
+              <ul className="flex flex-row flex-wrap gap-2">
                 <MovieCountries movie={movie} />
               </ul>
             </div>
@@ -70,7 +72,7 @@ export function MoviePage({ movie }: { movie: Movie }) {
           <DescriptionItem
             name="Страна"
             content={
-              <ul className="flex flex-row space-x-4">
+              <ul className="flex flex-row flex-wrap gap-4">
                 <MovieCountries movie={movie} />
               </ul>
             }
@@ -78,7 +80,7 @@ export function MoviePage({ movie }: { movie: Movie }) {
           <DescriptionItem
             name="Жанр"
             content={
-              <ul className="flex flex-row space-x-4">
+              <ul className="flex flex-row flex-wrap gap-4">
                 <MovieGenres movie={movie} />
               </ul>
             }
@@ -104,7 +106,7 @@ function DescriptionItem({
   content: ReactNode;
 }) {
   return (
-    <div className="flex w-full flex-row items-center justify-between space-y-0">
+    <div className="flex w-full flex-row items-start justify-between space-y-0">
       <h6 className="min-w-32 text-muted-foreground">{name}</h6>
       <p className="ml-4 flex-1">{content}</p>
     </div>
@@ -131,7 +133,7 @@ function MoviesGrid({ type }: { type: Movie["type"] }) {
         {data.pages.map((page) => (
           <React.Fragment key={page.page}>
             {page.movies.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} />
+              <MovieCard key={movie.id} movie={movie} className="w-full" />
             ))}
           </React.Fragment>
         ))}
