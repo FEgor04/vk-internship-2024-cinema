@@ -42,8 +42,9 @@ export function MovieCard({ movie, className }: Props) {
         </div>
         <div className="flex flex-col space-y-2">
           <h3 className="text-xl font-semibold ">{movie.name}</h3>
-          <p className="space-x-2 text-sm">
+          <p className="flex flex-row items-center space-x-1 text-sm">
             <span>{movie.year}</span>
+            <span>&#x2022;</span>
             <span>
               {formatDuration({ minutes: movie.movieLength }, { locale: ru })}
             </span>
