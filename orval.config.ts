@@ -6,7 +6,6 @@ export default defineConfig({
       target: "https://api.kinopoisk.dev/documentation-yaml",
     },
     output: {
-      baseUrl: "/api",
       target: "index.ts",
       client: "axios-functions",
       workspace: "src/shared/api",
@@ -17,6 +16,10 @@ export default defineConfig({
       },
       prettier: true,
       override: {
+        mutator: {
+          path: "instance.ts",
+          name: "customInstance",
+        },
         mock: {
           locale: "ru",
           useExamples: true,

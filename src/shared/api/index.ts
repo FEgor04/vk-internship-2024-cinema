@@ -56,8 +56,6 @@ API работает по принципу REST, все запросы отпр�
 
  * OpenAPI spec version: 1.4
  */
-import * as axios from "axios";
-import type { AxiosRequestConfig, AxiosResponse } from "axios";
 import type {
   ImageControllerFindManyV14Params,
   ImageDocsResponseDtoV14,
@@ -90,289 +88,293 @@ import type {
   StudioControllerFindManyV14Params,
   StudioDocsResponseDtoV14,
 } from "./index.schemas";
+import { customInstance } from "./instance";
+
+type SecondParameter<T extends (...args: any) => any> = Parameters<T>[1];
 
 /**
  * Возвращает всю доступную информацию о сущности.
  * @summary Поиск по id
  */
-export const movieControllerFindOneV14 = <TData = AxiosResponse<MovieDtoV14>>(
+export const movieControllerFindOneV14 = (
   id?: number | null,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/movie/${id}`, options);
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<MovieDtoV14>(
+    { url: `/v1.4/movie/${id}`, method: "GET" },
+    options,
+  );
 };
 
 /**
  * Этот метод вернет список фильмов удовлетворяющих вашему запросу. <br> В ответе придут поля указанные в параметре `selectFields`. Если его не указать, то вернутся только дефолтные поля.
  * @summary Универсальный поиск с фильтрами
  */
-export const movieControllerFindManyByQueryV14 = <
-  TData = AxiosResponse<MovieDocsResponseDtoV14>,
->(
+export const movieControllerFindManyByQueryV14 = (
   params?: MovieControllerFindManyByQueryV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/movie`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<MovieDocsResponseDtoV14>(
+    { url: `/v1.4/movie`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * Этот метод вернет список фильмов которые подходят под ваш запрос.
  * @summary Поиск фильмов по названию
  */
-export const movieControllerSearchMovieV14 = <
-  TData = AxiosResponse<SearchMovieResponseDtoV14>,
->(
+export const movieControllerSearchMovieV14 = (
   params: MovieControllerSearchMovieV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/movie/search`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<SearchMovieResponseDtoV14>(
+    { url: `/v1.4/movie/search`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * Этот метод вернет рандомный тайтл из базы. Вы можете составить фильтр, чтобы получить рандомный тайтл по вашим критериям.
  * @summary Получить рандомный тайтл из базы
  */
-export const movieControllerGetRandomMovieV14 = <
-  TData = AxiosResponse<MovieDtoV14>,
->(
+export const movieControllerGetRandomMovieV14 = (
   params?: MovieControllerGetRandomMovieV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/movie/random`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<MovieDtoV14>(
+    { url: `/v1.4/movie/random`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * @summary Награды тайтлов
  */
-export const movieControllerFindManyAwardsV14 = <
-  TData = AxiosResponse<MovieAwardDocsResponseDto>,
->(
+export const movieControllerFindManyAwardsV14 = (
   params?: MovieControllerFindManyAwardsV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/movie/awards`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<MovieAwardDocsResponseDto>(
+    { url: `/v1.4/movie/awards`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * Этот метод принимает только определенные поля, и возвращает по ним все доступные значения.
  * @summary Получить список стран, жанров, и т.д.
  */
-export const movieControllerGetPossibleValuesByFieldName = <
-  TData = AxiosResponse<PossibleValueDto[]>,
->(
+export const movieControllerGetPossibleValuesByFieldName = (
   params?: MovieControllerGetPossibleValuesByFieldNameParams,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1/movie/possible-values-by-field`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<PossibleValueDto[]>(
+    { url: `/v1/movie/possible-values-by-field`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * @summary Поиск сезонов
  */
-export const seasonControllerFindManyV14 = <
-  TData = AxiosResponse<SeasonDocsResponseDtoV14>,
->(
+export const seasonControllerFindManyV14 = (
   params?: SeasonControllerFindManyV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/season`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<SeasonDocsResponseDtoV14>(
+    { url: `/v1.4/season`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * Этот метод предназначен для поиска персон по фильтрам. Он принимает множество параметров, которые можно комбинировать между собой. Если вам нужен только поиск по имени, используйте метод `Полнотекстовый поиск` (search). В этом методе также доступен выбор полей. А в ответ приходит полная модель персоны.
  * @summary Универсальный поиск с фильтрами
  */
-export const reviewControllerFindManyV14 = <
-  TData = AxiosResponse<ReviewDocsResponseDtoV14>,
->(
+export const reviewControllerFindManyV14 = (
   params?: ReviewControllerFindManyV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/review`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<ReviewDocsResponseDtoV14>(
+    { url: `/v1.4/review`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * Возвращает всю доступную информацию о сущности.
  * @summary Поиск по id
  */
-export const personControllerFindOneV14 = <TData = AxiosResponse<Person>>(
+export const personControllerFindOneV14 = (
   id: number,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/person/${id}`, options);
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<Person>(
+    { url: `/v1.4/person/${id}`, method: "GET" },
+    options,
+  );
 };
 
 /**
  * Этот метод вернет список персон удовлетворяющих вашему запросу. <br> В ответе придут поля указанные в параметре `selectFields`. Если его не указать, то вернутся только дефолтные поля.
  * @summary Универсальный поиск с фильтрами
  */
-export const personControllerFindManyV14 = <
-  TData = AxiosResponse<PersonDocsResponseDtoV14>,
->(
+export const personControllerFindManyV14 = (
   params?: PersonControllerFindManyV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/person`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<PersonDocsResponseDtoV14>(
+    { url: `/v1.4/person`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * Этот метод вернет список персон которые подходят под ваш запрос.
  * @summary Поиск актеров, режиссеров, и т.д по имени
  */
-export const personControllerSearchPersonV14 = <
-  TData = AxiosResponse<SearchPersonResponseDtoV14>,
->(
+export const personControllerSearchPersonV14 = (
   params: PersonControllerSearchPersonV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/person/search`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<SearchPersonResponseDtoV14>(
+    { url: `/v1.4/person/search`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * @summary Награды актеров
  */
-export const personControllerFindManyAwardsV14 = <
-  TData = AxiosResponse<PersonAwardDocsResponseDto>,
->(
+export const personControllerFindManyAwardsV14 = (
   params?: PersonControllerFindManyAwardsV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/person/awards`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<PersonAwardDocsResponseDto>(
+    { url: `/v1.4/person/awards`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * Этот метод предназначен для поиска студий
  * @summary Поиск студий
  */
-export const studioControllerFindManyV14 = <
-  TData = AxiosResponse<StudioDocsResponseDtoV14>,
->(
+export const studioControllerFindManyV14 = (
   params?: StudioControllerFindManyV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/studio`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<StudioDocsResponseDtoV14>(
+    { url: `/v1.4/studio`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * Этот метод предназначен для поиска ключевых слов
  * @summary Поиск ключевых слов
  */
-export const keywordControllerFindManyV14 = <
-  TData = AxiosResponse<KeywordDocsResponseDtoV14>,
->(
+export const keywordControllerFindManyV14 = (
   params?: KeywordControllerFindManyV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/keyword`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<KeywordDocsResponseDtoV14>(
+    { url: `/v1.4/keyword`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * Этот метод предназначен для поиска картинок которые привязаны к фильмам и сериалам
  * @summary Поиск картинок
  */
-export const imageControllerFindManyV14 = <
-  TData = AxiosResponse<ImageDocsResponseDtoV14>,
->(
+export const imageControllerFindManyV14 = (
   params?: ImageControllerFindManyV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/image`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<ImageDocsResponseDtoV14>(
+    { url: `/v1.4/image`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * Этот метод предназначен для поиска коллекций кино
  * @summary Поиск коллекций
  */
-export const listControllerFindManyV14 = <
-  TData = AxiosResponse<ListDocsResponseDtoV14>,
->(
+export const listControllerFindManyV14 = (
   params?: ListControllerFindManyV14Params,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/list`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<ListDocsResponseDtoV14>(
+    { url: `/v1.4/list`, method: "GET", params },
+    options,
+  );
 };
 
 /**
  * Этот метод предназначен для поиска коллекции кино по slug
  * @summary Поиск коллекции по slug
  */
-export const listControllerFindOneV14 = <TData = AxiosResponse<List>>(
+export const listControllerFindOneV14 = (
   slug: string,
-  options?: AxiosRequestConfig,
-): Promise<TData> => {
-  return axios.default.get(`/api/v1.4/list/${slug}`, options);
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<List>(
+    { url: `/v1.4/list/${slug}`, method: "GET" },
+    options,
+  );
 };
 
-export type MovieControllerFindOneV14Result = AxiosResponse<MovieDtoV14>;
-export type MovieControllerFindManyByQueryV14Result =
-  AxiosResponse<MovieDocsResponseDtoV14>;
-export type MovieControllerSearchMovieV14Result =
-  AxiosResponse<SearchMovieResponseDtoV14>;
-export type MovieControllerGetRandomMovieV14Result = AxiosResponse<MovieDtoV14>;
-export type MovieControllerFindManyAwardsV14Result =
-  AxiosResponse<MovieAwardDocsResponseDto>;
-export type MovieControllerGetPossibleValuesByFieldNameResult = AxiosResponse<
-  PossibleValueDto[]
+export type MovieControllerFindOneV14Result = NonNullable<
+  Awaited<ReturnType<typeof movieControllerFindOneV14>>
 >;
-export type SeasonControllerFindManyV14Result =
-  AxiosResponse<SeasonDocsResponseDtoV14>;
-export type ReviewControllerFindManyV14Result =
-  AxiosResponse<ReviewDocsResponseDtoV14>;
-export type PersonControllerFindOneV14Result = AxiosResponse<Person>;
-export type PersonControllerFindManyV14Result =
-  AxiosResponse<PersonDocsResponseDtoV14>;
-export type PersonControllerSearchPersonV14Result =
-  AxiosResponse<SearchPersonResponseDtoV14>;
-export type PersonControllerFindManyAwardsV14Result =
-  AxiosResponse<PersonAwardDocsResponseDto>;
-export type StudioControllerFindManyV14Result =
-  AxiosResponse<StudioDocsResponseDtoV14>;
-export type KeywordControllerFindManyV14Result =
-  AxiosResponse<KeywordDocsResponseDtoV14>;
-export type ImageControllerFindManyV14Result =
-  AxiosResponse<ImageDocsResponseDtoV14>;
-export type ListControllerFindManyV14Result =
-  AxiosResponse<ListDocsResponseDtoV14>;
-export type ListControllerFindOneV14Result = AxiosResponse<List>;
+export type MovieControllerFindManyByQueryV14Result = NonNullable<
+  Awaited<ReturnType<typeof movieControllerFindManyByQueryV14>>
+>;
+export type MovieControllerSearchMovieV14Result = NonNullable<
+  Awaited<ReturnType<typeof movieControllerSearchMovieV14>>
+>;
+export type MovieControllerGetRandomMovieV14Result = NonNullable<
+  Awaited<ReturnType<typeof movieControllerGetRandomMovieV14>>
+>;
+export type MovieControllerFindManyAwardsV14Result = NonNullable<
+  Awaited<ReturnType<typeof movieControllerFindManyAwardsV14>>
+>;
+export type MovieControllerGetPossibleValuesByFieldNameResult = NonNullable<
+  Awaited<ReturnType<typeof movieControllerGetPossibleValuesByFieldName>>
+>;
+export type SeasonControllerFindManyV14Result = NonNullable<
+  Awaited<ReturnType<typeof seasonControllerFindManyV14>>
+>;
+export type ReviewControllerFindManyV14Result = NonNullable<
+  Awaited<ReturnType<typeof reviewControllerFindManyV14>>
+>;
+export type PersonControllerFindOneV14Result = NonNullable<
+  Awaited<ReturnType<typeof personControllerFindOneV14>>
+>;
+export type PersonControllerFindManyV14Result = NonNullable<
+  Awaited<ReturnType<typeof personControllerFindManyV14>>
+>;
+export type PersonControllerSearchPersonV14Result = NonNullable<
+  Awaited<ReturnType<typeof personControllerSearchPersonV14>>
+>;
+export type PersonControllerFindManyAwardsV14Result = NonNullable<
+  Awaited<ReturnType<typeof personControllerFindManyAwardsV14>>
+>;
+export type StudioControllerFindManyV14Result = NonNullable<
+  Awaited<ReturnType<typeof studioControllerFindManyV14>>
+>;
+export type KeywordControllerFindManyV14Result = NonNullable<
+  Awaited<ReturnType<typeof keywordControllerFindManyV14>>
+>;
+export type ImageControllerFindManyV14Result = NonNullable<
+  Awaited<ReturnType<typeof imageControllerFindManyV14>>
+>;
+export type ListControllerFindManyV14Result = NonNullable<
+  Awaited<ReturnType<typeof listControllerFindManyV14>>
+>;
+export type ListControllerFindOneV14Result = NonNullable<
+  Awaited<ReturnType<typeof listControllerFindOneV14>>
+>;

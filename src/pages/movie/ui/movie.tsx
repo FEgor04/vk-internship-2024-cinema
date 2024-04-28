@@ -1,10 +1,9 @@
+import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 import { formatDuration } from "date-fns";
 import { ru } from "date-fns/locale";
+import React from "react";
 import { Movie, MovieCard, getMoviesQueryOptions } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
-import { useSuspenseQueries } from "node_modules/@tanstack/react-query/build/modern/useSuspenseQueries.d.cts";
-import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
-import React from "react";
 
 export function MoviePage({ movie }: { movie: Movie }) {
   return (

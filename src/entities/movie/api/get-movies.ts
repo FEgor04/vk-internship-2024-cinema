@@ -17,7 +17,7 @@ type Response = {
 export const getMoviesQueryOptions = (query: Query) =>
   infiniteQueryOptions({
     queryKey: ["movies", "list_infinite", query],
-    initialPageParam: 0,
+    initialPageParam: 1,
     getNextPageParam: (response: Response) => {
       if (response.page < response.pages) {
         return response.page + 1;
@@ -25,7 +25,7 @@ export const getMoviesQueryOptions = (query: Query) =>
       return undefined;
     },
     queryFn: async (params) => {
-      const { data } = await movieControllerFindManyByQueryV14({
+      const data = await movieControllerFindManyByQueryV14({
         page: params.pageParam,
         limit: query.limit,
         type: query.type ? [query.type] : undefined,

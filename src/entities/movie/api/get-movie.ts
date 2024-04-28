@@ -7,7 +7,7 @@ export const getMovieByIdQueryOptions = (id: MovieID) =>
   queryOptions({
     queryKey: ["movie", "detail", id],
     queryFn: async () => {
-      const { data } = await movieControllerFindOneV14(id);
+      const data = await movieControllerFindOneV14(id);
       return fromDTO(data);
     },
   });
