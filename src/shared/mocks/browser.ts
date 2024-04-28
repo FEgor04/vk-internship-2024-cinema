@@ -4,7 +4,7 @@ import { getAPIKinopoiskDevMock } from "../api/index.msw";
 const worker = setupWorker(...getAPIKinopoiskDevMock());
 
 export async function start(): Promise<void> {
-  if (import.meta.env.MODE == "dev") {
+  if (import.meta.env.DEV) {
     await worker.start();
   }
 }
