@@ -11,11 +11,17 @@
 // Import Routes
 
 import { Route as rootRoute } from "./app/routes/__root";
+import { Route as FavoriteImport } from "./app/routes/favorite";
 import { Route as IndexImport } from "./app/routes/index";
 import { Route as MoviesIndexImport } from "./app/routes/movies.index";
 import { Route as MoviesIdImport } from "./app/routes/movies.$id";
 
 // Create/Update Routes
+
+const FavoriteRoute = FavoriteImport.update({
+  path: "/favorite",
+  getParentRoute: () => rootRoute,
+} as any);
 
 const IndexRoute = IndexImport.update({
   path: "/",
@@ -43,6 +49,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof IndexImport;
       parentRoute: typeof rootRoute;
     };
+    "/favorite": {
+      id: "/favorite";
+      path: "/favorite";
+      fullPath: "/favorite";
+      preLoaderRoute: typeof FavoriteImport;
+      parentRoute: typeof rootRoute;
+    };
     "/movies/$id": {
       id: "/movies/$id";
       path: "/movies/$id";
@@ -64,6 +77,7 @@ declare module "@tanstack/react-router" {
 
 export const routeTree = rootRoute.addChildren({
   IndexRoute,
+  FavoriteRoute,
   MoviesIdRoute,
   MoviesIndexRoute,
 });
@@ -77,12 +91,16 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/favorite",
         "/movies/$id",
         "/movies/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/favorite": {
+      "filePath": "favorite.tsx"
     },
     "/movies/$id": {
       "filePath": "movies.$id.tsx"
