@@ -6,7 +6,11 @@ import {
   ChevronsLeft,
   ChevronsRight,
 } from "lucide-react";
-import { MovieFilters, getMoviesQueryOptions } from "@/features/filter-movie";
+import {
+  MovieFilters,
+  RatingFilterControls,
+  getMoviesQueryOptions,
+} from "@/features/filter-movie";
 import { YearFilterControls } from "@/features/filter-movie";
 import { Movie, MovieCard } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
@@ -32,7 +36,7 @@ export function MoviesListPage({ page, filters, initialData }: Props) {
 
   return (
     <div className="container mx-auto mt-8 space-y-8">
-      <header>
+      <header className="flex flex-row items-center space-x-4">
         <YearFilterControls
           filter={filters.yearFilter}
           onFilterChange={(f) =>
@@ -40,6 +44,17 @@ export function MoviesListPage({ page, filters, initialData }: Props) {
               search: (prev) => ({
                 ...prev,
                 filters: { ...prev.filters, yearFilter: f },
+              }),
+            })
+          }
+        />
+        <RatingFilterControls
+          filter={filters.ratingFilter}
+          onFilterChange={(f) =>
+            navigate({
+              search: (prev) => ({
+                ...prev,
+                filters: { ...prev.filters, ratingFilter: f },
               }),
             })
           }
