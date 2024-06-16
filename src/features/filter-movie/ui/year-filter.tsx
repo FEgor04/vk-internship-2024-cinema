@@ -1,18 +1,20 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import z from "zod";
+import { Badge } from "@/shared/ui/badge";
 import { Button } from "@/shared/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/shared/ui/form";
 import { Input } from "@/shared/ui/input";
 import { Label } from "@/shared/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
+import { Separator } from "@/shared/ui/separator";
 import { filterByYearSchema } from "../model";
 
 type YearFilter = z.infer<typeof filterByYearSchema>;
 
 type Props = {
   filter: YearFilter | undefined;
-  onFilterChange: (filter: YearFilter) => void;
+  onFilterChange: (filter: YearFilter | undefined) => void;
 };
 
 const schema = filterByYearSchema.pick({ value: true });
@@ -38,9 +40,15 @@ export function YearFilterControls({ filter, onFilterChange }: Props) {
         <Button variant="outline" className="border-dashed">
           Год выхода
           {filter && (
-            <span className="ml-2 font-semibold">
-              {filter.value.min} - {filter.value.max}
-            </span>
+            <>
+              <Separator orientation="vertical" className="mx-2 h-4" />
+              <Badge
+                variant="secondary"
+                className="rounded-sm px-1 font-normal"
+              >
+                {filter.value.min} - {filter.value.max}
+              </Badge>
+            </>
           )}
         </Button>
       </PopoverTrigger>
@@ -75,7 +83,16 @@ export function YearFilterControls({ filter, onFilterChange }: Props) {
               )}
             />
             <FormItem>
-              <Button>Сохранить</Button>
+              <div className="flex flex-row items-center space-x-2">
+                <Button type="submit">Сохранить</Button>
+                <Button
+                  variant="outline"
+                  onClick={() => onFilterChange(undefined)}
+                  type="reset"
+                >
+                  Сбросить
+                </Button>
+              </div>
             </FormItem>
           </form>
         </Form>

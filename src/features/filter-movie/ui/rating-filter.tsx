@@ -7,6 +7,8 @@ import { Input } from "@/shared/ui/input";
 import { Label } from "@/shared/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
 import { filterByRatingSchmea } from "../model";
+import { Separator } from "@/shared/ui/separator";
+import { Badge } from "@/shared/ui/badge";
 
 type RatingFilter = z.infer<typeof filterByRatingSchmea>;
 
@@ -38,9 +40,15 @@ export function RatingFilterControls({ filter, onFilterChange }: Props) {
         <Button variant="outline" className="border-dashed">
           Рейтинг
           {filter && (
-            <span className="ml-2 font-semibold">
-              {filter.value.min} - {filter.value.max}
-            </span>
+            <>
+              <Separator orientation="vertical" className="mx-2 h-4" />
+              <Badge
+                variant="secondary"
+                className="rounded-sm px-1 font-normal"
+              >
+                {filter.value.min} - {filter.value.max}
+              </Badge>
+            </>
           )}
         </Button>
       </PopoverTrigger>

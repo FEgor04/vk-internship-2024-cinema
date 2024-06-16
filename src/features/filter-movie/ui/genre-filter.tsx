@@ -1,8 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { CheckIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
-import { filterByGenreSchema } from "../model";
+import { cn } from "@/shared/lib";
 import { Button } from "@/shared/ui/button";
 import {
   Command,
@@ -11,8 +11,10 @@ import {
   CommandItem,
   CommandList,
 } from "@/shared/ui/command";
-import { cn } from "@/shared/lib";
-import { CheckIcon } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
+import { filterByGenreSchema } from "../model";
+import { Badge } from "@/shared/ui/badge";
+import { Separator } from "@/shared/ui/separator";
 
 type GenreFilter = z.infer<typeof filterByGenreSchema>;
 
@@ -44,6 +46,10 @@ export function GenreFilterControls({ filter, onFilterChange }: Props) {
       <PopoverTrigger asChild>
         <Button variant="outline" className="border-dashed">
           Жанры
+          {(filter?.value ?? []).length > 0 && (
+            <Separator orientation="vertical" className="mx-2 h-4" />
+          )}
+          <SelectedOptionsSpan options={filter?.value ?? []} />
         </Button>
       </PopoverTrigger>
       <PopoverContent>
@@ -74,5 +80,31 @@ export function GenreFilterControls({ filter, onFilterChange }: Props) {
         </Command>
       </PopoverContent>
     </Popover>
+  );
+}
+
+function SelectedOptionsSpan({ options }: { options: string[] }) {
+  if (options.length === 0) {
+    return null;
+  }
+  if (options.length < 3) {
+    return (
+      <div className="flex space-x-1 text-sm font-medium">
+        {options.map((option) => (
+          <Badge
+            key={option}
+            variant="secondary"
+            className="rounded-sm px-1 font-normal"
+          >
+            {option}
+          </Badge>
+        ))}
+      </div>
+    );
+  }
+  return (
+    <Badge variant="secondary" className="rounded-sm px-1 font-normal">
+      выбрано {options.length}
+    </Badge>
   );
 }
