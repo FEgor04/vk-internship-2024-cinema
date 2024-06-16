@@ -22,7 +22,7 @@ export default defineConfig({
         },
         mock: {
           locale: "ru",
-          useExamples: true,
+          useExamples: false,
           required: true,
           properties: {
             "/poster/": {

@@ -14,7 +14,7 @@ type RatingFilter = z.infer<typeof filterByRatingSchmea>;
 
 type Props = {
   filter: RatingFilter | undefined;
-  onFilterChange: (filter: RatingFilter) => void;
+  onFilterChange: (filter: RatingFilter | undefined) => void;
 };
 
 const schema = filterByRatingSchmea.pick({ value: true });

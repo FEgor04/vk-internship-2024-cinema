@@ -80,17 +80,32 @@ import type {
 export const getMovieControllerFindOneV14ResponseMock = (
   overrideResponse: Partial<MovieDtoV14> = {},
 ): MovieDtoV14 => ({
-  ageRating: "16",
-  alternativeName: "Spider man",
+  ageRating: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
   audience: Array.from(
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
-  ).map(() => ({ count: 1000, country: "Россия" })),
+  ).map(() => ({
+    count: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    country: faker.helpers.arrayElement([faker.word.sample(), null]),
+  })),
   backdrop: {
     previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
     url: faker.helpers.arrayElement([faker.word.sample(), null]),
   },
-  budget: { currency: "€", value: 207283 },
+  budget: {
+    currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+    value: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+  },
   countries: (() =>
     new Array(3).fill(0).map(() => ({ name: faker.location.country() })))(),
   createdAt: faker.helpers.arrayElement([
@@ -101,11 +116,14 @@ export const getMovieControllerFindOneV14ResponseMock = (
     "1987 год. Джордан Белфорт становится брокером в успешном инвестиционном банке. Вскоре банк закрывается после внезапного обвала индекса Доу-Джонса. По совету жены Терезы Джордан устраивается в небольшое заведение, занимающееся мелкими акциями. Его настойчивый стиль общения с клиентами и врождённая харизма быстро даёт свои плоды. Он знакомится с соседом по дому Донни, торговцем, который сразу находит общий язык с Джорданом и решает открыть с ним собственную фирму. В качестве сотрудников они нанимают нескольких друзей Белфорта, его отца Макса и называют компанию «Стрэттон Оукмонт». В свободное от работы время Джордан прожигает жизнь: лавирует от одной вечеринки к другой, вступает в сексуальные отношения с проститутками, употребляет множество наркотических препаратов, в том числе кокаин и кваалюд. Однажды наступает момент, когда быстрым обогащением Белфорта начинает интересоваться агент ФБР...",
     null,
   ]),
-  enName: "Spider man",
+  enName: faker.helpers.arrayElement([faker.word.sample(), null]),
   externalId: {
-    imdb: "tt0232500",
-    kpHD: "48e8d0acb0f62d8585101798eaeceec5",
-    tmdb: 9799,
+    imdb: faker.helpers.arrayElement([faker.word.sample(), null]),
+    kpHD: faker.helpers.arrayElement([faker.word.sample(), null]),
+    tmdb: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
   },
   facts: Array.from(
     { length: faker.number.int({ min: 1, max: 10 }) },
@@ -116,18 +134,45 @@ export const getMovieControllerFindOneV14ResponseMock = (
     value: faker.word.sample(),
   })),
   fees: {
-    russia: { currency: "€", value: 207283 },
-    usa: { currency: "€", value: 207283 },
-    world: { currency: "€", value: 207283 },
+    russia: {
+      currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+      value: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+    },
+    usa: {
+      currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+      value: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+    },
+    world: {
+      currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+      value: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+    },
   },
   genres: (() =>
     new Array(3).fill(0).map(() => ({ name: faker.music.genre() })))(),
-  id: 666,
-  isSeries: true,
-  lists: ["250 лучших сериалов"],
+  id: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  isSeries: faker.datatype.boolean(),
+  lists: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => faker.word.sample()),
   logo: { url: faker.helpers.arrayElement([faker.word.sample(), null]) },
-  movieLength: 120,
-  name: "Человек паук",
+  movieLength: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  name: faker.helpers.arrayElement([faker.word.sample(), null]),
   names: Array.from(
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
@@ -142,7 +187,7 @@ export const getMovieControllerFindOneV14ResponseMock = (
       (_, i) => i + 1,
     ).map(() => ({
       logo: { url: faker.helpers.arrayElement([faker.word.sample(), null]) },
-      name: "Netflix",
+      name: faker.helpers.arrayElement([faker.word.sample(), null]),
     })),
   },
   persons: Array.from(
@@ -153,11 +198,11 @@ export const getMovieControllerFindOneV14ResponseMock = (
       "1987 год. Джордан Белфорт становится брокером в успешном инвестиционном банке. Вскоре банк закрывается после внезапного обвала индекса Доу-Джонса. По совету жены Терезы Джордан устраивается в небольшое заведение, занимающееся мелкими акциями. Его настойчивый стиль общения с клиентами и врождённая харизма быстро даёт свои плоды. Он знакомится с соседом по дому Донни, торговцем, который сразу находит общий язык с Джорданом и решает открыть с ним собственную фирму. В качестве сотрудников они нанимают нескольких друзей Белфорта, его отца Макса и называют компанию «Стрэттон Оукмонт». В свободное от работы время Джордан прожигает жизнь: лавирует от одной вечеринки к другой, вступает в сексуальные отношения с проститутками, употребляет множество наркотических препаратов, в том числе кокаин и кваалюд. Однажды наступает момент, когда быстрым обогащением Белфорта начинает интересоваться агент ФБР...",
       null,
     ]),
-    enName: "Paul Walker",
+    enName: faker.helpers.arrayElement([faker.word.sample(), null]),
     enProfession: faker.helpers.arrayElement([faker.word.sample(), null]),
-    id: 6317,
-    name: "Пол Уокер",
-    photo: "https://st.kp.yandex.net/images/actor_iphone/iphone360_6317.jpg",
+    id: faker.number.int({ min: undefined, max: undefined }),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
+    photo: faker.helpers.arrayElement([faker.word.sample(), null]),
     profession: faker.helpers.arrayElement([faker.word.sample(), null]),
   })),
   poster: {
@@ -167,26 +212,62 @@ export const getMovieControllerFindOneV14ResponseMock = (
   },
   premiere: {
     bluray: faker.helpers.arrayElement([faker.word.sample(), null]),
-    cinema: "2023-02-25T02:44:39.359Z",
-    country: "США",
+    cinema: faker.helpers.arrayElement([
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
+    ]),
+    country: faker.helpers.arrayElement([faker.word.sample(), null]),
     digital: faker.helpers.arrayElement([faker.word.sample(), null]),
     dvd: faker.helpers.arrayElement([faker.word.sample(), null]),
-    russia: "2023-02-25T02:44:39.359Z",
-    world: "2023-02-25T02:44:39.359Z",
+    russia: faker.helpers.arrayElement([
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
+    ]),
+    world: faker.helpers.arrayElement([
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
+    ]),
   },
   rating: {
-    await: 6.1,
-    filmCritics: 10,
-    imdb: 8.4,
-    kp: 6.2,
-    russianFilmCritics: 5.1,
-    tmdb: 3.2,
+    await: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    filmCritics: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    imdb: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    kp: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    russianFilmCritics: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    tmdb: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
   },
-  ratingMpaa: "pg13",
+  ratingMpaa: faker.helpers.arrayElement([faker.word.sample(), null]),
   releaseYears: Array.from(
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
-  ).map(() => ({ end: 2023, start: 2022 })),
+  ).map(() => ({
+    end: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    start: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+  })),
   reviewInfo: {
     count: faker.helpers.arrayElement([
       faker.number.int({ min: undefined, max: undefined }),
@@ -228,17 +309,41 @@ export const getMovieControllerFindOneV14ResponseMock = (
       null,
     ]),
     rating: {
-      await: 6.1,
-      filmCritics: 10,
-      imdb: 8.4,
-      kp: 6.2,
-      russianFilmCritics: 5.1,
-      tmdb: 3.2,
+      await: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      filmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      imdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      kp: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      russianFilmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      tmdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     },
     type: faker.helpers.arrayElement([faker.word.sample(), null]),
-    year: 2021,
+    year: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
   })),
-  seriesLength: 20,
+  seriesLength: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
   shortDescription: faker.helpers.arrayElement([
     "Восхождение циника-гедониста на бизнес-олимп 1980-х. Блистательный тандем Леонардо ДиКаприо и Мартина Скорсезе",
     null,
@@ -260,24 +365,57 @@ export const getMovieControllerFindOneV14ResponseMock = (
       null,
     ]),
     rating: {
-      await: 6.1,
-      filmCritics: 10,
-      imdb: 8.4,
-      kp: 6.2,
-      russianFilmCritics: 5.1,
-      tmdb: 3.2,
+      await: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      filmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      imdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      kp: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      russianFilmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      tmdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     },
     type: faker.helpers.arrayElement([faker.word.sample(), null]),
-    year: 2021,
+    year: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
   })),
   slogan: faker.helpers.arrayElement([faker.word.sample(), null]),
-  status: "completed",
-  ticketsOnSale: true,
-  top10: 1,
-  top250: 200,
-  totalSeriesLength: 155,
-  type: "movie",
-  typeNumber: 1,
+  status: faker.helpers.arrayElement([faker.word.sample(), null]),
+  ticketsOnSale: faker.datatype.boolean(),
+  top10: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  top250: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  totalSeriesLength: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  type: faker.helpers.arrayElement([faker.word.sample(), null]),
+  typeNumber: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
   updatedAt: faker.helpers.arrayElement([
     `${faker.date.past().toISOString().split(".")[0]}Z`,
     null,
@@ -287,23 +425,38 @@ export const getMovieControllerFindOneV14ResponseMock = (
       { length: faker.number.int({ min: 1, max: 10 }) },
       (_, i) => i + 1,
     ).map(() => ({
-      name: "Official Trailer",
-      site: "youtube",
+      name: faker.helpers.arrayElement([faker.word.sample(), null]),
+      site: faker.helpers.arrayElement([faker.word.sample(), null]),
       size: faker.helpers.arrayElement([
         faker.number.int({ min: undefined, max: undefined }),
         null,
       ]),
-      type: "TRAILER",
-      url: "https://www.youtube.com/embed/ZsJz2TJAPjw",
+      type: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
     })),
   },
   votes: {
-    await: 34000,
-    filmCritics: 10000,
-    imdb: 50000,
-    kp: 60000,
-    russianFilmCritics: 4000,
-    tmdb: 10000,
+    await: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    filmCritics: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    imdb: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    kp: faker.helpers.arrayElement([faker.word.sample(), null]),
+    russianFilmCritics: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    tmdb: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
   },
   watchability: {
     items: Array.from(
@@ -315,7 +468,10 @@ export const getMovieControllerFindOneV14ResponseMock = (
       url: faker.word.sample(),
     })),
   },
-  year: 2023,
+  year: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
   ...overrideResponse,
 });
 
@@ -326,17 +482,32 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
   ).map(() => ({
-    ageRating: "16",
-    alternativeName: "Spider man",
+    ageRating: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
     audience: Array.from(
       { length: faker.number.int({ min: 1, max: 10 }) },
       (_, i) => i + 1,
-    ).map(() => ({ count: 1000, country: "Россия" })),
+    ).map(() => ({
+      count: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      country: faker.helpers.arrayElement([faker.word.sample(), null]),
+    })),
     backdrop: {
       previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
       url: faker.helpers.arrayElement([faker.word.sample(), null]),
     },
-    budget: { currency: "€", value: 207283 },
+    budget: {
+      currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+      value: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+    },
     countries: (() =>
       new Array(3).fill(0).map(() => ({ name: faker.location.country() })))(),
     createdAt: faker.helpers.arrayElement([
@@ -347,11 +518,14 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
       "1987 год. Джордан Белфорт становится брокером в успешном инвестиционном банке. Вскоре банк закрывается после внезапного обвала индекса Доу-Джонса. По совету жены Терезы Джордан устраивается в небольшое заведение, занимающееся мелкими акциями. Его настойчивый стиль общения с клиентами и врождённая харизма быстро даёт свои плоды. Он знакомится с соседом по дому Донни, торговцем, который сразу находит общий язык с Джорданом и решает открыть с ним собственную фирму. В качестве сотрудников они нанимают нескольких друзей Белфорта, его отца Макса и называют компанию «Стрэттон Оукмонт». В свободное от работы время Джордан прожигает жизнь: лавирует от одной вечеринки к другой, вступает в сексуальные отношения с проститутками, употребляет множество наркотических препаратов, в том числе кокаин и кваалюд. Однажды наступает момент, когда быстрым обогащением Белфорта начинает интересоваться агент ФБР...",
       null,
     ]),
-    enName: "Spider man",
+    enName: faker.helpers.arrayElement([faker.word.sample(), null]),
     externalId: {
-      imdb: "tt0232500",
-      kpHD: "48e8d0acb0f62d8585101798eaeceec5",
-      tmdb: 9799,
+      imdb: faker.helpers.arrayElement([faker.word.sample(), null]),
+      kpHD: faker.helpers.arrayElement([faker.word.sample(), null]),
+      tmdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     },
     facts: Array.from(
       { length: faker.number.int({ min: 1, max: 10 }) },
@@ -362,18 +536,45 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
       value: faker.word.sample(),
     })),
     fees: {
-      russia: { currency: "€", value: 207283 },
-      usa: { currency: "€", value: 207283 },
-      world: { currency: "€", value: 207283 },
+      russia: {
+        currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+        value: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+      },
+      usa: {
+        currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+        value: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+      },
+      world: {
+        currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+        value: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+      },
     },
     genres: (() =>
       new Array(3).fill(0).map(() => ({ name: faker.music.genre() })))(),
-    id: 666,
-    isSeries: true,
-    lists: ["250 лучших сериалов"],
+    id: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    isSeries: faker.datatype.boolean(),
+    lists: Array.from(
+      { length: faker.number.int({ min: 1, max: 10 }) },
+      (_, i) => i + 1,
+    ).map(() => faker.word.sample()),
     logo: { url: faker.helpers.arrayElement([faker.word.sample(), null]) },
-    movieLength: 120,
-    name: "Человек паук",
+    movieLength: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
     names: Array.from(
       { length: faker.number.int({ min: 1, max: 10 }) },
       (_, i) => i + 1,
@@ -388,7 +589,7 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
         (_, i) => i + 1,
       ).map(() => ({
         logo: { url: faker.helpers.arrayElement([faker.word.sample(), null]) },
-        name: "Netflix",
+        name: faker.helpers.arrayElement([faker.word.sample(), null]),
       })),
     },
     persons: Array.from(
@@ -399,11 +600,11 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
         "1987 год. Джордан Белфорт становится брокером в успешном инвестиционном банке. Вскоре банк закрывается после внезапного обвала индекса Доу-Джонса. По совету жены Терезы Джордан устраивается в небольшое заведение, занимающееся мелкими акциями. Его настойчивый стиль общения с клиентами и врождённая харизма быстро даёт свои плоды. Он знакомится с соседом по дому Донни, торговцем, который сразу находит общий язык с Джорданом и решает открыть с ним собственную фирму. В качестве сотрудников они нанимают нескольких друзей Белфорта, его отца Макса и называют компанию «Стрэттон Оукмонт». В свободное от работы время Джордан прожигает жизнь: лавирует от одной вечеринки к другой, вступает в сексуальные отношения с проститутками, употребляет множество наркотических препаратов, в том числе кокаин и кваалюд. Однажды наступает момент, когда быстрым обогащением Белфорта начинает интересоваться агент ФБР...",
         null,
       ]),
-      enName: "Paul Walker",
+      enName: faker.helpers.arrayElement([faker.word.sample(), null]),
       enProfession: faker.helpers.arrayElement([faker.word.sample(), null]),
-      id: 6317,
-      name: "Пол Уокер",
-      photo: "https://st.kp.yandex.net/images/actor_iphone/iphone360_6317.jpg",
+      id: faker.number.int({ min: undefined, max: undefined }),
+      name: faker.helpers.arrayElement([faker.word.sample(), null]),
+      photo: faker.helpers.arrayElement([faker.word.sample(), null]),
       profession: faker.helpers.arrayElement([faker.word.sample(), null]),
     })),
     poster: {
@@ -413,26 +614,62 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
     },
     premiere: {
       bluray: faker.helpers.arrayElement([faker.word.sample(), null]),
-      cinema: "2023-02-25T02:44:39.359Z",
-      country: "США",
+      cinema: faker.helpers.arrayElement([
+        `${faker.date.past().toISOString().split(".")[0]}Z`,
+        null,
+      ]),
+      country: faker.helpers.arrayElement([faker.word.sample(), null]),
       digital: faker.helpers.arrayElement([faker.word.sample(), null]),
       dvd: faker.helpers.arrayElement([faker.word.sample(), null]),
-      russia: "2023-02-25T02:44:39.359Z",
-      world: "2023-02-25T02:44:39.359Z",
+      russia: faker.helpers.arrayElement([
+        `${faker.date.past().toISOString().split(".")[0]}Z`,
+        null,
+      ]),
+      world: faker.helpers.arrayElement([
+        `${faker.date.past().toISOString().split(".")[0]}Z`,
+        null,
+      ]),
     },
     rating: {
-      await: 6.1,
-      filmCritics: 10,
-      imdb: 8.4,
-      kp: 6.2,
-      russianFilmCritics: 5.1,
-      tmdb: 3.2,
+      await: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      filmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      imdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      kp: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      russianFilmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      tmdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     },
-    ratingMpaa: "pg13",
+    ratingMpaa: faker.helpers.arrayElement([faker.word.sample(), null]),
     releaseYears: Array.from(
       { length: faker.number.int({ min: 1, max: 10 }) },
       (_, i) => i + 1,
-    ).map(() => ({ end: 2023, start: 2022 })),
+    ).map(() => ({
+      end: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      start: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+    })),
     reviewInfo: {
       count: faker.helpers.arrayElement([
         faker.number.int({ min: undefined, max: undefined }),
@@ -474,17 +711,41 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
         null,
       ]),
       rating: {
-        await: 6.1,
-        filmCritics: 10,
-        imdb: 8.4,
-        kp: 6.2,
-        russianFilmCritics: 5.1,
-        tmdb: 3.2,
+        await: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+        filmCritics: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+        imdb: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+        kp: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+        russianFilmCritics: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+        tmdb: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
       },
       type: faker.helpers.arrayElement([faker.word.sample(), null]),
-      year: 2021,
+      year: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     })),
-    seriesLength: 20,
+    seriesLength: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
     shortDescription: faker.helpers.arrayElement([
       "Восхождение циника-гедониста на бизнес-олимп 1980-х. Блистательный тандем Леонардо ДиКаприо и Мартина Скорсезе",
       null,
@@ -506,24 +767,57 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
         null,
       ]),
       rating: {
-        await: 6.1,
-        filmCritics: 10,
-        imdb: 8.4,
-        kp: 6.2,
-        russianFilmCritics: 5.1,
-        tmdb: 3.2,
+        await: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+        filmCritics: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+        imdb: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+        kp: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+        russianFilmCritics: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
+        tmdb: faker.helpers.arrayElement([
+          faker.number.int({ min: undefined, max: undefined }),
+          null,
+        ]),
       },
       type: faker.helpers.arrayElement([faker.word.sample(), null]),
-      year: 2021,
+      year: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     })),
     slogan: faker.helpers.arrayElement([faker.word.sample(), null]),
-    status: "completed",
-    ticketsOnSale: true,
-    top10: 1,
-    top250: 200,
-    totalSeriesLength: 155,
-    type: "movie",
-    typeNumber: 1,
+    status: faker.helpers.arrayElement([faker.word.sample(), null]),
+    ticketsOnSale: faker.datatype.boolean(),
+    top10: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    top250: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    totalSeriesLength: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    type: faker.helpers.arrayElement([faker.word.sample(), null]),
+    typeNumber: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
     updatedAt: faker.helpers.arrayElement([
       `${faker.date.past().toISOString().split(".")[0]}Z`,
       null,
@@ -533,23 +827,38 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
         { length: faker.number.int({ min: 1, max: 10 }) },
         (_, i) => i + 1,
       ).map(() => ({
-        name: "Official Trailer",
-        site: "youtube",
+        name: faker.helpers.arrayElement([faker.word.sample(), null]),
+        site: faker.helpers.arrayElement([faker.word.sample(), null]),
         size: faker.helpers.arrayElement([
           faker.number.int({ min: undefined, max: undefined }),
           null,
         ]),
-        type: "TRAILER",
-        url: "https://www.youtube.com/embed/ZsJz2TJAPjw",
+        type: faker.helpers.arrayElement([faker.word.sample(), null]),
+        url: faker.helpers.arrayElement([faker.word.sample(), null]),
       })),
     },
     votes: {
-      await: 34000,
-      filmCritics: 10000,
-      imdb: 50000,
-      kp: 60000,
-      russianFilmCritics: 4000,
-      tmdb: 10000,
+      await: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      filmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      imdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      kp: faker.helpers.arrayElement([faker.word.sample(), null]),
+      russianFilmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      tmdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     },
     watchability: {
       items: Array.from(
@@ -561,7 +870,10 @@ export const getMovieControllerFindManyByQueryV14ResponseMock = (
         url: faker.word.sample(),
       })),
     },
-    year: 2023,
+    year: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
   })),
   limit: faker.number.int({ min: undefined, max: undefined }),
   page: faker.number.int({ min: undefined, max: undefined }),
@@ -597,9 +909,12 @@ export const getMovieControllerSearchMovieV14ResponseMock = (
     ]),
     enName: faker.helpers.arrayElement([faker.word.sample(), null]),
     externalId: {
-      imdb: "tt0232500",
-      kpHD: "48e8d0acb0f62d8585101798eaeceec5",
-      tmdb: 9799,
+      imdb: faker.helpers.arrayElement([faker.word.sample(), null]),
+      kpHD: faker.helpers.arrayElement([faker.word.sample(), null]),
+      tmdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     },
     genres: faker.helpers.arrayElement([
       (() => new Array(3).fill(0).map(() => ({ name: faker.music.genre() })))(),
@@ -630,18 +945,45 @@ export const getMovieControllerSearchMovieV14ResponseMock = (
       null,
     ]),
     rating: {
-      await: 6.1,
-      filmCritics: 10,
-      imdb: 8.4,
-      kp: 6.2,
-      russianFilmCritics: 5.1,
-      tmdb: 3.2,
+      await: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      filmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      imdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      kp: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      russianFilmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      tmdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     },
     ratingMpaa: faker.helpers.arrayElement([faker.word.sample(), null]),
     releaseYears: Array.from(
       { length: faker.number.int({ min: 1, max: 10 }) },
       (_, i) => i + 1,
-    ).map(() => ({ end: 2023, start: 2022 })),
+    ).map(() => ({
+      end: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      start: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+    })),
     seriesLength: faker.helpers.arrayElement([
       faker.number.int({ min: undefined, max: undefined }),
       null,
@@ -670,12 +1012,27 @@ export const getMovieControllerSearchMovieV14ResponseMock = (
       null,
     ]),
     votes: {
-      await: 34000,
-      filmCritics: 10000,
-      imdb: 50000,
-      kp: 60000,
-      russianFilmCritics: 4000,
-      tmdb: 10000,
+      await: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      filmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      imdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      kp: faker.helpers.arrayElement([faker.word.sample(), null]),
+      russianFilmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      tmdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     },
     year: faker.helpers.arrayElement([
       faker.number.int({ min: undefined, max: undefined }),
@@ -692,17 +1049,32 @@ export const getMovieControllerSearchMovieV14ResponseMock = (
 export const getMovieControllerGetRandomMovieV14ResponseMock = (
   overrideResponse: Partial<MovieDtoV14> = {},
 ): MovieDtoV14 => ({
-  ageRating: "16",
-  alternativeName: "Spider man",
+  ageRating: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  alternativeName: faker.helpers.arrayElement([faker.word.sample(), null]),
   audience: Array.from(
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
-  ).map(() => ({ count: 1000, country: "Россия" })),
+  ).map(() => ({
+    count: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    country: faker.helpers.arrayElement([faker.word.sample(), null]),
+  })),
   backdrop: {
     previewUrl: faker.helpers.arrayElement([faker.word.sample(), null]),
     url: faker.helpers.arrayElement([faker.word.sample(), null]),
   },
-  budget: { currency: "€", value: 207283 },
+  budget: {
+    currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+    value: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+  },
   countries: (() =>
     new Array(3).fill(0).map(() => ({ name: faker.location.country() })))(),
   createdAt: faker.helpers.arrayElement([
@@ -713,11 +1085,14 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
     "1987 год. Джордан Белфорт становится брокером в успешном инвестиционном банке. Вскоре банк закрывается после внезапного обвала индекса Доу-Джонса. По совету жены Терезы Джордан устраивается в небольшое заведение, занимающееся мелкими акциями. Его настойчивый стиль общения с клиентами и врождённая харизма быстро даёт свои плоды. Он знакомится с соседом по дому Донни, торговцем, который сразу находит общий язык с Джорданом и решает открыть с ним собственную фирму. В качестве сотрудников они нанимают нескольких друзей Белфорта, его отца Макса и называют компанию «Стрэттон Оукмонт». В свободное от работы время Джордан прожигает жизнь: лавирует от одной вечеринки к другой, вступает в сексуальные отношения с проститутками, употребляет множество наркотических препаратов, в том числе кокаин и кваалюд. Однажды наступает момент, когда быстрым обогащением Белфорта начинает интересоваться агент ФБР...",
     null,
   ]),
-  enName: "Spider man",
+  enName: faker.helpers.arrayElement([faker.word.sample(), null]),
   externalId: {
-    imdb: "tt0232500",
-    kpHD: "48e8d0acb0f62d8585101798eaeceec5",
-    tmdb: 9799,
+    imdb: faker.helpers.arrayElement([faker.word.sample(), null]),
+    kpHD: faker.helpers.arrayElement([faker.word.sample(), null]),
+    tmdb: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
   },
   facts: Array.from(
     { length: faker.number.int({ min: 1, max: 10 }) },
@@ -728,18 +1103,45 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
     value: faker.word.sample(),
   })),
   fees: {
-    russia: { currency: "€", value: 207283 },
-    usa: { currency: "€", value: 207283 },
-    world: { currency: "€", value: 207283 },
+    russia: {
+      currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+      value: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+    },
+    usa: {
+      currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+      value: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+    },
+    world: {
+      currency: faker.helpers.arrayElement([faker.word.sample(), null]),
+      value: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+    },
   },
   genres: (() =>
     new Array(3).fill(0).map(() => ({ name: faker.music.genre() })))(),
-  id: 666,
-  isSeries: true,
-  lists: ["250 лучших сериалов"],
+  id: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  isSeries: faker.datatype.boolean(),
+  lists: Array.from(
+    { length: faker.number.int({ min: 1, max: 10 }) },
+    (_, i) => i + 1,
+  ).map(() => faker.word.sample()),
   logo: { url: faker.helpers.arrayElement([faker.word.sample(), null]) },
-  movieLength: 120,
-  name: "Человек паук",
+  movieLength: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  name: faker.helpers.arrayElement([faker.word.sample(), null]),
   names: Array.from(
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
@@ -754,7 +1156,7 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
       (_, i) => i + 1,
     ).map(() => ({
       logo: { url: faker.helpers.arrayElement([faker.word.sample(), null]) },
-      name: "Netflix",
+      name: faker.helpers.arrayElement([faker.word.sample(), null]),
     })),
   },
   persons: Array.from(
@@ -765,11 +1167,11 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
       "1987 год. Джордан Белфорт становится брокером в успешном инвестиционном банке. Вскоре банк закрывается после внезапного обвала индекса Доу-Джонса. По совету жены Терезы Джордан устраивается в небольшое заведение, занимающееся мелкими акциями. Его настойчивый стиль общения с клиентами и врождённая харизма быстро даёт свои плоды. Он знакомится с соседом по дому Донни, торговцем, который сразу находит общий язык с Джорданом и решает открыть с ним собственную фирму. В качестве сотрудников они нанимают нескольких друзей Белфорта, его отца Макса и называют компанию «Стрэттон Оукмонт». В свободное от работы время Джордан прожигает жизнь: лавирует от одной вечеринки к другой, вступает в сексуальные отношения с проститутками, употребляет множество наркотических препаратов, в том числе кокаин и кваалюд. Однажды наступает момент, когда быстрым обогащением Белфорта начинает интересоваться агент ФБР...",
       null,
     ]),
-    enName: "Paul Walker",
+    enName: faker.helpers.arrayElement([faker.word.sample(), null]),
     enProfession: faker.helpers.arrayElement([faker.word.sample(), null]),
-    id: 6317,
-    name: "Пол Уокер",
-    photo: "https://st.kp.yandex.net/images/actor_iphone/iphone360_6317.jpg",
+    id: faker.number.int({ min: undefined, max: undefined }),
+    name: faker.helpers.arrayElement([faker.word.sample(), null]),
+    photo: faker.helpers.arrayElement([faker.word.sample(), null]),
     profession: faker.helpers.arrayElement([faker.word.sample(), null]),
   })),
   poster: {
@@ -779,26 +1181,62 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
   },
   premiere: {
     bluray: faker.helpers.arrayElement([faker.word.sample(), null]),
-    cinema: "2023-02-25T02:44:39.359Z",
-    country: "США",
+    cinema: faker.helpers.arrayElement([
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
+    ]),
+    country: faker.helpers.arrayElement([faker.word.sample(), null]),
     digital: faker.helpers.arrayElement([faker.word.sample(), null]),
     dvd: faker.helpers.arrayElement([faker.word.sample(), null]),
-    russia: "2023-02-25T02:44:39.359Z",
-    world: "2023-02-25T02:44:39.359Z",
+    russia: faker.helpers.arrayElement([
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
+    ]),
+    world: faker.helpers.arrayElement([
+      `${faker.date.past().toISOString().split(".")[0]}Z`,
+      null,
+    ]),
   },
   rating: {
-    await: 6.1,
-    filmCritics: 10,
-    imdb: 8.4,
-    kp: 6.2,
-    russianFilmCritics: 5.1,
-    tmdb: 3.2,
+    await: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    filmCritics: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    imdb: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    kp: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    russianFilmCritics: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    tmdb: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
   },
-  ratingMpaa: "pg13",
+  ratingMpaa: faker.helpers.arrayElement([faker.word.sample(), null]),
   releaseYears: Array.from(
     { length: faker.number.int({ min: 1, max: 10 }) },
     (_, i) => i + 1,
-  ).map(() => ({ end: 2023, start: 2022 })),
+  ).map(() => ({
+    end: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    start: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+  })),
   reviewInfo: {
     count: faker.helpers.arrayElement([
       faker.number.int({ min: undefined, max: undefined }),
@@ -840,17 +1278,41 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
       null,
     ]),
     rating: {
-      await: 6.1,
-      filmCritics: 10,
-      imdb: 8.4,
-      kp: 6.2,
-      russianFilmCritics: 5.1,
-      tmdb: 3.2,
+      await: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      filmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      imdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      kp: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      russianFilmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      tmdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     },
     type: faker.helpers.arrayElement([faker.word.sample(), null]),
-    year: 2021,
+    year: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
   })),
-  seriesLength: 20,
+  seriesLength: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
   shortDescription: faker.helpers.arrayElement([
     "Восхождение циника-гедониста на бизнес-олимп 1980-х. Блистательный тандем Леонардо ДиКаприо и Мартина Скорсезе",
     null,
@@ -872,24 +1334,57 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
       null,
     ]),
     rating: {
-      await: 6.1,
-      filmCritics: 10,
-      imdb: 8.4,
-      kp: 6.2,
-      russianFilmCritics: 5.1,
-      tmdb: 3.2,
+      await: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      filmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      imdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      kp: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      russianFilmCritics: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
+      tmdb: faker.helpers.arrayElement([
+        faker.number.int({ min: undefined, max: undefined }),
+        null,
+      ]),
     },
     type: faker.helpers.arrayElement([faker.word.sample(), null]),
-    year: 2021,
+    year: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
   })),
   slogan: faker.helpers.arrayElement([faker.word.sample(), null]),
-  status: "completed",
-  ticketsOnSale: true,
-  top10: 1,
-  top250: 200,
-  totalSeriesLength: 155,
-  type: "movie",
-  typeNumber: 1,
+  status: faker.helpers.arrayElement([faker.word.sample(), null]),
+  ticketsOnSale: faker.datatype.boolean(),
+  top10: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  top250: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  totalSeriesLength: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
+  type: faker.helpers.arrayElement([faker.word.sample(), null]),
+  typeNumber: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
   updatedAt: faker.helpers.arrayElement([
     `${faker.date.past().toISOString().split(".")[0]}Z`,
     null,
@@ -899,23 +1394,38 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
       { length: faker.number.int({ min: 1, max: 10 }) },
       (_, i) => i + 1,
     ).map(() => ({
-      name: "Official Trailer",
-      site: "youtube",
+      name: faker.helpers.arrayElement([faker.word.sample(), null]),
+      site: faker.helpers.arrayElement([faker.word.sample(), null]),
       size: faker.helpers.arrayElement([
         faker.number.int({ min: undefined, max: undefined }),
         null,
       ]),
-      type: "TRAILER",
-      url: "https://www.youtube.com/embed/ZsJz2TJAPjw",
+      type: faker.helpers.arrayElement([faker.word.sample(), null]),
+      url: faker.helpers.arrayElement([faker.word.sample(), null]),
     })),
   },
   votes: {
-    await: 34000,
-    filmCritics: 10000,
-    imdb: 50000,
-    kp: 60000,
-    russianFilmCritics: 4000,
-    tmdb: 10000,
+    await: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    filmCritics: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    imdb: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    kp: faker.helpers.arrayElement([faker.word.sample(), null]),
+    russianFilmCritics: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
+    tmdb: faker.helpers.arrayElement([
+      faker.number.int({ min: undefined, max: undefined }),
+      null,
+    ]),
   },
   watchability: {
     items: Array.from(
@@ -927,7 +1437,10 @@ export const getMovieControllerGetRandomMovieV14ResponseMock = (
       url: faker.word.sample(),
     })),
   },
-  year: 2023,
+  year: faker.helpers.arrayElement([
+    faker.number.int({ min: undefined, max: undefined }),
+    null,
+  ]),
   ...overrideResponse,
 });
 

@@ -12,6 +12,7 @@ import {
   getMoviesQueryOptions,
 } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
+import { FavoriteStar } from "@/features/favorite-movie";
 
 export function MoviePage({ movie }: { movie: Movie }) {
   return (
@@ -133,7 +134,12 @@ function MoviesGrid({ type }: { type: Movie["type"] }) {
         {data.pages.map((page) => (
           <React.Fragment key={page.page}>
             {page.movies.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} className="w-full" />
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+                className="w-full"
+                favoriteStarSlot={<FavoriteStar movieId={movie.id} />}
+              />
             ))}
           </React.Fragment>
         ))}

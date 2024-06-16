@@ -19,7 +19,7 @@ type GenreFilter = z.infer<typeof filterByGenreSchema>;
 
 type Props = {
   filter: GenreFilter | undefined;
-  onFilterChange: (filter: GenreFilter) => void;
+  onFilterChange: (filter: GenreFilter | undefined) => void;
 };
 
 const genres = ["Драма", "Комедия", "Мелодрама", "Приключения"];
