@@ -14,7 +14,7 @@ export function IndexPage() {
             </h1>
             <p className="flex max-w-[600px] flex-row space-x-4 text-lg md:text-xl">
               <Button className="text-lg font-bold" size="lg" asChild>
-                <Link to="/movies">
+                <Link to="/movies" search={{ page: 1, filters: {} }}>
                   <Film className="mr-2 size-5" />К фильмам
                 </Link>
               </Button>
