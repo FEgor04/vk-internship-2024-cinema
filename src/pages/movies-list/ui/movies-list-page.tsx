@@ -14,6 +14,7 @@ import {
 import { YearFilterControls } from "@/features/filter-movie";
 import { Movie, MovieCard } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
+import { GenreFilterControls } from "@/features/filter-movie/ui/genre-filter";
 
 type Props = {
   initialData: {
@@ -55,6 +56,17 @@ export function MoviesListPage({ page, filters, initialData }: Props) {
               search: (prev) => ({
                 ...prev,
                 filters: { ...prev.filters, ratingFilter: f },
+              }),
+            })
+          }
+        />
+        <GenreFilterControls
+          filter={filters.genreFilter}
+          onFilterChange={(f) =>
+            navigate({
+              search: (prev) => ({
+                ...prev,
+                filters: { ...prev.filters, genreFilter: f },
               }),
             })
           }
