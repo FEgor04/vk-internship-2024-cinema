@@ -1,11 +1,14 @@
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/shared/ui/button";
 import { useFavoriteMovies } from "../model/hooks";
 
 export function FavoritesButton() {
   const [favorites] = useFavoriteMovies();
   return (
-    <Button variant="link">
-      {favorites.length} {formText(favorites.length)} в избранном
+    <Button variant="link" asChild>
+      <Link to="/favorite">
+        {favorites.length} {formText(favorites.length)} в избранном
+      </Link>
     </Button>
   );
 }
