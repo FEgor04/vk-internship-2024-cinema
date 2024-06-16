@@ -3,16 +3,8 @@ import { ReactNode } from "@tanstack/react-router";
 import { formatDuration } from "date-fns";
 import { ru } from "date-fns/locale";
 import { Play } from "lucide-react";
-import React from "react";
-import {
-  Movie,
-  MovieCard,
-  MovieCountries,
-  MovieGenres,
-  getMoviesQueryOptions,
-} from "@/entities/movie";
+import { Movie, MovieCountries, MovieGenres } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
-import { FavoriteStar } from "@/features/favorite-movie";
 
 export function MoviePage({ movie }: { movie: Movie }) {
   return (
@@ -110,51 +102,5 @@ function DescriptionItem({
       <h6 className="min-w-32 text-muted-foreground">{name}</h6>
       <p className="ml-4 flex-1">{content}</p>
     </div>
-  );
-}
-
-function YouWillProbablyLike({ movie }: { movie: Movie }) {
-  return (
-    <div className="container mt-8 space-y-4">
-      <h1 className="text-xl font-bold">Фильмы, похожие на этот</h1>
-      <div>
-        <MoviesGrid type={movie.type} />
-      </div>
-    </div>
-  );
-}
-
-function MoviesGrid({ type }: { type: Movie["type"] }) {
-  const { data, hasNextPage, fetchNextPage, isFetching } =
-    useSuspenseInfiniteQuery(getMoviesQueryOptions({ limit: 25, type }));
-  return (
-    <>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-        {data.pages.map((page) => (
-          <React.Fragment key={page.page}>
-            {page.movies.map((movie) => (
-              <MovieCard
-                key={movie.id}
-                movie={movie}
-                className="w-full"
-                favoriteStarSlot={<FavoriteStar movieId={movie.id} />}
-              />
-            ))}
-          </React.Fragment>
-        ))}
-      </div>
-      {hasNextPage && (
-        <div className="flex ">
-          <Button
-            onClick={() => fetchNextPage()}
-            disabled={isFetching}
-            variant="link"
-            className="mx-auto"
-          >
-            Загрузить еще
-          </Button>
-        </div>
-      )}
-    </>
   );
 }
