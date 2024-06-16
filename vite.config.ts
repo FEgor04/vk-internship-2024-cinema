@@ -16,4 +16,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      "/v1.4": "https://api.kinopoisk.dev",
+    },
+  },
 });

@@ -2,6 +2,7 @@ import { MovieDtoV14 } from "@/shared/api/index.schemas";
 import { Movie, movieSchema } from "../model/movie";
 
 export function fromDTO(dto: MovieDtoV14): Movie {
+  console.log(dto);
   return movieSchema.parse({
     // todo: add a zod schema and parse it
     id: dto.id,

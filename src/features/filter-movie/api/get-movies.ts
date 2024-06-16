@@ -1,5 +1,9 @@
 import { queryOptions } from "@tanstack/react-query";
-import { fromDTO } from "@/entities/movie";
+import {
+  fromDTO,
+  getMoviesNotNullFields,
+  getMoviesSelectedFields,
+} from "@/entities/movie";
 import { movieControllerFindManyByQueryV14 } from "@/shared/api";
 import {
   MovieFilterByGenre,
@@ -53,6 +57,8 @@ export const getMoviesQueryOptions = (query: Query) =>
       return movieControllerFindManyByQueryV14({
         page: query.page,
         limit: query.pageSize,
+        notNullFields: getMoviesNotNullFields,
+        selectFields: getMoviesSelectedFields,
         ...transformFilters(query.filters),
       }).then((data) => {
         return {

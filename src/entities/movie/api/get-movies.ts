@@ -1,6 +1,9 @@
 import { infiniteQueryOptions, queryOptions } from "@tanstack/react-query";
 import { movieControllerFindManyByQueryV14 } from "@/shared/api";
-import { MovieControllerFindManyByQueryV14SelectFieldsItem } from "@/shared/api/index.schemas";
+import {
+  MovieControllerFindManyByQueryV14NotNullFieldsItem,
+  MovieControllerFindManyByQueryV14SelectFieldsItem,
+} from "@/shared/api/index.schemas";
 import { Movie, MovieID } from "../model/movie";
 import { fromDTO } from "./utils";
 
@@ -32,6 +35,13 @@ export const getMoviesSelectedFields = [
   "poster",
 ] satisfies Array<MovieControllerFindManyByQueryV14SelectFieldsItem>;
 
+export const getMoviesNotNullFields = [
+  "name",
+  "poster.url",
+  "id",
+  "rating.kp",
+] satisfies Array<MovieControllerFindManyByQueryV14NotNullFieldsItem>;
+
 export const getMoviesQueryOptions = (query: Query) =>
   infiniteQueryOptions({
     queryKey: ["movies", "list_infinite", query],
@@ -48,6 +58,7 @@ export const getMoviesQueryOptions = (query: Query) =>
         limit: query.limit,
         type: query.type ? [query.type] : undefined,
         selectFields: getMoviesSelectedFields,
+        notNullFields: getMoviesNotNullFields,
       });
       const response: Response = {
         movies: data.docs.map(fromDTO),
@@ -70,6 +81,7 @@ export const getMoviesByIdsQueryOptions = (
         limit: query.limit,
         type: query.type ? [query.type] : undefined,
         selectFields: getMoviesSelectedFields,
+        notNullFields: getMoviesNotNullFields,
         id: ids.map((it) => it.toString()),
       });
       const response: Response = {

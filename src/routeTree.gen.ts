@@ -10,66 +10,66 @@
 
 // Import Routes
 
-import { Route as rootRoute } from "./app/routes/__root";
-import { Route as FavoriteImport } from "./app/routes/favorite";
-import { Route as IndexImport } from "./app/routes/index";
-import { Route as MoviesIndexImport } from "./app/routes/movies.index";
-import { Route as MoviesIdImport } from "./app/routes/movies.$id";
+import { Route as rootRoute } from './app/routes/__root'
+import { Route as FavoriteImport } from './app/routes/favorite'
+import { Route as IndexImport } from './app/routes/index'
+import { Route as MoviesIndexImport } from './app/routes/movies.index'
+import { Route as MoviesIdImport } from './app/routes/movies.$id'
 
 // Create/Update Routes
 
 const FavoriteRoute = FavoriteImport.update({
-  path: "/favorite",
+  path: '/favorite',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const IndexRoute = IndexImport.update({
-  path: "/",
+  path: '/',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const MoviesIndexRoute = MoviesIndexImport.update({
-  path: "/movies/",
+  path: '/movies/',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const MoviesIdRoute = MoviesIdImport.update({
-  path: "/movies/$id",
+  path: '/movies/$id',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 // Populate the FileRoutesByPath interface
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/": {
-      id: "/";
-      path: "/";
-      fullPath: "/";
-      preLoaderRoute: typeof IndexImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/favorite": {
-      id: "/favorite";
-      path: "/favorite";
-      fullPath: "/favorite";
-      preLoaderRoute: typeof FavoriteImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/movies/$id": {
-      id: "/movies/$id";
-      path: "/movies/$id";
-      fullPath: "/movies/$id";
-      preLoaderRoute: typeof MoviesIdImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/movies/": {
-      id: "/movies/";
-      path: "/movies";
-      fullPath: "/movies";
-      preLoaderRoute: typeof MoviesIndexImport;
-      parentRoute: typeof rootRoute;
-    };
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/favorite': {
+      id: '/favorite'
+      path: '/favorite'
+      fullPath: '/favorite'
+      preLoaderRoute: typeof FavoriteImport
+      parentRoute: typeof rootRoute
+    }
+    '/movies/$id': {
+      id: '/movies/$id'
+      path: '/movies/$id'
+      fullPath: '/movies/$id'
+      preLoaderRoute: typeof MoviesIdImport
+      parentRoute: typeof rootRoute
+    }
+    '/movies/': {
+      id: '/movies/'
+      path: '/movies'
+      fullPath: '/movies'
+      preLoaderRoute: typeof MoviesIndexImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -80,7 +80,7 @@ export const routeTree = rootRoute.addChildren({
   FavoriteRoute,
   MoviesIdRoute,
   MoviesIndexRoute,
-});
+})
 
 /* prettier-ignore-end */
 

@@ -94,7 +94,6 @@ export function MoviePage({ movie }: { movie: Movie }) {
           )}
         </div>
       </div>
-      <YouWillProbablyLike movie={movie} />
     </div>
   );
 }
