@@ -7,7 +7,6 @@ import { Input } from "@/shared/ui/input";
 import { Label } from "@/shared/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
 import { filterByYearSchema } from "../model";
-import { SeparatorVertical } from "lucide-react";
 
 type YearFilter = z.infer<typeof filterByYearSchema>;
 

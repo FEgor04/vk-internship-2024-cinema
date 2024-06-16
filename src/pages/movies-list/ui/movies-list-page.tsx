@@ -7,9 +7,9 @@ import {
   ChevronsRight,
 } from "lucide-react";
 import { MovieFilters, getMoviesQueryOptions } from "@/features/filter-movie";
+import { YearFilterControls } from "@/features/filter-movie";
 import { Movie, MovieCard } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
-import { YearFilterControls } from "@/features/filter-movie/ui/year-filter";
 
 type Props = {
   initialData: {
