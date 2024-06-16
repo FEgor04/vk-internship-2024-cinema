@@ -1,7 +1,7 @@
+import { Check, PlusCircle } from "lucide-react";
+import { MovieID } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
 import { useIsMovieFavorite, useToggleIsFavorite } from "../model/hooks";
-import { MovieID } from "@/entities/movie";
-import { Check, PlusCircle } from "lucide-react";
 
 export function ToggleFavoriteButton({ movieId }: { movieId: MovieID }) {
   const isFavorite = useIsMovieFavorite(movieId);

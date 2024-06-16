@@ -2,9 +2,9 @@ import { ReactNode } from "@tanstack/react-router";
 import { formatDuration } from "date-fns";
 import { ru } from "date-fns/locale";
 import { Play } from "lucide-react";
+import { ToggleFavoriteButton } from "@/features/favorite-movie";
 import { Movie, MovieCountries, MovieGenres } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
-import { ToggleFavoriteButton } from "@/features/favorite-movie";
 
 export function MoviePage({ movie }: { movie: Movie }) {
   return (

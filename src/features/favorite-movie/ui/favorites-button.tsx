@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
+import { Heart } from "lucide-react";
 import { Button } from "@/shared/ui/button";
 import { useFavoriteMovies } from "../model/hooks";
-import { Heart } from "lucide-react";
 
 export function FavoritesButton() {
   const [favorites] = useFavoriteMovies();
