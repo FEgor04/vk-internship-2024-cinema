@@ -83,7 +83,16 @@ export function RatingFilterControls({ filter, onFilterChange }: Props) {
               )}
             />
             <FormItem>
-              <Button>Сохранить</Button>
+              <div className="flex flex-row items-center space-x-2">
+                <Button>Сохранить</Button>
+                <Button
+                  variant="outline"
+                  onClick={() => onFilterChange(undefined)}
+                  type="reset"
+                >
+                  Сбросить
+                </Button>
+              </div>
             </FormItem>
           </form>
         </Form>
