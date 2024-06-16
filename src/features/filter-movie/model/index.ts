@@ -5,6 +5,8 @@ const filterByGenreSchema = z.object({
   value: z.string().array(),
 });
 
+export type MovieFilterByGenre = z.infer<typeof filterByGenreSchema>;
+
 const filterByRatingSchmea = z.object({
   type: z.literal("rating"),
   value: z.object({
@@ -12,6 +14,8 @@ const filterByRatingSchmea = z.object({
     max: z.number().min(0).max(10),
   }),
 });
+
+export type MovieFilterByRating = z.infer<typeof filterByRatingSchmea>;
 
 const filterByYearSchema = z.object({
   type: z.literal("year"),
@@ -21,8 +25,12 @@ const filterByYearSchema = z.object({
   }),
 });
 
+export type MovieFilterByYear = z.infer<typeof filterByYearSchema>;
+
 export const filterSchema = z.discriminatedUnion("type", [
   filterByGenreSchema,
   filterByRatingSchmea,
   filterByYearSchema,
 ]);
+
+export type MovieFilter = z.infer<typeof filterSchema>;
