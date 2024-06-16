@@ -46,7 +46,7 @@ export function MoviePage({ movie }: { movie: Movie }) {
             <p className="text-lg leading-relaxed">
               {movie.shortDescription ?? movie.description}
             </p>
-            <div className="flex flex-row items-center space-x-4">
+            <div className="flex flex-col gap-2 md:flex-row md:items-center">
               <Button
                 variant="default"
                 size="lg"
