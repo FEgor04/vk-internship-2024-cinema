@@ -1,8 +1,7 @@
-import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckIcon } from "lucide-react";
-import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { cn } from "@/shared/lib";
+import { Badge } from "@/shared/ui/badge";
 import { Button } from "@/shared/ui/button";
 import {
   Command,
@@ -13,9 +12,8 @@ import {
   CommandSeparator,
 } from "@/shared/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
-import { filterByGenreSchema } from "../model";
-import { Badge } from "@/shared/ui/badge";
 import { Separator } from "@/shared/ui/separator";
+import { filterByGenreSchema } from "../model";
 
 type GenreFilter = z.infer<typeof filterByGenreSchema>;
 

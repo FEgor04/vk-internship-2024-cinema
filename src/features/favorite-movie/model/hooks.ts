@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useLocalStorage } from "usehooks-ts";
 import { MovieID } from "@/entities/movie";
 

@@ -6,16 +6,16 @@ import {
   ChevronsLeft,
   ChevronsRight,
 } from "lucide-react";
+import { FavoriteStar } from "@/features/favorite-movie";
 import {
   MovieFilters,
   RatingFilterControls,
   getMoviesQueryOptions,
 } from "@/features/filter-movie";
 import { YearFilterControls } from "@/features/filter-movie";
+import { GenreFilterControls } from "@/features/filter-movie";
 import { Movie, MovieCard } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
-import { GenreFilterControls } from "@/features/filter-movie/ui/genre-filter";
-import { FavoriteStar } from "@/features/favorite-movie";
 
 type Props = {
   initialData: {

@@ -1,14 +1,14 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import z from "zod";
+import { Badge } from "@/shared/ui/badge";
 import { Button } from "@/shared/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/shared/ui/form";
 import { Input } from "@/shared/ui/input";
 import { Label } from "@/shared/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
-import { filterByRatingSchmea } from "../model";
 import { Separator } from "@/shared/ui/separator";
-import { Badge } from "@/shared/ui/badge";
+import { filterByRatingSchmea } from "../model";
 
 type RatingFilter = z.infer<typeof filterByRatingSchmea>;
 

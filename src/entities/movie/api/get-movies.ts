@@ -1,8 +1,8 @@
 import { infiniteQueryOptions, queryOptions } from "@tanstack/react-query";
 import { movieControllerFindManyByQueryV14 } from "@/shared/api";
+import { MovieControllerFindManyByQueryV14SelectFieldsItem } from "@/shared/api/index.schemas";
 import { Movie, MovieID } from "../model/movie";
 import { fromDTO } from "./utils";
-import { MovieControllerFindManyByQueryV14SelectFieldsItem } from "@/shared/api/index.schemas";
 
 type Query = {
   limit: number;
