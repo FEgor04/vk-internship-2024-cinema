@@ -37,14 +37,23 @@ const MoviesIdRoute = MoviesIdImport.update({
 declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
     "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
       preLoaderRoute: typeof IndexImport;
       parentRoute: typeof rootRoute;
     };
     "/movies/$id": {
+      id: "/movies/$id";
+      path: "/movies/$id";
+      fullPath: "/movies/$id";
       preLoaderRoute: typeof MoviesIdImport;
       parentRoute: typeof rootRoute;
     };
     "/movies/": {
+      id: "/movies/";
+      path: "/movies";
+      fullPath: "/movies";
       preLoaderRoute: typeof MoviesIndexImport;
       parentRoute: typeof rootRoute;
     };
@@ -53,10 +62,34 @@ declare module "@tanstack/react-router" {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren([
+export const routeTree = rootRoute.addChildren({
   IndexRoute,
   MoviesIdRoute,
   MoviesIndexRoute,
-]);
+});
 
 /* prettier-ignore-end */
+
+/* ROUTE_MANIFEST_START
+{
+  "routes": {
+    "__root__": {
+      "filePath": "__root.tsx",
+      "children": [
+        "/",
+        "/movies/$id",
+        "/movies/"
+      ]
+    },
+    "/": {
+      "filePath": "index.tsx"
+    },
+    "/movies/$id": {
+      "filePath": "movies.$id.tsx"
+    },
+    "/movies/": {
+      "filePath": "movies.index.tsx"
+    }
+  }
+}
+ROUTE_MANIFEST_END */

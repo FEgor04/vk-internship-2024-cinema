@@ -1,17 +1,15 @@
 import { queryOptions } from "@tanstack/react-query";
+import { fromDTO } from "@/entities/movie";
 import { movieControllerFindManyByQueryV14 } from "@/shared/api";
 import {
   MovieFilterByGenre,
   MovieFilterByRating,
   MovieFilterByYear,
+  MovieFilters,
 } from "../model";
 
 type Query = {
-  filters: {
-    yearFilter?: MovieFilterByYear;
-    genreFilter?: MovieFilterByGenre;
-    ratingFilter?: MovieFilterByRating;
-  };
+  filters: MovieFilters;
   page: number;
   pageSize: number;
 };
@@ -56,6 +54,13 @@ export const getMoviesQueryOptions = (query: Query) =>
         page: query.page,
         limit: query.pageSize,
         ...transformFilters(query.filters),
+      }).then((data) => {
+        return {
+          page: data.page,
+          pages: data.pages,
+          pageSize: data.limit,
+          movies: data.docs.map((it) => fromDTO(it)),
+        };
       });
     },
   });
