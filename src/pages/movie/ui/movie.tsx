@@ -1,10 +1,10 @@
-import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 import { ReactNode } from "@tanstack/react-router";
 import { formatDuration } from "date-fns";
 import { ru } from "date-fns/locale";
 import { Play } from "lucide-react";
 import { Movie, MovieCountries, MovieGenres } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
+import { ToggleFavoriteButton } from "@/features/favorite-movie";
 
 export function MoviePage({ movie }: { movie: Movie }) {
   return (
@@ -46,7 +46,7 @@ export function MoviePage({ movie }: { movie: Movie }) {
             <p className="text-lg leading-relaxed">
               {movie.shortDescription ?? movie.description}
             </p>
-            <div>
+            <div className="flex flex-row items-center space-x-4">
               <Button
                 variant="default"
                 size="lg"
@@ -57,6 +57,7 @@ export function MoviePage({ movie }: { movie: Movie }) {
                   <Play className="mr-2 h-6 w-6" /> Трейлер
                 </a>
               </Button>
+              <ToggleFavoriteButton movieId={movie.id} />
             </div>
           </div>
         </div>
