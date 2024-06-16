@@ -38,7 +38,7 @@ export function MoviesListPage({ page, filters, initialData }: Props) {
 
   return (
     <div className="container mx-auto mt-8 space-y-8">
-      <header className="flex flex-row items-center space-x-4">
+      <header className="flex flex-col gap-2 md:flex-row md:items-center">
         <YearFilterControls
           filter={filters.yearFilter}
           onFilterChange={(f) =>
