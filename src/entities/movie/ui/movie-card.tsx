@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { formatDuration } from "date-fns";
 import { ru } from "date-fns/locale";
+import React from "react";
 import { cn } from "@/shared/lib";
 import { Skeleton } from "@/shared/ui/skeleton";
 import { Movie } from "../model/movie";
@@ -8,9 +9,10 @@ import { Movie } from "../model/movie";
 type Props = {
   movie: Movie;
   className?: string;
+  favoriteStarSlot: React.ReactNode;
 };
 
-export function MovieCard({ movie, className }: Props) {
+export function MovieCard({ movie, className, favoriteStarSlot }: Props) {
   return (
     <div
       className={cn(
@@ -18,36 +20,34 @@ export function MovieCard({ movie, className }: Props) {
         className,
       )}
     >
-      <Link
-        className="absolute inset-0 z-10"
-        to="/movies/$id"
-        params={{ id: String(movie.id) }}
-      >
-        <span className="sr-only">View movie details</span>
-      </Link>
       <img
         alt="Movie Poster"
         className="w-full object-cover transition-transform duration-300 group-hover:scale-105"
         src={movie.poster?.previewUrl}
       />
       <div className="absolute inset-0 flex flex-col justify-between bg-black/40 p-4 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <div className="space-x-1">
-          {movie.rating && (
-            <>
-              {movie.rating.imdb && (
-                <MovieRating rating={movie.rating.imdb} name="IMDB" />
-              )}
-              {movie.rating.tmdb && (
-                <MovieRating rating={movie.rating.tmdb} name="TMDB" />
-              )}
-              {movie.rating.kp && (
-                <MovieRating rating={movie.rating.kp} name="КП" />
-              )}
-            </>
-          )}
+        <div className="flex flex-row items-center justify-between">
+          <div className="space-x-1">
+            {movie.rating && (
+              <>
+                {movie.rating.imdb && (
+                  <MovieRating rating={movie.rating.imdb} name="IMDB" />
+                )}
+                {movie.rating.tmdb && (
+                  <MovieRating rating={movie.rating.tmdb} name="TMDB" />
+                )}
+                {movie.rating.kp && (
+                  <MovieRating rating={movie.rating.kp} name="КП" />
+                )}
+              </>
+            )}
+          </div>
+          <div>{favoriteStarSlot}</div>
         </div>
         <div className="flex flex-col space-y-2">
-          <h3 className="text-xl font-semibold ">{movie.name}</h3>
+          <Link to="/movies/$id" params={{ id: String(movie.id) }}>
+            <h3 className="text-xl font-semibold ">{movie.name}</h3>
+          </Link>
           <p className="flex flex-row items-center space-x-1 text-sm">
             <span>{movie.year}</span>
             <span>&#x2022;</span>
