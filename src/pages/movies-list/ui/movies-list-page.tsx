@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import {
   ChevronLeft,
   ChevronRight,
@@ -9,6 +9,7 @@ import {
 import { MovieFilters, getMoviesQueryOptions } from "@/features/filter-movie";
 import { Movie, MovieCard } from "@/entities/movie";
 import { Button } from "@/shared/ui/button";
+import { YearFilterControls } from "@/features/filter-movie/ui/year-filter";
 
 type Props = {
   initialData: {
@@ -26,9 +27,24 @@ export function MoviesListPage({ page, filters, initialData }: Props) {
     ...getMoviesQueryOptions({ page, filters, pageSize: 50 }),
     initialData,
   });
+
+  const navigate = useNavigate({ from: "/movies" });
+
   return (
     <div className="container mx-auto mt-8 space-y-8">
-      <header></header>
+      <header>
+        <YearFilterControls
+          filter={filters.yearFilter}
+          onFilterChange={(f) =>
+            navigate({
+              search: (prev) => ({
+                ...prev,
+                filters: { ...prev.filters, yearFilter: f },
+              }),
+            })
+          }
+        />
+      </header>
       <section className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
         {data.movies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
